@@ -48,4 +48,4 @@ public class StrumentoController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "strumento with id " + id + " not found");
         }
     }
-}
+    }
