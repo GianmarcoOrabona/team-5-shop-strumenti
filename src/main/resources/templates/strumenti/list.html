@@ -21,7 +21,7 @@
                              alt="strumento" style="height: 200px;">
                         <div class="card-body d-flex flex-column">
                             <h5 th:text="${strumenti.marca}"></h5>
-                            <p class="card-text" th:text="${strumenti.modello}"></p>
+                            <p class="card-text mb-4" th:text="${strumenti.modello}"></p>
                             <div class="mt-auto d-flex justify-content-around">
                                 <a th:href="@{/strumenti/edit/{id}(id=${strumenti.id})}" class="btn btn-primary">Modifica</a>
                                 <form th:action="@{/strumenti/delete/{id}(id=${strumenti.id})}" method="post"
