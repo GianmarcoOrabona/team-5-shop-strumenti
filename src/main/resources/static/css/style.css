@@ -1,7 +1,3 @@
-.img-strumenti{
-    width : 50%;
-}
-
-.img-strumenti img{
-    object-fit: cover;
+.img-strumento {
+    height: 200px;
 }
