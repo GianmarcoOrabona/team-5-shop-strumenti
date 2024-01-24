@@ -9,7 +9,8 @@
 <main>
     <div class="container mt-100">
         <h1 class="text-center ">Strumenti</h1>
-        <a class="btn btn-danger mb-3" th:href="@{/strumenti/create}">Aggiungi</a>
+        <a id="addButton" class="btn btn-danger mb-3" th:href="@{/strumenti/create}">Aggiungi</a>
+
         <!-- Card strumenti -->
         <div class="row g-5">
             <div class="col-3" th:each="strumenti : ${strumenti}">
@@ -21,10 +22,10 @@
                             <h5 th:text="${strumenti.marca}"></h5>
                             <p class="card-text mb-4" th:text="${strumenti.modello}"></p>
                             <div class="mt-auto d-flex justify-content-around">
-                                <a th:href="@{/strumenti/edit/{id}(id=${strumenti.id})}" class="btn btn-primary">Modifica</a>
+                                <a id="editButton" th:href="@{/strumenti/edit/{id}(id=${strumenti.id})}" class="btn btn-primary">Modifica</a>
                                 <form th:action="@{/strumenti/delete/{id}(id=${strumenti.id})}" method="post"
                                       onsubmit="return confirm('Are you sure?')">
-                                    <button type="submit" class="btn btn-danger">Elimina</button>
+                                    <button type="submit" id="deliteButton" class="btn btn-danger">Elimina</button>
                                 </form>
                             </div>
                         </div>
@@ -34,6 +35,7 @@
         </div>
     </div>
 </main>
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
 <footer th:replace="fragments/footer :: footer()"></footer>
 <th:block th:replace="fragments/resource :: script"></th:block>
 </body>
