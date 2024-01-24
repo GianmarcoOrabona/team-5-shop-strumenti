@@ -2,7 +2,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resource :: head('Edit Strumento')"></head>
 <body>
-<h1 style="text-align:center">Modifica uno strumento</h1>
 <form
         method="post"
         th:action="@{/strumenti/edit/{id}(id=${strumento.id})}"
