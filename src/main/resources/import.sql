@@ -1,20 +1,20 @@
-INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('Eko', 'Chitarra classica', 123.45, 'photo.jpg', 'Chitarra classica');
+INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('Eko', 'Chitarra classica', 123.45, 'https://www.crucianimusica.it/media/06217039_m.jpg', 'Chitarra classica');
 
-INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('Eko', 'Chitarra acustica', 156.78, 'photo2.jpg', 'Chitarra acustica');
+INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('Eko', 'Chitarra acustica', 156.78, 'https://m.media-amazon.com/images/I/41g7wUFj0UL.jpg', 'Chitarra acustica');
 
-INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA', 'Chitarra elettrica', 189.01, 'photo3.jpg', 'Chitarra elettrica');
+INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA', 'Chitarra elettrica', 189.01, 'https://www.musicbros.net/media/catalog/product/cache/1/image/900x/040ec09b1e35df139433887a97daa66f/b/r/bryce-bes002-chitarra-elettrica-nera-fretless.jpg', 'Chitarra elettrica');
 
-INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA', 'Chitarra classica', 221.23, 'photo4.jpg', 'Chitarra classica');
+INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA', 'Chitarra classica', 221.23, 'https://ae01.alicdn.com/kf/H2bd5106a984043d8a0a5bb94287780ffr.jpg_640x640q90.jpg', 'Chitarra classica');
 
-INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('Eko', 'Chitarra classica', 253.45, 'photo5.jpg', 'Chitarra classica');
+INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('Eko', 'Chitarra classica', 253.45, 'https://www.bananamusic.it/c/1177-category_default/chitarre-flamenco.jpg', 'Chitarra classica');
 
-INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA', 'Chitarra elettrica', 285.67, 'photo6.jpg', 'Chitarra elettrica');
+INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA', 'Chitarra elettrica', 285.67, 'https://www.guitarsland.it/pub/media/catalog/product/cache/cf3f2243ef4940fd5c66f2ff035145ac/m/j/mjdm30bk.png', 'Chitarra elettrica');
 
-INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('Eko', 'Chitarra elettrica', 317.89, 'photo7.jpg', 'Chitarra elettrica');
+INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('Eko', 'Chitarra elettrica', 317.89, 'https://www.cittadelsole.it/files/content/93/78/48/20220704100750_WI42296_A1_STRUMENTI_MUSICALI_chitarra_piccola_elettrica_OK.jpg', 'Chitarra elettrica');
 
-INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA', 'Chitarra elettrica', 350.12, 'photo8.jpg', 'Chitarra elettrica');
+INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA', 'Chitarra elettrica', 350.12, 'https://www.fireflyaudio.it/wp-content/uploads/2016/08/EKO-3_4-S100-CHROME-RED.jpg', 'Chitarra elettrica');
 
-INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA', 'Chitarra acustica', 382.34, 'photo9.jpg', 'Chitarra acustica');
+INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA', 'Chitarra acustica', 382.34, 'https://www.sanniomusicstore.com/3955-large_default/EKO-RANGER-6-EQ-Chitarra.jpg', 'Chitarra acustica');
 
 -- Tastiere
 
