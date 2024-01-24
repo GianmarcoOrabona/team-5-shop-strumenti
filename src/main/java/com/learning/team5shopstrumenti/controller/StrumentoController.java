@@ -74,7 +74,7 @@ public class StrumentoController {
     public String create(Model model) {
         Strumento strumento = new Strumento();
         model.addAttribute("strumento", strumento);
-        return "create";
+        return "strumenti/create";
     }
 
     @PostMapping("/create")

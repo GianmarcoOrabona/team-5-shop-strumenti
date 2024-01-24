@@ -3,5 +3,38 @@
 <head th:replace="fragments/resource :: head('Create Strumento')"></head>
 <body>
 
+<form
+        id="create-strumento"
+        class="row g-3"
+        th:object="${strumento}"
+        th:action="@{/strumenti/create}"
+        method="post" class="row g-3"
+>
+
+    <div class="col-md-6">
+        <label for="inputMarca" class="form-label">Marca</label>
+        <input type="text" class="form-control" id="inputMarca" th:field="*{marca}">
+    </div>
+    <div class="col-md-6">
+        <label for="inputModello" class="form-label">Modello</label>
+        <input type="text" class="form-control" id="inputModello" th:field="*{modello}">
+    </div>
+    <div class="col-12">
+        <label for="inputPrezzo" class="form-label">Prezzo</label>
+        <input type="number" class="form-control" id="inputPrezzo" th:field="*{prezzo}">
+    </div>
+    <div class="col-12">
+        <label for="inputFoto" class="form-label">Foto</label>
+        <input type="text" class="form-control" id="inputFoto" th:field="*{foto}">
+    </div>
+    <div class="col-md-6">
+        <label for="inputDescrizione" class="form-label">Descrizione</label>
+        <input type="text" class="form-control" id="inputDescrizione" th:field="*{descrizione}">
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Modifica</button>
+        <a class="btn btn-primary" th:href="@{/strumenti}">Cancella</a>
+    </div>
+</form>
 </body>
 </html>
