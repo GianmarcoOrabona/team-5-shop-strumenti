@@ -2,6 +2,10 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/resource :: head('Lista strumenti')"></head>
 <body>
+<header>
+    <nav th:replace="fragments/navbar :: topNavbar('strumenti')"></nav>
+</header>
+
 <main>
     <h1 class="text-center mt-5">Strumenti</h1>
     <div class="container d-flex">
@@ -32,5 +36,7 @@
         </div>
     </div>
 </main>
+
+<th:block th:replace="fragments/resources :: script"></th:block>
 </body>
 </html>
