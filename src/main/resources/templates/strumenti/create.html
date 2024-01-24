@@ -3,6 +3,19 @@
 <head th:replace="fragments/resource :: head('Create Strumento')"></head>
 <body>
 
+<section>
+    <form id="crea-strumento"
+          th:object="${strumento}"
+          th:action="@{/strumenti/create}"
+          method="post"
+    >
+        <header>
+            <div class="row bg-dark p-3">
+                <h3 class="text-center text-light"> AGGIUNGI UNO STRUMENTO </h3>
+            </div>
+        </header>
+        <div class="container">
+    <div class="col-6 mt-3">
 <form
         id="create-strumento"
         class="row g-3"

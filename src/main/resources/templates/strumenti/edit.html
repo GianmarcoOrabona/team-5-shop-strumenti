@@ -9,14 +9,15 @@
         id="edit-strumento"
         class="row g-3"
         th:object="${strumento}">
-
-    <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Marca</label>
-        <input type="text" class="form-control" id="inputEmail4" th:field="*{marca}">
-    </div>
-    <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Modello</label>
-        <input type="text" class="form-control" id="inputPassword4" th:field="*{modello}">
+    <header>
+        <div class="row bg-dark p-3">
+            <h3 class="text-center text-light"> MODIFICA UNO STRUMENTO </h3>
+        </div>
+    </header>
+    <div class="container ms-4">
+    <div class="col-6 mt-3">
+        <label for="inputMarca" class="form-label">Marca</label>
+        <input type="text" class="form-control" id="inputMarca" th:field="*{marca}">
     </div>
     <div class="col-6">
         <label for="inputAddress" class="form-label">Prezzo</label>
