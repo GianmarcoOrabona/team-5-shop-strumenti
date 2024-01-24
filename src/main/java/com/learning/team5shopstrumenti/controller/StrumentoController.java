@@ -80,7 +80,7 @@ public class StrumentoController {
             return "list/create";
         } else {
             Strumento strumentoSalvato = strumentoRepository.save(formStrumento);
-            return "redirect:/list/" + strumentoSalvato.getId();
+            return "redirect:/strumenti" + strumentoSalvato.getId();
         }
     }
 
