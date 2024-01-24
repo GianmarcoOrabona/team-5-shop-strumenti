@@ -4,7 +4,7 @@
 <body>
 <form
         method="post"
-        th:action="@{/strumenti/edit/{id}(id=${strumento.id})}"
+        th:action="@{/admin/strumenti/edit/{id}(id=${strumento.id})}"
         id="edit-strumento"
         class="row g-3"
         th:object="${strumento}">
@@ -35,7 +35,7 @@
     </div>
     <div class="col-12" style="text-align:center">
         <button type="submit" class="btn btn-primary">Modifica</button>
-        <a class="btn btn-primary" th:href="@{/strumenti}">Cancel</a>
+        <a class="btn btn-primary" th:href="@{/admin/strumenti}">Cancel</a>
     </div>
     </div>
 </form>

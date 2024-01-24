@@ -17,7 +17,7 @@ import java.util.Optional;
 
 
 @Controller
-@RequestMapping("/adimin/strumenti")
+@RequestMapping("/admin/strumenti")
 public class AdminController {
 
     @Autowired
@@ -37,7 +37,7 @@ public class AdminController {
         return "strumenti/list";
     }
 
-    @GetMapping("/adimin/strumenti/edit/{id}")
+    @GetMapping("/admin/strumenti/edit/{id}")
     public String edit(@PathVariable Integer id, Model model) {
         Optional<Strumento> result=strumentoRepository.findById(id);
         if(result.isPresent()) {
@@ -49,7 +49,7 @@ public class AdminController {
         }
     }
 
-    @PostMapping("/adimin/strumenti/edit/{id}")
+    @PostMapping("/admin/strumenti/edit/{id}")
     public String updateStrumento (@PathVariable Integer id, @Valid @ModelAttribute("strumento") Strumento formStrumento, BindingResult bindingResult, Model model ) {
         Optional<Strumento> strumento = strumentoRepository.findById(formStrumento.getId());
         if (strumento.isPresent()) {
@@ -59,20 +59,20 @@ public class AdminController {
             }
             formStrumento.setFoto(strumentoEdit.getFoto());
             Strumento savedStrumento = strumentoRepository.save(formStrumento);
-            return "redirect:/strumenti";
+            return "redirect:/adimin/strumenti";
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
         }
     }
 
-    @GetMapping("/adimin/strumenti/create")
+    @GetMapping("/admin/strumenti/create")
     public String create(Model model) {
         Strumento strumento = new Strumento();
         model.addAttribute("strumento", strumento);
         return "strumenti/create";
     }
 
-    @PostMapping("/adimin/strumenti/create")
+    @PostMapping("/admin/strumenti/create")
     public String store(@Valid @ModelAttribute("strumento") Strumento formStrumento, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "strumenti/create";
@@ -82,7 +82,7 @@ public class AdminController {
         }
     }
 
-    @PostMapping("/adimin/strumenti/delete/{id}")
+    @PostMapping("/admin/strumenti/delete/{id}")
     public String delete(@PathVariable Integer id,Model model) {
         Optional<Strumento> result=strumentoRepository.findById(id);
         if(result.isPresent()) {
