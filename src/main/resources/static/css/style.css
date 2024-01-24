@@ -1,0 +1,7 @@
+.img-strumenti{
+    width : 50%;
+}
+
+.img-strumenti img{
+    object-fit: cover;
+}

@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="fragments/resource :: head('Lista strumenti')"></head>
+<head th:replace="fragments/resource :: head('Lista strumenti')">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
 <body>
 <header>
     <nav th:replace="fragments/navbar :: topNavbar('strumenti')"></nav>
@@ -12,16 +14,16 @@
     <div class="container d-flex">
         <div class="row mt-5">
             <div class="col-md-4 p-5" th:each="strumenti : ${strumenti}">
-                <div class="card" >
+                <div class="card h-100" >
                     <a th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="text-decoration-none text-danger">
-                        <img th:src="${strumenti.foto}" class="card-img-top" alt="...">
+                        <div class="img-strumenti">
+                            <img th:src="${strumenti.foto}" class="card-img-top" alt="...">
+                        </div>
                         <div class="card-body row ">
                             <h3 class="card-title d-flex justify-content-center p-3" th:text="${strumenti.marca}"></h3>
                             <h3 class="card-title d-flex justify-content-center p-3" th:text="${strumenti.modello}"></h3>
-                            <div class="col-6 d-flex justify-content-center">
+                            <div class="d-flex justify-content-between">
                                 <a th:href="@{/strumenti/edit/{id}(id=${strumenti.id})}" class="btn btn-primary">Modifica</a>
-                            </div>
-                            <div class="col-6 d-flex justify-content-center">
                                 <form
                                         th:action="@{/strumenti/delete/{id}(id=${strumenti.id})}"
                                         method="post"
