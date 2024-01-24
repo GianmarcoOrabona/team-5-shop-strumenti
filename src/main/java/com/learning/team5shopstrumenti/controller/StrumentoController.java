@@ -22,10 +22,16 @@ public class StrumentoController {
     private StrumentoRepository strumentoRepository;
 
     @GetMapping
-    public String index(Model model) {
-        // Listaa strumenti
-        List<Strumento> strumenti = strumentoRepository.findAll();
+    public String index(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
+
+        List<Strumento> strumenti;
+        if (searchKeyword != null) {
+            strumenti = strumentoRepository.findByMarcaContaining(searchKeyword);
+        } else {
+            strumenti = strumentoRepository.findAll();
+        }
         model.addAttribute("strumenti", strumenti);
+        model.addAttribute("preloadSearch", searchKeyword);
         return "strumenti/list";
     }
 
