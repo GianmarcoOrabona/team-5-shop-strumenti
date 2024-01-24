@@ -92,7 +92,7 @@ public class StrumentoController {
         Optional<Strumento> result=strumentoRepository.findById(id);
         if(result.isPresent()) {
             strumentoRepository.deleteById(id);
-            return "strumenti";
+            return "redirect:/strumenti";
 
         }
         else {
