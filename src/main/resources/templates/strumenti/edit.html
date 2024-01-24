@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/resource :: head('Edit Strumento')"></head>
+<head th:replace="fragments/resource :: head('Modifica Strumento')"></head>
 <body>
 <h1 style="text-align:center">Modifica uno strumento</h1>
 <form
@@ -8,20 +8,20 @@
         class="row g-3"
         th:object="${strumento}">
     <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Marca</label>
-        <input type="text" class="form-control" id="inputEmail4" th:field="*{marca}" disabled>
+        <label for="inputMarca" class="form-label">Marca</label>
+        <input type="text" class="form-control" id="inputMarca" th:field="*{marca}">
     </div>
     <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Modello</label>
-        <input type="text" class="form-control" id="inputPassword4" th:field="*{modello}" disabled>
+        <label for="inputModello" class="form-label">Modello</label>
+        <input type="text" class="form-control" id="inputModello" th:field="*{modello}">
     </div>
     <div class="col-6">
-        <label for="inputAddress" class="form-label">Prezzo</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" th:field="*{prezzo}">
+        <label for="inputPrezzo" class="form-label">Prezzo</label>
+        <input type="number" class="form-control" min=0 id="inputPrezzo"  th:field="*{prezzo}">
     </div>
     <div class="col-6">
-        <label for="inputAddress2" class="form-label">Foto</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" th:field="*{foto}">
+        <label for="inputFoto" class="form-label">Foto</label>
+        <input type="text" class="form-control" id="inputFoto" th:field="*{foto}">
     </div>
     <div class="d-flex justify-content-center">
     <div class="mb-3 col-6">
