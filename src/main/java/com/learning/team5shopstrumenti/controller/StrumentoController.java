@@ -55,18 +55,27 @@ public class StrumentoController {
     public String edit(@PathVariable Integer id, Model model) {
         Optional<Strumento> result=strumentoRepository.findById(id);
         if(result.isPresent()) {
-            Strumento obj= result.get();
-            Strumento strumento=new Strumento();
-            strumento.setFoto(obj.getFoto());
-            strumento.setMarca(obj.getMarca());
-            strumento.setDescrizione(obj.getDescrizione());
-            strumento.setModello(obj.getModello());
-            strumento.setPrezzo(obj.getPrezzo());
-            model.addAttribute("strumento",strumento);
+            model.addAttribute("strumento",result.get());
             return "strumenti/edit";
         }
         else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "strumento with id " + id + " not found");
+        }
+    }
+
+    @PostMapping("/edit/{id}")
+    public String updateStrumento (@PathVariable Integer id, @Valid @ModelAttribute("strumento") Strumento formStrumento,  BindingResult bindingResult, Model model ) {
+        Optional<Strumento> strumento = strumentoRepository.findById(formStrumento.getId());
+        if (strumento.isPresent()) {
+            Strumento strumentoEdit = strumento.get();
+            if (bindingResult.hasErrors()) {
+                return "strumenti/edit";
+            }
+            formStrumento.setFoto(strumentoEdit.getFoto());
+            Strumento savedStrumento = strumentoRepository.save(formStrumento);
+            return "redirect:/strumenti";
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
         }
     }
 

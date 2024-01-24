@@ -4,16 +4,19 @@
 <body>
 <h1 style="text-align:center">Modifica uno strumento</h1>
 <form
+        method="post"
+        th:action="@{/strumenti/edit/{id}(id=${strumento.id})}"
         id="edit-strumento"
         class="row g-3"
         th:object="${strumento}">
+
     <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Marca</label>
-        <input type="text" class="form-control" id="inputEmail4" th:field="*{marca}" disabled>
+        <input type="text" class="form-control" id="inputEmail4" th:field="*{marca}">
     </div>
     <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Modello</label>
-        <input type="text" class="form-control" id="inputPassword4" th:field="*{modello}" disabled>
+        <input type="text" class="form-control" id="inputPassword4" th:field="*{modello}">
     </div>
     <div class="col-6">
         <label for="inputAddress" class="form-label">Prezzo</label>
