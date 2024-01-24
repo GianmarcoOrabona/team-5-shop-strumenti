@@ -3,13 +3,11 @@ package com.learning.team5shopstrumenti.controller;
 import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
 import com.learning.team5shopstrumenti.model.Strumento;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +23,7 @@ public class StrumentoController {
     public String index(Model model) {
         // Listaa strumenti
         List<Strumento> strumenti = strumentoRepository.findAll();
-        model.addAttribute("strumenti",strumenti);
+        model.addAttribute("strumenti", strumenti);
         return "strumenti/list";
     }
 
