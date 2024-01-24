@@ -78,4 +78,17 @@ public class StrumentoController {
         }
     }
 
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id,Model model) {
+        Optional<Strumento> result=strumentoRepository.findById(id);
+        if(result.isPresent()) {
+            strumentoRepository.deleteById(id);
+            return "strumenti/list";
+        }
+        else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Book with id " + id + " not found");
+        }
+
+    }
+
 }
