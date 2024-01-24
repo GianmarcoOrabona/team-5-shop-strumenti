@@ -29,6 +29,18 @@ public class StrumentoController {
         return "strumenti/list";
     }
 
+    @GetMapping("/show/{id}")
+    public String show(@PathVariable Integer id, Model model) {
+        Optional<Strumento> result = strumentoRepository.findById(id);
+        if (result.isPresent()) {
+            Strumento strumento = result.get();
+            model.addAttribute("strumento", strumento);
+            return "strumenti/show";
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Lo strumento con id " + id + " non è stato trovato");
+        }
+    }
+
 
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable Integer id, Model model) {

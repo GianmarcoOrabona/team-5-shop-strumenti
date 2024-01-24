@@ -3,26 +3,29 @@
 <head th:replace="fragments/resource :: head('Edit Strumento')"></head>
 <body>
 
-<form class="row g-3">
+<form
+        id="edit-strumento"
+        class="row g-3"
+        th:object="${strumento}">
     <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Marca</label>
-        <input type="text" class="form-control" id="inputEmail4">
+        <input type="text" class="form-control" id="inputEmail4" th:field="*{marca}">
     </div>
     <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Modello</label>
-        <input type="text" class="form-control" id="inputPassword4">
+        <input type="text" class="form-control" id="inputPassword4" th:field="*{modello}">
     </div>
     <div class="col-12">
         <label for="inputAddress" class="form-label">Prezzo</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" th:field="*{prezzo}">
     </div>
     <div class="col-12">
         <label for="inputAddress2" class="form-label">Foto</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" th:field="*{foto}">
     </div>
     <div class="col-md-6">
         <label for="inputCity" class="form-label">Descrizione</label>
-        <input type="text" class="form-control" id="inputCity">
+        <input type="text" class="form-control" id="inputCity" th:field="*{descrizione}">
     </div>
     <div class="col-12">
         <button type="submit" class="btn btn-primary">Modifica</button>
