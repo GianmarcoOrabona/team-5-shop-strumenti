@@ -3,14 +3,13 @@
 <head th:replace="fragments/resource :: head('Create Strumento')"></head>
 <body>
 
-<form
-        id="create-strumento"
-        class="row g-3"
-        th:object="${strumento}"
-        th:action="@{/strumenti/create}"
-        method="post" class="row g-3"
->
-
+<section>
+    <form id="crea-strumento"
+          th:object="${strumento}"
+          th:action="@{/strumenti/create}"
+          method="post"
+          class="row g-3"
+    >
     <div class="col-md-6">
         <label for="inputMarca" class="form-label">Marca</label>
         <input type="text" class="form-control" id="inputMarca" th:field="*{marca}">
@@ -32,9 +31,10 @@
         <input type="text" class="form-control" id="inputDescrizione" th:field="*{descrizione}">
     </div>
     <div class="col-12">
-        <button type="submit" class="btn btn-primary">Modifica</button>
-        <a class="btn btn-primary" th:href="@{/strumenti}">Cancella</a>
+        <button type="submit" class="btn btn-primary">Aggiungi</button>
+        <a class="btn btn-primary" th:href="@{/strumenti}">Annulla</a>
     </div>
 </form>
+</section>
 </body>
 </html>
