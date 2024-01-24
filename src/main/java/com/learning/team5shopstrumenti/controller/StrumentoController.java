@@ -18,6 +18,7 @@ public class StrumentoController {
 
     @GetMapping
     public String index() {
+        // Listaa strumenti
         List<Strumento> strumenti = strumentoRepository.findAll();
         return "strumenti/list";
     }
