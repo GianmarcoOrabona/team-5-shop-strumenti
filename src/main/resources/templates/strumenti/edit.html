@@ -2,39 +2,42 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resource :: head('Modifica Strumento')"></head>
 <body>
-<h1 style="text-align:center">Modifica uno strumento</h1>
 <form
         id="edit-strumento"
         class="row g-3"
         th:object="${strumento}">
-    <div class="col-md-6">
+    <header>
+        <div class="row bg-dark p-3">
+            <h3 class="text-center text-light"> MODIFICA UNO STRUMENTO </h3>
+        </div>
+    </header>
+    <div class="container ms-4">
+    <div class="col-6 mt-3">
         <label for="inputMarca" class="form-label">Marca</label>
         <input type="text" class="form-control" id="inputMarca" th:field="*{marca}">
     </div>
-    <div class="col-md-6">
+    <div class="col-6 mt-1">
         <label for="inputModello" class="form-label">Modello</label>
         <input type="text" class="form-control" id="inputModello" th:field="*{modello}">
     </div>
-    <div class="col-6">
+    <div class="col-6 mt-1">
         <label for="inputPrezzo" class="form-label">Prezzo</label>
         <input type="number" class="form-control" min=0 id="inputPrezzo"  th:field="*{prezzo}">
     </div>
-    <div class="col-6">
+    <div class="col-6 mt-1">
         <label for="inputFoto" class="form-label">Foto</label>
         <input type="text" class="form-control" id="inputFoto" th:field="*{foto}">
     </div>
-    <div class="d-flex justify-content-center">
-    <div class="mb-3 col-6">
-
-        <label for="exampleFormControlTextarea1" class="form-label" style="font-size:20px">Scrivi una descrizione</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{descrizione}"></textarea>
+        <div class="col-6 mt-1">
+        <label for="inputDescrizione" class="form-label">Descrizione</label>
+        <textarea class="form-control" id="inputDescrizione" rows="3" th:field="*{descrizione}"></textarea>
     </div>
-    </div>
-    <div class="col-12" style="text-align:center">
+    <div class="col-6 mt-3">
         <button type="submit" class="btn btn-primary">Modifica</button>
-        <a class="btn btn-primary" th:href="@{/strumenti}">Cancel</a>
+        <a class="btn btn-primary" th:href="@{/strumenti}">Annulla</a>
     </div>
 </form>
+</div>
 
 </body>
 </html>
