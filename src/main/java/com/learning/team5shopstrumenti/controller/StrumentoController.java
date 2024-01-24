@@ -21,6 +21,9 @@ public class StrumentoController {
     @Autowired
     private StrumentoRepository strumentoRepository;
 
+
+
+
     @GetMapping
     public String index(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
 
@@ -77,10 +80,10 @@ public class StrumentoController {
     @PostMapping("/create")
     public String store(@Valid @ModelAttribute("strumento") Strumento formStrumento, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "list/create";
+            return "strumenti/create";
         } else {
             Strumento strumentoSalvato = strumentoRepository.save(formStrumento);
-            return "redirect:/list/" + strumentoSalvato.getId();
+            return "redirect:/strumenti/show/" + strumentoSalvato.getId();
         }
     }
 
@@ -89,7 +92,7 @@ public class StrumentoController {
         Optional<Strumento> result=strumentoRepository.findById(id);
         if(result.isPresent()) {
             strumentoRepository.deleteById(id);
-            return "strumenti/list";
+            return "strumenti";
 
         }
         else {
