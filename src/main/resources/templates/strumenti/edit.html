@@ -2,32 +2,34 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resource :: head('Edit Strumento')"></head>
 <body>
-
+<h1 style="text-align:center">Modifica lo strumento</h1>
 <form
         id="edit-strumento"
         class="row g-3"
         th:object="${strumento}">
     <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Marca</label>
-        <input type="text" class="form-control" id="inputEmail4" th:field="*{marca}">
+        <input type="text" class="form-control" id="inputEmail4" th:field="*{marca}" disabled>
     </div>
     <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Modello</label>
-        <input type="text" class="form-control" id="inputPassword4" th:field="*{modello}">
+        <input type="text" class="form-control" id="inputPassword4" th:field="*{modello}" disabled>
     </div>
-    <div class="col-12">
+    <div class="col-6">
         <label for="inputAddress" class="form-label">Prezzo</label>
         <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" th:field="*{prezzo}">
     </div>
-    <div class="col-12">
+    <div class="col-6">
         <label for="inputAddress2" class="form-label">Foto</label>
         <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" th:field="*{foto}">
     </div>
-    <div class="col-md-6">
-        <label for="inputCity" class="form-label">Descrizione</label>
-        <input type="text" class="form-control" id="inputCity" th:field="*{descrizione}">
+    <div class="d-flex justify-content-center">
+    <div class="mb-3 col-6">
+        <label for="exampleFormControlTextarea1" class="form-label">Scrivi una descrizione</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{descrizione}"></textarea>
     </div>
-    <div class="col-12">
+    </div>
+    <div class="col-12" style="text-align:center">
         <button type="submit" class="btn btn-primary">Modifica</button>
         <a class="btn btn-primary" th:href="@{/strumenti}">Cancel</a>
     </div>
