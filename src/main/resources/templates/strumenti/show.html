@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/resource :: head('Lista strumenti')"></head>
+<body>
+<header>
+    <nav th:replace="fragments/navbar :: topNavbar('strumenti')"></nav>
+</header>
+
+<main>
+    <div class="container mt-3">
+        <h1 th:text="|Dettagli ${strumento.marca} ${strumento.modello}|"></h1>
+        <div class="mt-5 row">
+            <div class="col-4">
+                <div class="img-container img-fluid d-flex justify-content-center">
+                    <img th:src="${strumento.foto}" alt="">
+                </div>
+            </div>
+            <div class="col-8">
+                <h3 th:text="|${strumento.marca} ${strumento.modello}|"></h3>
+                <span class="text-danger fw-bold" th:text="|${strumento.prezzo} &euro;|"></span>
+                <hr class="w-50">
+                <div>
+                    <p class="text-danger">Spedizione <i class="fa-solid fa-truck"></i></p>
+                    <p th:text="|${strumento.marca} ${strumento.modello}|" class="text-secondary"></p>
+                </div>
+                <button type="button" class="btn btn-success"><i class="fa-solid fa-bag-shopping"></i> Aggiungi al carrello</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<th:block th:replace="fragments/resource :: script"></th:block>
+</body>
+</html>
