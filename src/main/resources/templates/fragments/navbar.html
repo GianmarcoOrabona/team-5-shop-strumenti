@@ -14,6 +14,24 @@
             </ul>
         </div>
     </div>
+
+    <div th:if="${area == 'strumenti'}">
+        <div class="row d-flex">
+            <form
+                    id="strumenti-search"
+                    th:action="@{/strumenti}"
+                    method="get"
+                    class="ms-auto"
+            >
+                <div class="input-group">
+                    <input class="form-control me-2" type="text" name="keyword" id="keyword"
+                           placeholder="Cerca lo strumento" th:value="${preloadSearch}">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </nav>
 </body>
 </html>
