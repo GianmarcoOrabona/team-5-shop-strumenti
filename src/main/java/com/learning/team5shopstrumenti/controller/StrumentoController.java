@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -23,17 +22,10 @@ public class StrumentoController {
     private StrumentoRepository strumentoRepository;
 
     @GetMapping
-    public String index(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
+    public String index(Model model) {
         // Listaa strumenti
-
-        List<Strumento> strumenti;
-        if (searchKeyword != null) {
-            strumenti = strumentoRepository.findByMarcaContaining(searchKeyword);
-        } else {
-            strumenti = strumentoRepository.findAll();
-        }
+        List<Strumento> strumenti = strumentoRepository.findAll();
         model.addAttribute("strumenti", strumenti);
-        model.addAttribute("preloadSearch", searchKeyword);
         return "strumenti/list";
     }
 
