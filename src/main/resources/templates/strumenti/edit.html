@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/resource :: head('Edit Strumento')"></head>
+<head th:replace="fragments/resource :: head('Modifica Strumento')"></head>
 <body>
 <h1 style="text-align:center">Modifica uno strumento</h1>
 <form
@@ -17,7 +17,7 @@
     </div>
     <div class="col-6">
         <label for="inputPrezzo" class="form-label">Prezzo</label>
-        <input type="number" class="form-control" id="inputPrezzo"  th:field="*{prezzo}">
+        <input type="number" class="form-control" min=0 id="inputPrezzo"  th:field="*{prezzo}">
     </div>
     <div class="col-6">
         <label for="inputFoto" class="form-label">Foto</label>
