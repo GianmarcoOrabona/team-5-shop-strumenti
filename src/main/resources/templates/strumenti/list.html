@@ -10,7 +10,7 @@
 
 <main>
     <h1 class="text-center mt-5">Strumenti</h1>
-    <a class="btn btn-danger mb-3" th:href="@{/strumenti/create}">Aggiungi</a>
+    <a class="btn btn-danger mb-3" th:href="@{/strumenti/create}"><i class="fa-solid fa-plus"></i></a>
     <div class="container d-flex">
         <div class="row mt-5">
             <div class="col-md-4 p-5" th:each="strumenti : ${strumenti}">
@@ -23,12 +23,12 @@
                             <h3 class="card-title d-flex justify-content-center p-3" th:text="${strumenti.marca}"></h3>
                             <h3 class="card-title d-flex justify-content-center p-3" th:text="${strumenti.modello}"></h3>
                             <div class="d-flex justify-content-between">
-                                <a th:href="@{/strumenti/edit/{id}(id=${strumenti.id})}" class="btn btn-primary">Modifica</a>
+                                <a th:href="@{/strumenti/edit/{id}(id=${strumenti.id})}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <form
                                         th:action="@{/strumenti/delete/{id}(id=${strumenti.id})}"
                                         method="post"
                                         onsubmit="return confirm('Are you sure?')">
-                                    <button type="submit" class="btn btn-primary">Elimina</button>
+                                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-trash"></i></button>
                                 </form>
                             </div>
 
