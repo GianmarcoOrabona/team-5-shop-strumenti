@@ -1,13 +1,36 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/resource :: head('Lista strumenti')"></head>
 <body>
-    <h1>Strumenti</h1>
+<main>
+    <h1 class="text-center mt-5">Strumenti</h1>
+    <div class="container d-flex">
+        <div class="row mt-5">
+            <div class="col-md-4 p-5" th:each="strumenti : ${strumenti}">
+                <div class="card" >
+                    <a th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="text-decoration-none text-danger">
+                        <img th:src="${strumenti.foto}" class="card-img-top" alt="...">
+                        <div class="card-body row ">
+                            <h3 class="card-title d-flex justify-content-center p-3" th:text="${strumenti.marca}"></h3>
+                            <h3 class="card-title d-flex justify-content-center p-3" th:text="${strumenti.modello}"></h3>
+                            <div class="col-6 d-flex justify-content-center">
+                                <a th:href="@{/strumenti/edit/{id}(id=${strumenti.id})}" class="btn btn-primary">Modifica</a>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center">
+                                <form
+                                        th:action="@{/strumenti/delete/{id}(id=${strumenti.id})}"
+                                        method="post"
+                                        onsubmit="return confirm('Are you sure?')">
+                                    <button type="submit" class="btn btn-primary">Elimina</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 </body>
 </html>

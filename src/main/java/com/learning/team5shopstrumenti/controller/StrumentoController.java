@@ -23,13 +23,8 @@ public class StrumentoController {
     public String index(Model model) {
         // Listaa strumenti
         List<Strumento> strumenti = strumentoRepository.findAll();
-        model.addAttribute("strumenti",strumenti);
+        model.addAttribute("strumenti", strumenti);
         return "strumenti/list";
     }
 
-
-    @GetMapping("/edit")
-    public String edit(@PathVariable Integer id, Model model) {
-        Optional<Strumento> result=strumentoRepository.findById(id);
-    }
 }
