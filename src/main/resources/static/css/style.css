@@ -1,3 +1,15 @@
-.img-strumento {
-    height: 200px;
+body {
+    overflow-x: hidden;
+}
+
+.img-container img {
+    width: 300px;
+}
+
+footer {
+    margin-top: 10%
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
