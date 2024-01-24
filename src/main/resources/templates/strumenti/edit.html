@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resource :: head('Edit Strumento')"></head>
 <body>
-
+<h1 style="text-align:center">Modifica uno strumento</h1>
 <form
         id="edit-strumento"
         class="row g-3"
@@ -26,7 +26,7 @@
     <div class="d-flex justify-content-center">
     <div class="mb-3 col-6">
 
-        <label for="exampleFormControlTextarea1" class="form-label">Scrivi una descrizione</label>
+        <label for="exampleFormControlTextarea1" class="form-label" style="font-size:20px">Scrivi una descrizione</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{descrizione}"></textarea>
     </div>
     </div>
