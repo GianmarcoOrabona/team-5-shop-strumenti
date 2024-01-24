@@ -90,6 +90,7 @@ public class StrumentoController {
         if(result.isPresent()) {
             strumentoRepository.deleteById(id);
             return "strumenti/list";
+
         }
         else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Book with id " + id + " not found");
