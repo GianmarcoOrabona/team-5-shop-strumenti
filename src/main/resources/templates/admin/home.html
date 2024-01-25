@@ -3,39 +3,40 @@
 <head th:replace="fragments/resource :: head('Lista strumenti')"></head>
 <body>
 <header>
-    <nav th:replace="fragments/navbar :: topNavbar('strumenti')"></nav>
+    <nav th:replace="fragments/navbar :: topNavbar('admin')"></nav>
 </header>
 
-<main>
-    <div class="container mt-100">
-        <h1 class="text-center ">Strumenti</h1>
-        <a th:if="${area == 'admin'}" class="btn btn-danger mb-3" th:href="@{/admin/create}">Aggiungi</a>
-        <!-- Card strumenti -->
-        <div class="row g-5">
-            <div class="col-3" th:each="strumenti : ${strumenti}">
-                <a th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="text-decoration-none text-dark">
-                    <div class="card h-100 crad-strumento">
-                        <img th:src="${strumenti.foto}" class="card-img-top img-fluid object-fit-contain"
-                             alt="strumento" style="height: 200px;">
-                        <div class="card-body d-flex flex-column">
-                            <h5 th:text="${strumenti.marca}"></h5>
-                            <p class="card-text mb-4" th:text="${strumenti.modello}"></p>
-                            <div class="mt-auto d-flex justify-content-around">
-                                <a th:if="${area == 'admin'}" th:href="@{/admin/edit/{id}(id=${strumenti.id})}" class="btn btn-primary">Modifica</a>
-                                <a th:if="${area == 'public'}" th:href="@{/strumenti/buy/{id}(id=${strumenti.id})}" class="btn btn-primary">Acquista</a>
-                                <form th:action="@{/strumenti/delete/{id}(id=${strumenti.id})}" method="post"
-                                      onsubmit="return confirm('Are you sure?')">
-                                    <button type="submit" th:if="${area == 'admin'}" class="btn btn-danger">Elimina</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</main>
 
+<table class="table table-striped mt-100">
+    <thead>
+    <tr>
+        <th scope="col"></th>
+        <th scope="col">Nome</th>
+        <th scope="col">Prezzo</th>
+        <th scope="col">Quantità</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="strumento : ${strumenti}">
+        <div>
+            <a th:href="@{/amministrazione/show}">
+                <td class="img-td-widt"><img class="img-fluid img-list" th:src="@{${strumento.foto}}">
+                </td>
+                <td class="fw-normal" th:text="${strumento.marca}"></td>
+                <td>
+                    <div class="badge text-bg-success" th:text="${strumento.prezzo} + ' ' + € "></div>
+                </td>
+                <td>
+                    <div class="badge text-bg-success" th:text="${strumento.modello}"></div>
+                </td>
+                <td>
+                    <a class="btn btn-warning margine" th:href="@{/admin/create}">Aggiungi</a>
+                </td>
+            </a>
+        </div>
+    </tr>
+    </tbody>
+</table>
 <form
         id="strumenti-search"
         th:action="@{/strumenti}"

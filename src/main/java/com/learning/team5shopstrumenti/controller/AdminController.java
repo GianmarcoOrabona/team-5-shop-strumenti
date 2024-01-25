@@ -51,7 +51,7 @@ public class AdminController {
     }
 
     @PostMapping("/edit/{id}")
-    public String updateStrumento (@PathVariable Integer id, @Valid @ModelAttribute("strumento") Strumento formStrumento, BindingResult bindingResult, Model model ) {
+    public String updateStrumento (@PathVariable Integer id, @Valid @ModelAttribute("strumento") Strumento formStrumento, BindingResult bindingResult) {
         Optional<Strumento> strumento = strumentoRepository.findById(formStrumento.getId());
         if (strumento.isPresent()) {
             Strumento strumentoEdit = strumento.get();
