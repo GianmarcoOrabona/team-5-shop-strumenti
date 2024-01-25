@@ -64,4 +64,38 @@ public class StrumentoController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
         }
     }
+
+    @GetMapping("/checkout")
+    public String checkout( Model model) {
+        return "strumenti/checkout";
+    }
+
+    @GetMapping("/buy/{id}")
+    public String buy(@PathVariable Integer id,@Valid @ModelAttribute("strumento") Strumento buyStrumento, Model model) {
+        Optional<Strumento> result = strumentoRepository.findById(buyStrumento.getId());
+        if (result.isPresent()) {
+            model.addAttribute("strumento", result.get());
+                Strumento savedStrumento = strumentoRepository.save(buyStrumento);
+                return "strumenti/checkout";
+            } else {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
+            }
+    }
+
+    @PostMapping("/buy/{id}")
+    public String sell (@PathVariable Integer id, @Valid @ModelAttribute("ricetta") Strumento strumento,  BindingResult bindingResult, Model model ) {
+        Optional<Strumento> result = strumentoRepository.findById(strumento.getId());
+        if (result.isPresent()) {
+            Strumento buyStrumento = result.get();
+            if (bindingResult.hasErrors()) {
+                model.addAttribute("ricettaTypeList", strumentoRepository.findAll());
+                return "ricetta/form";
+            }
+            strumento.setFoto(buyStrumento.getFoto());
+            Strumento savedricetta = strumentoRepository.save(strumento);
+            return "redirect:/ricette";
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
+        }
+    }
 }
