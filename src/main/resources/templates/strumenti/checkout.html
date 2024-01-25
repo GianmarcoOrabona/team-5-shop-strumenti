@@ -6,6 +6,8 @@
     <nav th:replace="fragments/navbar :: topNavbar('strumenti')"></nav>
 </header>
 
-
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+<footer th:replace="fragments/footer :: footer()"></footer>
+<th:block th:replace="fragments/resource :: script"></th:block>
 </body>
 </html>

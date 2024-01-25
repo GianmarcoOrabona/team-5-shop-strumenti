@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -64,4 +65,23 @@ public class StrumentoController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
         }
     }
+
+    @GetMapping("/checkout")
+    public String checkout( Model model) {
+        return "strumenti/checkout";
+    }
+
+    @PostMapping("/buy/{id}")
+    public String buy(@PathVariable Integer id, Model model) {
+        Optional<Strumento> result = strumentoRepository.findById(id);
+        if (result.isPresent()) {
+            model.addAttribute("strumento", result.get());
+            LocalDate today = LocalDate.now();
+
+                return "strumenti/checkout";
+            } else {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
+            }
+    }
+
 }
