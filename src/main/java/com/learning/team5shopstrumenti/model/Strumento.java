@@ -37,7 +37,7 @@ public class Strumento {
     @OneToMany(mappedBy = "strumento")
     private List<Vendita> vendite;
 
-    @OneToMany(mappedBy = "strumento")
+    @OneToMany(mappedBy = "strumento", orphanRemoval = true)
     private List<Assortimento> assortimenti;
 
     // GETTER E SETTER

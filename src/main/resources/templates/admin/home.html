@@ -32,6 +32,15 @@
                     <td>
                         <a class="btn btn-primary" th:href="@{/admin/edit/{id}(id=${strumento.id})}"><i class="fa-solid fa-pencil"></i></a>
                     </td>
+                    <td>
+                        <form
+                                th:action="@{/admin/delete/{id}(id=${strumento.id})}"
+                                method="post"
+                                onsubmit="return confirm('Are you sure?')">
+                            <button type="submit" class="btn btn-primary">Delete</button>
+                        </form>
+                    </td>
+
                 </tr>
             </tbody>
         </table>
