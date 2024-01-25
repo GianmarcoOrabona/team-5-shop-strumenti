@@ -1,6 +1,8 @@
 package com.learning.team5shopstrumenti.controller;
 
+import com.learning.team5shopstrumenti.interfaccie.AssortimentoRepository;
 import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
+import com.learning.team5shopstrumenti.model.Assortimento;
 import com.learning.team5shopstrumenti.model.Strumento;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +23,9 @@ public class StrumentoController {
 
     @Autowired
     private StrumentoRepository strumentoRepository;
+
+    @Autowired
+    private AssortimentoRepository assortimentoRepository;
 
 
 
@@ -41,13 +47,16 @@ public class StrumentoController {
 
     @GetMapping("/show/{id}")
     public String show(@PathVariable Integer id, Model model) {
+        List<Integer> lista=new ArrayList<>();
+        int cont=0;
         Optional<Strumento> result = strumentoRepository.findById(id);
-        if (result.isPresent()) {
+        for (int i = 0; i < result.get().getAssortimenti().get(0).getQuantita(); i++) {
+           cont++;
+           lista.add(cont);
+        }
             Strumento strumento = result.get();
             model.addAttribute("strumento", strumento);
+            model.addAttribute("array",lista);
             return "strumenti/show";
-        } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Lo strumento con id " + id + " non è stato trovato");
-        }
+       }
     }
-}
