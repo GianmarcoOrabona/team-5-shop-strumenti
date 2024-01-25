@@ -16,6 +16,7 @@
                     <div class="card h-100 crad-strumento">
                         <img th:src="${strumenti.foto}" class="card-img-top img-fluid object-fit-contain"
                              alt="strumento" style="height: 200px;">
+                        <hr>
                         <div class="card-body d-flex flex-column">
                             <h5 th:text="${strumenti.marca}"></h5>
                             <p class="card-text mb-4" th:text="${strumenti.modello}"></p>
@@ -31,26 +32,7 @@
     </div>
 </main>
 
-<form
-        id="strumenti-search"
-        th:action="@{/strumenti}"
-        method="get"
-        class="ms-auto"
->
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-            Default checkbox
-        </label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-        <label class="form-check-label" for="flexCheckChecked">
-            Checked checkbox
-        </label>
-    </div>
-    <button type="submit" class="btn btn-primary">Search</button>
-</form>
+
 
 
 
