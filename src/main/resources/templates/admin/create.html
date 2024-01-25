@@ -3,44 +3,53 @@
 <head th:replace="fragments/resource :: head('Aggiungi Strumento')"></head>
 <body>
 
-<section>
-    <form id="crea-strumento"
-          th:object="${strumento}"
-          th:action="@{/admin/create}"
-          method="post"
-    >
-        <header>
-            <div class="row bg-dark p-3">
-                <h3 class="text-center text-light"> AGGIUNGI UNO STRUMENTO </h3>
+<header>
+    <div class="row bg-dark p-3">
+        <h3 class="text-center text-light"> MODIFICA UNO STRUMENTO </h3>
+    </div>
+</header>
+<main>
+    <div class="container mt-5">
+
+        <p class="text-secondary text-start">* Campi obbligatori</p>
+
+        <form
+                method="post"
+                th:action="@{/admin/create}"
+                id="create-strumento"
+                class="row g-3"
+                th:object="${strumento}"
+        >
+            <div class="col-6">
+                <div class="col-md-6 mb-3">
+                    <label for="marca" class="form-label">Marca*</label>
+                    <input type="text" class="form-control" id="marca" placeholder="Fender" th:field="*{marca}">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="prezzo" class="form-label">Prezzo*</label>
+                    <input type="number" min="0" value="0" step=".01" class="form-control" id="prezzo" th:field="*{prezzo}">
+                </div>
             </div>
-        </header>
-        <div class="container">
-            <div class="col-6 mt-3">
-                <label for="inputMarca" class="form-label">Marca</label>
-                <input type="text" class="form-control" id="inputMarca" th:field="*{marca}">
+            <div class="col-6">
+                <div class="col-md-6 mb-3">
+                    <label for="foto" class="form-label">Foto</label>
+                    <input type="text" class="form-control" id="foto" th:field="*{foto}">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="modello" class="form-label">Modello*</label>
+                    <input type="text" class="form-control" id="modello" th:field="*{modello}">
+                </div>
             </div>
-            <div class="col-6 mt-1">
-                <label for="inputModello" class="form-label">Modello</label>
-                <input type="text" class="form-control" id="inputModello" th:field="*{modello}">
+            <div class="col-md-12">
+                <label for="descrizione" class="form-label">Scrivi una descrizione</label>
+                <textarea class="form-control" rows="10" id="descrizione" th:field="*{descrizione}"></textarea>
             </div>
-            <div class="col-6 mt-1">
-                <label for="inputPrezzo" class="form-label">Prezzo</label>
-                <input type="number" class="form-control" min=0 id="inputPrezzo" th:field="*{prezzo}">
-            </div>
-            <div class="col-6 mt-1">
-                <label for="inputFoto" class="form-label">Foto</label>
-                <input type="text" class="form-control" id="inputFoto" th:field="*{foto}">
-            </div>
-            <div class="col-6 mt-1">
-                <label for="inputDescrizione" class="form-label">Descrizione</label>
-                <textarea class="form-control"  rows="6" id="inputDescrizione" th:field="*{descrizione}"> </textarea>
-            </div>
-            <div class="col-12 mt-3">
+            <div class="col-12">
                 <button type="submit" class="btn btn-primary">Aggiungi</button>
-                <a class="btn btn-primary" th:href="@{/admin}">Annulla</a>
+                <a class="btn btn-danger" th:href="@{/admin}">Cancel</a>
             </div>
-        </div>
-    </form>
-</section>
+        </form>
+    </div>
+</main>
 </body>
 </html>

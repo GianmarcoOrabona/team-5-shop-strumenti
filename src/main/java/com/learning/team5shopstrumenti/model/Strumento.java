@@ -1,6 +1,9 @@
 package com.learning.team5shopstrumenti.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,10 +17,14 @@ public class Strumento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotEmpty(message = "Il nome non può essere vuoto")
     private String marca;
 
+    @NotEmpty(message = "Il modello non può essere vuoto")
     private String modello;
 
+    @NotNull(message = "Il prezzo non può essere vuoto")
+    @DecimalMin(value = "1.00", message = "Il prezzo non può essere minore di 1.00")
     private BigDecimal prezzo;
 
     @Lob
