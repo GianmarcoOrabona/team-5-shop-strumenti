@@ -27,6 +27,9 @@ public class StrumentoController {
     @Autowired
     private AssortimentoRepository assortimentoRepository;
 
+    @Autowired
+    private VenditaRepository venditaRepository;
+
 
     @GetMapping
     public String index(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
@@ -59,13 +62,9 @@ public class StrumentoController {
             model.addAttribute("array", lista);
             return "strumenti/show";
         }
+
         else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
         }
-    }
-
-    @GetMapping("/checkout/{id}")
-    public String chekout(@PathVariable Integer id, Model model) {
-        return "strumenti/checkout";
     }
 }
