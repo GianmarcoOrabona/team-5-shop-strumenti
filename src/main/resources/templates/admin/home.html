@@ -19,7 +19,8 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Prezzo &euro;</th>
                     <th scope="col">Quantità</th>
-                    <th scope="col">Azioni</th>
+                    <th scope="col" class="text-center">Azioni</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -36,8 +37,8 @@
                         <form
                                 th:action="@{/admin/delete/{id}(id=${strumento.id})}"
                                 method="post"
-                                onsubmit="return confirm('Are you sure?')">
-                            <button type="submit" class="btn btn-primary">Delete</button>
+                                onsubmit="return confirm('Sei sicuro di voler eliminare questo strumento?')">
+                            <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     </td>
 
