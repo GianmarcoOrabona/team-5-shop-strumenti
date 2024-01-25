@@ -88,7 +88,7 @@ INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-1
 
 INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-11-10', 284, 56, 5);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-12-11', 247, 91, 6);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-09-11', 247, 91, 6);
 
 INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-11-12', 209, 93, 7);
 
