@@ -48,6 +48,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annulla</button>
+                <a th:href="@{/strumenti/checkout/{id}(id=${strumento.id})}" class="btn btn-primary">Vai al pagamento</a>
                 <form
                         method="post"
                         th:action="@{/strumenti/buy/{id}( id = ${strumento.id})}"

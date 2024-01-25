@@ -66,9 +66,15 @@ public class StrumentoController {
         }
     }
 
-    @GetMapping("/checkout")
-    public String checkout( Model model) {
-        return "strumenti/checkout";
+    @GetMapping("/checkout/{id}")
+    public String checkout(@PathVariable Integer id, Model model){
+        Optional<Strumento> result = strumentoRepository.findById(id);
+        if (result.isPresent()){
+            model.addAttribute("strumento", result.get());
+            return "strumenti/checkout";
+        }else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
+        }
     }
 
     @PostMapping("/buy/{id}")
