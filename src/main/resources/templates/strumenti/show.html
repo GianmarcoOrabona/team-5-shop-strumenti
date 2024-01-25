@@ -40,15 +40,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addToCartModalLabel">Aggiungi al carrello</h5>
+                <h5 class="modal-title" id="addToCartModalLabel">Vai alla pagina di acquisto</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Sei sicuro di voler aggiungere questo prodotto al carrello?
+                Comfermando sarai reinderizzato alla paggina di acquisto
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                <button type="button" class="btn btn-primary">Aggiungi al carrello</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annulla</button>
+                <a th:href="@{/strumenti/checkout}" class="btn btn-primary">Vai al pagamento</a>
             </div>
         </div>
     </div>

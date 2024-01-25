@@ -59,9 +59,13 @@ public class StrumentoController {
             model.addAttribute("array", lista);
             return "strumenti/show";
         }
-
         else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
         }
+    }
+
+    @GetMapping("/checkout/{id}")
+    public String chekout(@PathVariable Integer id, Model model) {
+        return "strumenti/checkout";
     }
 }
