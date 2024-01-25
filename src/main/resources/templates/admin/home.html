@@ -9,6 +9,7 @@
 <main>
     <div class="container mt-100">
         <h1 class="text-center ">Strumenti</h1>
+        <a th:if="${area == 'admin'}" class="btn btn-danger mb-3" th:href="@{/admin/create}">Aggiungi</a>
         <!-- Card strumenti -->
         <div class="row g-5">
             <div class="col-3" th:each="strumenti : ${strumenti}">
@@ -20,7 +21,12 @@
                             <h5 th:text="${strumenti.marca}"></h5>
                             <p class="card-text mb-4" th:text="${strumenti.modello}"></p>
                             <div class="mt-auto d-flex justify-content-around">
+                                <a th:if="${area == 'admin'}" th:href="@{/admin/edit/{id}(id=${strumenti.id})}" class="btn btn-primary">Modifica</a>
                                 <a th:if="${area == 'public'}" th:href="@{/strumenti/buy/{id}(id=${strumenti.id})}" class="btn btn-primary">Acquista</a>
+                                <form th:action="@{/strumenti/delete/{id}(id=${strumenti.id})}" method="post"
+                                      onsubmit="return confirm('Are you sure?')">
+                                    <button type="submit" th:if="${area == 'admin'}" class="btn btn-danger">Elimina</button>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -17,7 +17,7 @@ import java.util.Optional;
 
 
 @Controller
-@RequestMapping("/admin/strumenti")
+@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
@@ -35,55 +35,55 @@ public class AdminController {
         model.addAttribute("area", "admin");
         model.addAttribute("strumenti", strumenti);
         model.addAttribute("preloadSearch", searchKeyword);
-        return "strumenti/list";
+        return "admin/home";
     }
 
-    @GetMapping("/admin/strumenti/edit/{id}")
+    @GetMapping("/edit/{id}")
     public String edit(@PathVariable Integer id, Model model) {
         Optional<Strumento> result=strumentoRepository.findById(id);
         if(result.isPresent()) {
             model.addAttribute("strumento",result.get());
-            return "strumenti/edit";
+            return "admin/edit";
         }
         else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "strumento with id " + id + " not found");
         }
     }
 
-    @PostMapping("/admin/strumenti/edit/{id}")
+    @PostMapping("/edit/{id}")
     public String updateStrumento (@PathVariable Integer id, @Valid @ModelAttribute("strumento") Strumento formStrumento, BindingResult bindingResult, Model model ) {
         Optional<Strumento> strumento = strumentoRepository.findById(formStrumento.getId());
         if (strumento.isPresent()) {
             Strumento strumentoEdit = strumento.get();
             if (bindingResult.hasErrors()) {
-                return "strumenti/edit";
+                return "admin/edit";
             }
             formStrumento.setFoto(strumentoEdit.getFoto());
             Strumento savedStrumento = strumentoRepository.save(formStrumento);
-            return "redirect:/adimin/strumenti";
+            return "redirect:/admin";
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
         }
     }
 
-    @GetMapping("/admin/strumenti/create")
+    @GetMapping("/create")
     public String create(Model model) {
         Strumento strumento = new Strumento();
         model.addAttribute("strumento", strumento);
-        return "strumenti/create";
+        return "admin/create";
     }
 
-    @PostMapping("/admin/strumenti/create")
+    @PostMapping("/create")
     public String store(@Valid @ModelAttribute("strumento") Strumento formStrumento, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "strumenti/create";
+            return "admin/create";
         } else {
             Strumento strumentoSalvato = strumentoRepository.save(formStrumento);
-            return "redirect:/strumenti/show/" + strumentoSalvato.getId();
+            return "redirect:/admin" ;
         }
     }
 
-    @PostMapping("/admin/strumenti/delete/{id}")
+    @PostMapping("/strumenti/delete/{id}")
     public String delete(@PathVariable Integer id,Model model) {
         Optional<Strumento> result=strumentoRepository.findById(id);
         if(result.isPresent()) {
