@@ -2,8 +2,10 @@ package com.learning.team5shopstrumenti.controller;
 
 import com.learning.team5shopstrumenti.interfaccie.AssortimentoRepository;
 import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
+import com.learning.team5shopstrumenti.interfaccie.VenditaRepository;
 import com.learning.team5shopstrumenti.model.Assortimento;
 import com.learning.team5shopstrumenti.model.Strumento;
+import com.learning.team5shopstrumenti.model.Vendita;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,6 +28,9 @@ public class StrumentoController {
 
     @Autowired
     private AssortimentoRepository assortimentoRepository;
+
+    @Autowired
+    private VenditaRepository venditaRepository;
 
 
     @GetMapping
@@ -64,4 +69,10 @@ public class StrumentoController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
         }
     }
+
+   @GetMapping("/vendita")
+   public String mostra() {
+        return "strumenti/vendita";
+   }
+
 }
