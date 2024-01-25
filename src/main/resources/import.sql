@@ -76,3 +76,32 @@ INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA
 
 INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('Fender', 'Basso', 382.34, 'https://www.musicartenet.it/106857-home_default/cort-sjb5f-ns-wbag.jpg', 'Basso acustico');
 
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-07-08', 300, 100, 1);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 350, 150, 2);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 370, 180, 3);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 320, 120, 4);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 280, 80, 5);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 250, 400, 6);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 210, 430, 7);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 225, 460, 8);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 215, 450, 9);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 205, 410, 10);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 290, 467, 11);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 299, 453, 12);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 305, 243, 13);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 297, 235, 14);
+
+
