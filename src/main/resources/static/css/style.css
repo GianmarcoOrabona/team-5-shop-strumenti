@@ -22,17 +22,14 @@ footer {
     width: 200px;
 }
 
-th{
+.table-image {
+  td, th {
     vertical-align: middle;
+  }
 }
 
-td{
-    vertical-align: middle;
-}
-
-.img-td-width {
-width: 250px;
-height: 200px;
+.img-thumbnail {
+    width: 50%;
 }
 
 .name-list-w {
