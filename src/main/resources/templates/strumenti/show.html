@@ -16,11 +16,12 @@
         <div class="col-md-6">
             <h5 th:text="|Marca ${strumento.marca}|"></h5>
             <!--Testo che varia in base al numero di strumenti disponibili-->
-            <p>Non disponibile</p>
+            <p th:if="${strumento.assortimenti.size() == 0}">Non disponibile</p>
+            <p th:unless="${strumento.assortimenti.size() == 0}">Disponibile</p>
             <span class="text-danger fw-bold" th:text="|${strumento.prezzo} &euro;|"></span>
             <p>Tasse incluse</p>
             <p th:text="|Paga fino a 12 rate da: ${strumento.prezzo} &euro;|" > </p>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" style="width:100px">
                 <option th:each="qt : ${array}" th:text="${qt}"></option>
             </select>
             <!--Testo che varia in base al costo della merce totale -->

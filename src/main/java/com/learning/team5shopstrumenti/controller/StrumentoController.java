@@ -28,8 +28,6 @@ public class StrumentoController {
     private AssortimentoRepository assortimentoRepository;
 
 
-
-
     @GetMapping
     public String index(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
 
@@ -47,16 +45,23 @@ public class StrumentoController {
 
     @GetMapping("/show/{id}")
     public String show(@PathVariable Integer id, Model model) {
-        List<Integer> lista=new ArrayList<>();
-        int cont=0;
+        List<Integer> lista = new ArrayList<>();
+        int cont = 0;
         Optional<Strumento> result = strumentoRepository.findById(id);
-        for (int i = 0; i < result.get().getAssortimenti().get(0).getQuantita(); i++) {
-           cont++;
-           lista.add(cont);
-        }
+        if (result.isPresent()) {
+            for (int i = 0; i < result.get().getAssortimenti().get(0).getQuantita(); i++) {
+                cont++;
+                lista.add(cont);
+            }
+
             Strumento strumento = result.get();
             model.addAttribute("strumento", strumento);
-            model.addAttribute("array",lista);
+            model.addAttribute("array", lista);
             return "strumenti/show";
-       }
+        }
+
+        else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
+        }
     }
+}
