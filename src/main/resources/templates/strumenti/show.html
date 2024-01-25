@@ -20,13 +20,19 @@
             <span class="text-danger fw-bold" th:text="|${strumento.prezzo} &euro;|"></span>
             <p>Tasse incluse</p>
             <p th:text="|Paga fino a 12 rate da: ${strumento.prezzo} &euro;|" > </p>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
             <!--Testo che varia in base al costo della merce totale -->
             <p class="text-danger">Spedizione <i class="fa-solid fa-truck"></i></p>
             <div class="input-group mb-3">
                 <button type="button" class="btn btn-success" data-bs-toggle="modal"
                         data-bs-target="#addToCartModal">
                     <i class="fa-solid fa-bag-shopping"></i>
-                    Aggiungi al carrello
+                    Acquista
                 </button>
             </div>
         </div>

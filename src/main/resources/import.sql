@@ -76,3 +76,4 @@ INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA
 
 INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('Fender', 'Basso', 382.34, 'https://www.musicartenet.it/106857-home_default/cort-sjb5f-ns-wbag.jpg', 'Basso acustico');
 
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-07-08', 300, 100, 4);
