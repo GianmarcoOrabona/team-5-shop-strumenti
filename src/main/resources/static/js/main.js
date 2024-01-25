@@ -22,10 +22,20 @@ const addButton = document.getElementById('addButton');
             deliteButton.style.display = 'none';
         }
 
+
+    let buyButton = document.getElementById('buyButton');
+
+    if (url === '/strumenti') {
+      buyButton.style.display = 'block';
+    } else {
+      buyButton.style.display = 'none';
+                }
+
     function enableButton(buttonId, link) {
-     if (url === link) {
-            buttonId.style.display = 'block';
-        } else {
-            buttonId.style.display = 'none';
-        }
+        const url = window.location.pathname;
+         if (url === link) {
+                buttonId.style.display = 'block';
+            } else {
+                buttonId.style.display = 'none';
+            }
     }

@@ -32,6 +32,7 @@ public class AdminController {
         } else {
             strumenti = strumentoRepository.findAll();
         }
+        model.addAttribute("area", "admin");
         model.addAttribute("strumenti", strumenti);
         model.addAttribute("preloadSearch", searchKeyword);
         return "strumenti/list";

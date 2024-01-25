@@ -33,6 +33,7 @@ public class StrumentoController {
         } else {
             strumenti = strumentoRepository.findAll();
         }
+        model.addAttribute("area", "public");
         model.addAttribute("strumenti", strumenti);
         model.addAttribute("preloadSearch", searchKeyword);
         return "strumenti/list";
