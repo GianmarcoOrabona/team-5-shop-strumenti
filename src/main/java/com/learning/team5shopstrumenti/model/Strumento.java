@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -38,7 +39,9 @@ public class Strumento {
     private List<Vendita> vendite;
 
     @OneToMany(mappedBy = "strumento", orphanRemoval = true)
-    private List<Assortimento> assortimenti;
+    private List<Assortimento> assortimenti = new ArrayList<>();
+
+
 
     // GETTER E SETTER
 

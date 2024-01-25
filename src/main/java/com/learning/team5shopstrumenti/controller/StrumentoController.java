@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -70,32 +71,17 @@ public class StrumentoController {
         return "strumenti/checkout";
     }
 
-    @GetMapping("/buy/{id}")
-    public String buy(@PathVariable Integer id,@Valid @ModelAttribute("strumento") Strumento buyStrumento, Model model) {
-        Optional<Strumento> result = strumentoRepository.findById(buyStrumento.getId());
+    @PostMapping("/buy/{id}")
+    public String buy(@PathVariable Integer id, Model model) {
+        Optional<Strumento> result = strumentoRepository.findById(id);
         if (result.isPresent()) {
             model.addAttribute("strumento", result.get());
-                Strumento savedStrumento = strumentoRepository.save(buyStrumento);
+            LocalDate today = LocalDate.now();
+
                 return "strumenti/checkout";
             } else {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
             }
     }
 
-    @PostMapping("/buy/{id}")
-    public String sell (@PathVariable Integer id, @Valid @ModelAttribute("ricetta") Strumento strumento,  BindingResult bindingResult, Model model ) {
-        Optional<Strumento> result = strumentoRepository.findById(strumento.getId());
-        if (result.isPresent()) {
-            Strumento buyStrumento = result.get();
-            if (bindingResult.hasErrors()) {
-                model.addAttribute("ricettaTypeList", strumentoRepository.findAll());
-                return "ricetta/form";
-            }
-            strumento.setFoto(buyStrumento.getFoto());
-            Strumento savedricetta = strumentoRepository.save(strumento);
-            return "redirect:/ricette";
-        } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
-        }
-    }
 }
