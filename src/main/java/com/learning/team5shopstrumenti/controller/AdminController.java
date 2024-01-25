@@ -83,16 +83,16 @@ public class AdminController {
         }
     }
 
-    @PostMapping("/strumenti/delete/{id}")
+    @PostMapping("/delete/{id}")
     public String delete(@PathVariable Integer id,Model model) {
         Optional<Strumento> result=strumentoRepository.findById(id);
         if(result.isPresent()) {
             strumentoRepository.deleteById(id);
-            return "redirect:/strumenti";
+            return "redirect:/admin";
 
         }
         else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Book with id " + id + " not found");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Lo strumento con questo id: " + id + " non e' stato trovato");
         }
 
     }
