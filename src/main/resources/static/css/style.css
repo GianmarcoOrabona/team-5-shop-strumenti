@@ -30,6 +30,8 @@ footer {
 
 .img-thumbnail {
     width: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
 }
 
 .name-list-w {
