@@ -35,3 +35,32 @@ footer {
 .name-list-w {
 width: 300px;
 }
+
+.card {
+   width: 300px;
+   height: 400px;
+   background-color: white;
+   border-radius: 5px;
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+   transform-style: preserve-3d;
+   transition: transform 0.3s ease-in-out;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 10px;
+}
+
+.card:hover {
+   transform: translateZ(-5px) scale(1.05);
+}
+
+.card-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin: 80px;
+}
+
+.card-column {
+    margin-bottom: 30px;
+}
