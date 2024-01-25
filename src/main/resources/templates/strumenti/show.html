@@ -16,8 +16,8 @@
         <div class="col-md-6">
             <h5 th:text="|Marca ${strumento.marca}|"></h5>
             <!--Testo che varia in base al numero di strumenti disponibili-->
-            <p th:if="${strumento.assortimenti.size() == 0}">Non disponibile</p>
-            <p th:unless="${strumento.assortimenti.size() == 0}">Disponibile</p>
+            <p th:if="${strumento.assortimenti.size() == 0}" style="background-color:red">Non disponibile</p>
+            <p th:unless="${strumento.assortimenti.size() == 0}" style="color:green; font-weight:bold">Disponibile</p>
             <span class="text-danger fw-bold" th:text="|${strumento.prezzo} &euro;|"></span>
             <p>Tasse incluse</p>
             <p th:text="|Paga fino a 12 rate da: ${strumento.prezzo} &euro;|" > </p>
