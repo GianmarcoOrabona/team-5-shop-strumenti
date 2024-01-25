@@ -76,32 +76,77 @@ INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('YAMAHA
 
 INSERT INTO strumenti (marca, modello, prezzo, foto, descrizione)VALUES ('Fender', 'Basso', 382.34, 'https://www.musicartenet.it/106857-home_default/cort-sjb5f-ns-wbag.jpg', 'Basso acustico');
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-07-08', 300, 100, 1);
+--Assortimento
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 350, 150, 2);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-07-08', 293, 64, 1);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 370, 180, 3);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-01-08', 398, 89, 2);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 320, 120, 4);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-30-08', 356, 95, 3);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 280, 80, 5);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-23-09', 313, 72, 4);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 250, 400, 6);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-13-10', 284, 56, 5);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 210, 430, 7);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-21-11', 247, 91, 6);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 225, 460, 8);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-23-12', 209, 93, 7);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 215, 450, 9);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-12-09', 224, 96, 8);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 205, 410, 10);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-30-12', 214, 96, 9);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 290, 467, 11);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-28-09', 204, 91, 10);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 299, 453, 12);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 289, 97, 11);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 305, 243, 13);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2024-01-08', 298, 93, 12);
 
-INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-05-08', 297, 235, 14);
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2024-01-12', 304, 63, 13);
 
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2024-01-20', 296, 62, 14);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2024-01-03', 292, 64, 15);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2024-01-07', 349, 89, 16);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2024-01-13', 369, 95, 17);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-12-23',  319, 72, 18);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-12-30', 279, 56, 19);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-11-23', 246, 91, 20);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-12-26', 208, 93, 21);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-08-21', 223, 96, 22);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-09-17', 213, 95, 23);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-11-15', 203, 91, 24);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-12-23', 288, 97, 25);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-11-11', 297, 93, 26);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-12-21', 303, 63, 27);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-10-29', 295, 62, 28);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-12-23', 288, 97, 29);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-11-11', 297, 93, 30);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-12-21', 303, 63, 31);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-10-29', 295, 62, 32);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-12-23', 288, 97, 33);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-11-11', 297, 93, 34);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-12-21', 303, 63, 35);
+
+INSERT INTO assortimenti (`data`, prezzo, quantita, strumento_id) VALUES('2023-10-29', 295, 62, 36);
 

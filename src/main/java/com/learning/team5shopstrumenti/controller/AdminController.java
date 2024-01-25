@@ -24,19 +24,11 @@ public class AdminController {
     private StrumentoRepository strumentoRepository;
 
     @GetMapping
-    public String index(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
-
-        List<Strumento> strumenti;
-        if (searchKeyword != null) {
-            strumenti = strumentoRepository.findByMarcaContaining(searchKeyword);
-        } else {
-            strumenti = strumentoRepository.findAll();
-        }
-        model.addAttribute("area", "admin");
+    public String index(Model model) {
+        List<Strumento> strumenti = strumentoRepository.findAll();
         model.addAttribute("strumenti", strumenti);
-        model.addAttribute("preloadSearch", searchKeyword);
         return "admin/home";
-    }
+        }
 
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable Integer id, Model model) {
