@@ -27,9 +27,6 @@ public class StrumentoController {
     @Autowired
     private AssortimentoRepository assortimentoRepository;
 
-    @Autowired
-    private VenditaRepository venditaRepository;
-
 
     @GetMapping
     public String index(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
