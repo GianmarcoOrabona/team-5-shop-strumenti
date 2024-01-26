@@ -41,9 +41,17 @@ public class Strumento {
     @OneToMany(mappedBy = "strumento", orphanRemoval = true)
     private List<Assortimento> assortimenti = new ArrayList<>();
 
+    @ManyToOne
+    private Categoria categorie;
 
+    public Categoria getCategorie() {
+        return categorie;
+    }
 
-    // GETTER E SETTER
+    public void setCategorie(Categoria categorie) {
+        this.categorie = categorie;
+    }
+// GETTER E SETTER
 
     public Integer getId() {
         return id;
