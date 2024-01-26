@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -35,7 +37,8 @@ public class Strumento {
     private String descrizione;
 
     // RELAZIONI
-    @OneToMany(mappedBy = "strumento", orphanRemoval = true)
+    @OneToMany(mappedBy = "strumento")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Vendita> vendite;
 
     @OneToMany(mappedBy = "strumento", orphanRemoval = true)
