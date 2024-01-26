@@ -108,4 +108,21 @@ public class Strumento {
     public void setAssortimenti(List<Assortimento> assortimenti) {
         this.assortimenti = assortimenti;
     }
+
+    public Integer quantitaMagazzino() {
+        Integer countVendite = 0;
+        Integer countAssortimenti = 0;
+        for (Vendita vendite : vendite) {
+            Integer quantitaVendute = vendite.getQuantita();
+            countVendite++;
+        }
+
+        for (Assortimento assortimenti : assortimenti) {
+            Integer quantitaAssortimento = assortimenti.getQuantita();
+            countAssortimenti++;
+        }
+
+        Integer quantitaTotale =  countAssortimenti - countVendite;
+        return quantitaTotale;
+    }
 }
