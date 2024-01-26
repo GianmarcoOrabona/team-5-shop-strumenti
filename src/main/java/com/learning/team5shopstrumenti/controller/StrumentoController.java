@@ -70,4 +70,7 @@ public class StrumentoController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
         }
     }
+
+
+
 }

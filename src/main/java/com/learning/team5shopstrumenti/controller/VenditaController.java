@@ -17,7 +17,7 @@ public class VenditaController {
     VenditaRepository venditaRepository;
 
     @PostMapping
-    public String store(@ModelAttribute("vendita")Vendita vendita, Model model) {
+    public String store(@ModelAttribute("vendita") Vendita vendita, Model model) {
         Vendita savedVendita = venditaRepository.save(vendita);
         return "redirect:/strumenti";
     }

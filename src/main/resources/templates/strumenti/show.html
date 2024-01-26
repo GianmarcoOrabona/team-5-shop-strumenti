@@ -23,15 +23,16 @@
             <p th:text="|Paga fino a 12 rate da: ${strumento.prezzo} &euro;|" > </p>
 
             <form
-                    id="create-book"
                     method="post"
-                    th:object="${vendita}"
-                    class="row gy-3"
+                    th:action="@{/vendite}"
+                    id="create-strumento"
+                    class="row g-3"
             >
-                <input type="hidden" th:field="*{strumento}">
-            <select th:field="*{quantita}" class="form-select" aria-label="Default select example" style="width:100px">
+            <select class="form-select" aria-label="Default select example" style="width:100px" name="quantita">
                 <option th:each="qt : ${array}" th:text="${qt}" th:value="${qt}"></option>
             </select>
+                <button type="submit">Acquista</button>
+                </form>
 
 
             <!--Testo che varia in base al costo della merce totale -->
