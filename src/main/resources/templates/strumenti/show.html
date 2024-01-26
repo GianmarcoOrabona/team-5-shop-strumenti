@@ -21,7 +21,7 @@
             <span class="text-danger fw-bold" th:text="|${strumento.prezzo} &euro;|"></span>
             <p>Tasse incluse</p>
             <p th:text="|Paga fino a 12 rate da: ${strumento.prezzo} &euro;|"></p>
-
+            <p class="text-danger">Spedizione <i class="fa-solid fa-truck"></i></p>
             <form
                     method="post"
                     th:action="@{/vendite}"
@@ -31,23 +31,20 @@
             >
                 <input type="hidden" th:field="*{strumento}">
                 <input type="hidden" th:field="*{data}">
-                <select class="form-select" aria-label="Default select example" style="width:100px" name="quantita">
+                <select class="form-select" aria-label="Default select example" style="width:100px;position:relative;left:8px" name="quantita">
                     <option th:each="qt : ${array}" th:text="${qt}" th:value="${qt}"></option>
                 </select>
-                <button type="submit">Acquista</button>
+                <div class="input-group mb-3">
+                    <button type="submit" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#addToCartModal">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Acquista
+                    </button>
+                </div>
             </form>
 
                <!-- <p th:text="${vendite.prezzoVendita()}"></p>-->
             <!--Testo che varia in base al costo della merce totale -->
-            <p class="text-danger">Spedizione <i class="fa-solid fa-truck"></i></p>
-            <div class="input-group mb-3">
-                <button type="submit" class="btn btn-success" data-bs-toggle="modal"
-                        data-bs-target="#addToCartModal">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    Acquista
-                </button>
-            </div>
-            </form>
         </div>
     </div>
 </div>
