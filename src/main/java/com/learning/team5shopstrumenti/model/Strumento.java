@@ -114,12 +114,12 @@ public class Strumento {
         Integer countAssortimenti = 0;
         for (Vendita vendite : vendite) {
             Integer quantitaVendute = vendite.getQuantita();
-            countVendite++;
+            countVendite += quantitaVendute;
         }
 
         for (Assortimento assortimenti : assortimenti) {
             Integer quantitaAssortimento = assortimenti.getQuantita();
-            countAssortimenti++;
+            countAssortimenti += quantitaAssortimento;
         }
 
         Integer quantitaTotale =  countAssortimenti - countVendite;
