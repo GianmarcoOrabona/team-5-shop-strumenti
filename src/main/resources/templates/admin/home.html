@@ -31,14 +31,14 @@
                     <td th:text="|${strumento.prezzo} &euro;|"></td>
                     <td th:text="${strumento.quantitaMagazzino()}"><span class="badge text-bg-success"></span></td>
                     <td>
-                        <a class="btn btn-primary" th:href="@{/admin/edit/{id}(id=${strumento.id})}"><i class="fa-solid fa-pencil"></i></a>
+                        <a class="btn btn-primary" th:href="@{/admin/edit/{id}(id=${strumento.id})}" title="Modifica"><i class="fa-solid fa-pencil"></i></a>
                     </td>
                     <td>
                         <form
                                 th:action="@{/admin/delete/{id}(id=${strumento.id})}"
                                 method="post"
                                 onsubmit="return confirm('Sei sicuro di voler eliminare questo strumento?')">
-                            <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                            <button type="submit" class="btn btn-danger" title="Elimina"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     </td>
 

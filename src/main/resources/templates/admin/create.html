@@ -5,7 +5,7 @@
 
 <header>
     <div class="row bg-dark p-3">
-        <h3 class="text-center text-light"> MODIFICA UNO STRUMENTO </h3>
+        <h3 class="text-center text-light"> AGGIUNGI UNO STRUMENTO </h3>
     </div>
 </header>
 <main>
@@ -23,7 +23,7 @@
             <div class="col-6">
                 <div class="col-md-6 mb-3">
                     <label for="marca" class="form-label">Marca*</label>
-                    <input type="text" class="form-control" id="marca" placeholder="Fender" th:field="*{marca}" th:errorClass="is-invalid">
+                    <input type="text" class="form-control" id="marca" placeholder="Es: Fender" th:field="*{marca}" th:errorClass="is-invalid">
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('marca')}">
                         <ul>
                             <li th:each="err : ${#fields.errors('marca')}" th:text="${err}"></li>
@@ -47,13 +47,17 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="modello" class="form-label">Modello*</label>
-                    <input type="text" class="form-control" id="modello" placeholder="Stratocaster" th:field="*{modello}" th:errorClass="is-invalid">
+                    <input type="text" class="form-control" id="modello" placeholder="Es: Stratocaster" th:field="*{modello}" th:errorClass="is-invalid">
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('modello')}">
                         <ul>
                             <li th:each="err : ${#fields.errors('modello')}" th:text="${err}"></li>
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div class="col-12" style="position:relative;left:35%;top:10px">
+                <label for="inputPassword5" class="form-label">Quantità</label>
+                <input type="number" id="inputPassword5" class="form-control inputNumber" aria-describedby="passwordHelpBlock" name="numeroQuantita">
             </div>
             <div class="col-md-12">
                 <label for="descrizione" class="form-label">Scrivi una descrizione</label>
