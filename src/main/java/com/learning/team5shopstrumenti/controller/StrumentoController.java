@@ -61,7 +61,6 @@ public class StrumentoController {
             Strumento strumento = result.get();
             vendita.setStrumento(strumento);
             vendita.setData(LocalDate.now());
-            // Aggiungere prezzo
             model.addAttribute("vendita", vendita);
             model.addAttribute("strumento", strumento);
             model.addAttribute("array", lista);

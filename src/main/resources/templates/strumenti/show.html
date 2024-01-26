@@ -30,7 +30,6 @@
                     class="row g-3"
             >
                 <input type="hidden" th:field="*{strumento}">
-                <!--<input type="hidden" th:field="*{strumento.prezzo}">-->
                 <input type="hidden" th:field="*{data}">
                 <select class="form-select" aria-label="Default select example" style="width:100px" name="quantita">
                     <option th:each="qt : ${array}" th:text="${qt}" th:value="${qt}"></option>
@@ -38,7 +37,7 @@
                 <button type="submit">Acquista</button>
             </form>
 
-
+               <!-- <p th:text="${vendite.prezzoVendita()}"></p>-->
             <!--Testo che varia in base al costo della merce totale -->
             <p class="text-danger">Spedizione <i class="fa-solid fa-truck"></i></p>
             <div class="input-group mb-3">

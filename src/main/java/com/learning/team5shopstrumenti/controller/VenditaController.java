@@ -1,6 +1,8 @@
 package com.learning.team5shopstrumenti.controller;
 
+import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
 import com.learning.team5shopstrumenti.interfaccie.VenditaRepository;
+import com.learning.team5shopstrumenti.model.Strumento;
 import com.learning.team5shopstrumenti.model.Vendita;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,9 +20,12 @@ public class VenditaController {
     @Autowired
     VenditaRepository venditaRepository;
 
+    @Autowired
+    StrumentoRepository strumentoRepository;
+
     @PostMapping
     public String store(@ModelAttribute("vendita") Vendita vendita, Model model) {
         Vendita savedVendita = venditaRepository.save(vendita);
-        return "redirect:/strumenti";
+        return "vendite/show";
     }
 }
