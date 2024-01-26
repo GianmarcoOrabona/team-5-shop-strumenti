@@ -29,7 +29,7 @@
                     <td class="w-25"><img th:src="${strumento.foto}" class="img-fluid img-thumbnail" alt="Strumento"></td>
                     <td th:text="${strumento.marca}"></td>
                     <td th:text="|${strumento.prezzo} &euro;|"></td>
-                    <td th:text="${strumento.quantitaMagazzino()}"><span class="badge text-bg-success"></span></td>
+                    <td><span th:text="${strumento.quantitaMagazzino()}" class="badge text-bg-success" th:classappend="${strumento.quantitaMagazzino() < 20 ? 'text-bg-danger' : ''}"></span></td>
                     <td>
                         <a class="btn btn-primary" th:href="@{/admin/edit/{id}(id=${strumento.id})}"><i class="fa-solid fa-pencil"></i></a>
                     </td>
