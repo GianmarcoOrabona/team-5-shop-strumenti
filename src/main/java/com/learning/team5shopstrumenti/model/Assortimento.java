@@ -18,8 +18,6 @@ public class Assortimento {
 
     private Integer quantita;
 
-    private BigDecimal prezzo;
-
     // RELAZIONI
 
     @ManyToOne
@@ -49,14 +47,6 @@ public class Assortimento {
 
     public void setQuantita(Integer quantita) {
         this.quantita = quantita;
-    }
-
-    public BigDecimal getPrezzo() {
-        return prezzo;
-    }
-
-    public void setPrezzo(BigDecimal prezzo) {
-        this.prezzo = prezzo;
     }
 
     public Strumento getStrumento() {
