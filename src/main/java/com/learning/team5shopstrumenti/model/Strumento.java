@@ -35,7 +35,7 @@ public class Strumento {
     private String descrizione;
 
     // RELAZIONI
-    @OneToMany(mappedBy = "strumento")
+    @OneToMany(mappedBy = "strumento", orphanRemoval = true)
     private List<Vendita> vendite;
 
     @OneToMany(mappedBy = "strumento", orphanRemoval = true)
