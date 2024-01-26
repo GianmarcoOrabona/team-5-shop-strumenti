@@ -18,7 +18,7 @@ public class Vendita {
 
     private Integer quantita;
 
-    private BigDecimal prezzo;
+    private BigDecimal prezzo_totale;
 
     // RELAZIONI
     @ManyToOne
@@ -50,12 +50,12 @@ public class Vendita {
         this.quantita = quantita;
     }
 
-    public BigDecimal getPrezzo() {
-        return prezzo;
+    public BigDecimal getPrezzo_totale() {
+        return prezzo_totale;
     }
 
-    public void setPrezzo(BigDecimal prezzo) {
-        this.prezzo = prezzo;
+    public void setPrezzo_totale(BigDecimal prezzo_totale) {
+        this.prezzo_totale = prezzo_totale;
     }
 
     public Strumento getStrumento() {
@@ -64,5 +64,10 @@ public class Vendita {
 
     public void setStrumento(Strumento strumento) {
         this.strumento = strumento;
+    }
+
+    public static BigDecimal multiply(int number, BigDecimal decimalNumber) {
+        BigDecimal bigNumber = new BigDecimal(number);
+        return bigNumber.multiply(decimalNumber);
     }
 }

@@ -20,19 +20,23 @@
             <p th:unless="${strumento.assortimenti.size() == 0}" style="color:green; font-weight:bold">Disponibile</p>
             <span class="text-danger fw-bold" th:text="|${strumento.prezzo} &euro;|"></span>
             <p>Tasse incluse</p>
-            <p th:text="|Paga fino a 12 rate da: ${strumento.prezzo} &euro;|" > </p>
+            <p th:text="|Paga fino a 12 rate da: ${strumento.prezzo} &euro;|"></p>
 
             <form
                     method="post"
                     th:action="@{/vendite}"
+                    th:object="${vendita}"
                     id="create-strumento"
                     class="row g-3"
             >
-            <select class="form-select" aria-label="Default select example" style="width:100px" name="quantita">
-                <option th:each="qt : ${array}" th:text="${qt}" th:value="${qt}"></option>
-            </select>
+                <input type="hidden" th:field="*{strumento}">
+                <!--<input type="hidden" th:field="*{strumento.prezzo}">-->
+                <input type="hidden" th:field="*{data}">
+                <select class="form-select" aria-label="Default select example" style="width:100px" name="quantita">
+                    <option th:each="qt : ${array}" th:text="${qt}" th:value="${qt}"></option>
+                </select>
                 <button type="submit">Acquista</button>
-                </form>
+            </form>
 
 
             <!--Testo che varia in base al costo della merce totale -->

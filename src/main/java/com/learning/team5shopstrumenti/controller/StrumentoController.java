@@ -3,15 +3,12 @@ package com.learning.team5shopstrumenti.controller;
 import com.learning.team5shopstrumenti.interfaccie.AssortimentoRepository;
 import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
 import com.learning.team5shopstrumenti.interfaccie.VenditaRepository;
-import com.learning.team5shopstrumenti.model.Assortimento;
 import com.learning.team5shopstrumenti.model.Strumento;
 import com.learning.team5shopstrumenti.model.Vendita;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -52,6 +49,7 @@ public class StrumentoController {
     @GetMapping("/show/{id}")
     public String show(@PathVariable Integer id, Model model) {
         List<Integer> lista = new ArrayList<>();
+        Vendita vendita = new Vendita();
         int cont = 0;
         Optional<Strumento> result = strumentoRepository.findById(id);
         if (result.isPresent()) {
@@ -61,6 +59,10 @@ public class StrumentoController {
             }
 
             Strumento strumento = result.get();
+            vendita.setStrumento(strumento);
+            vendita.setData(LocalDate.now());
+            // Aggiungere prezzo
+            model.addAttribute("vendita", vendita);
             model.addAttribute("strumento", strumento);
             model.addAttribute("array", lista);
             return "strumenti/show";
