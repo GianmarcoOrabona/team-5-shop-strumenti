@@ -71,36 +71,6 @@ public class StrumentoController {
         }
     }
 
-    @GetMapping("/checkout")
-    public String create(@RequestParam Integer strumentoId, Model model) {
-        Optional<Strumento> result = strumentoRepository.findById(strumentoId);
-        if (result.isPresent()) {
-            Strumento strumentoToBuy = result.get();
-            model.addAttribute("strumento", strumentoToBuy);
-            Vendita newVendita = new Vendita();
-            newVendita.setStrumento(strumentoToBuy);
-            newVendita.setData(LocalDate.now());
-            model.addAttribute("vendita", newVendita);
-            return "strumenti/checkout";
-        } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-                    "Strumento with id " + strumentoId + " not found");
-        }
-    }
 
 
-    @PostMapping("/show")
-    public String store(@Valid @ModelAttribute("vendita") Vendita formVendita,
-                        BindingResult bindingResult, Model model) {
-        // valido l'oggetto
-        if (bindingResult.hasErrors()) {
-            // se ci sono errori ritorno il template del form
-            model.addAttribute("strumento", formVendita.getStrumento());
-            return "strumenti/show";
-        }
-        // se non ci sono errori lo salvo su database
-        Vendita storedVendita = venditaRepository.save(formVendita);
-        // faccio una redirect alla pagina di dettaglio del libro
-        return "redirect:/strumenti/show/" + storedVendita.getStrumento().getId();
-    }
 }
