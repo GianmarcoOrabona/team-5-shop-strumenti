@@ -2,6 +2,7 @@ package com.learning.team5shopstrumenti.controller;
 
 import com.learning.team5shopstrumenti.interfaccie.AssortimentoRepository;
 import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
+import com.learning.team5shopstrumenti.interfaccie.VenditaRepository;
 import com.learning.team5shopstrumenti.model.Assortimento;
 import com.learning.team5shopstrumenti.model.Strumento;
 import com.learning.team5shopstrumenti.model.Vendita;
@@ -28,6 +29,9 @@ public class StrumentoController {
 
     @Autowired
     private AssortimentoRepository assortimentoRepository;
+
+    @Autowired
+    private VenditaRepository venditaRepository;
 
 
     @GetMapping
@@ -82,5 +86,21 @@ public class StrumentoController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "Strumento with id " + strumentoId + " not found");
         }
+    }
+
+
+    @PostMapping("/show")
+    public String store(@Valid @ModelAttribute("vendita") Vendita formVendita,
+                        BindingResult bindingResult, Model model) {
+        // valido l'oggetto
+        if (bindingResult.hasErrors()) {
+            // se ci sono errori ritorno il template del form
+            model.addAttribute("strumento", formVendita.getStrumento());
+            return "strumenti/show";
+        }
+        // se non ci sono errori lo salvo su database
+        Vendita storedVendita = venditaRepository.save(formVendita);
+        // faccio una redirect alla pagina di dettaglio del libro
+        return "redirect:/strumenti/show/" + storedVendita.getStrumento().getId();
     }
 }
