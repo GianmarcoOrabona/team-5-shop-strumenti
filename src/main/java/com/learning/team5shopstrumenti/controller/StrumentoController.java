@@ -4,6 +4,7 @@ import com.learning.team5shopstrumenti.interfaccie.AssortimentoRepository;
 import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
 import com.learning.team5shopstrumenti.model.Assortimento;
 import com.learning.team5shopstrumenti.model.Strumento;
+import com.learning.team5shopstrumenti.model.Vendita;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -66,28 +67,20 @@ public class StrumentoController {
         }
     }
 
-    @GetMapping("/checkout/{id}")
-    public String checkout(@PathVariable Integer id, Model model){
-        Optional<Strumento> result = strumentoRepository.findById(id);
-        if (result.isPresent()){
-            model.addAttribute("strumento", result.get());
+    @GetMapping("/checkout")
+    public String create(@RequestParam Integer strumentoId, Model model) {
+        Optional<Strumento> result = strumentoRepository.findById(strumentoId);
+        if (result.isPresent()) {
+            Strumento strumentoToBuy = result.get();
+            model.addAttribute("strumento", strumentoToBuy);
+            Vendita newVendita = new Vendita();
+            newVendita.setStrumento(strumentoToBuy);
+            newVendita.setData(LocalDate.now());
+            model.addAttribute("vendita", newVendita);
             return "strumenti/checkout";
-        }else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    "Strumento with id " + strumentoId + " not found");
         }
     }
-
-    @PostMapping("/buy/{id}")
-    public String buy(@PathVariable Integer id, Model model) {
-        Optional<Strumento> result = strumentoRepository.findById(id);
-        if (result.isPresent()) {
-            model.addAttribute("strumento", result.get());
-            LocalDate today = LocalDate.now();
-
-                return "strumenti/checkout";
-            } else {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
-            }
-    }
-
 }
