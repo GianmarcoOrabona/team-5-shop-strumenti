@@ -103,3 +103,36 @@ border-radius:8px;
 }
 
 
+/* Basic styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #212121;
+  margin: 10px;
+}
+
+header {
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+  border-bottom: 1px dotted #bdbdbd;
+  padding-bottom: 2px;
+  display: inline-block;
+}
+
+.bg-red {
+  background-color: #ff5252 !important;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
