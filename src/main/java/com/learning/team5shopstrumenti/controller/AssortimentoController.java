@@ -27,7 +27,7 @@ class AssortimentoController {
     public String index(Model model) {
         List<Assortimento> assortimenti = assortimentoRepository.findAll();
         model.addAttribute("assortimenti", assortimenti);
-        return "admin/home";
+        return "admin/assortimenti";
     }
 
 
