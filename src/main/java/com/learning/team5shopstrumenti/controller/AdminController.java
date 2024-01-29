@@ -80,7 +80,6 @@ public class AdminController {
         if (bindingResult.hasErrors()) {
             return "admin/create";
         } else {
-            model.addAttribute("categoriaList", categoriaRepository.findAll());
            Strumento strumento = new Strumento();
            strumento.setFoto(formStrumento.getFoto());
            strumento.setDescrizione(formStrumento.getDescrizione());
@@ -93,8 +92,6 @@ public class AdminController {
            assortimento.setData(LocalDate.now());
            assortimento.setStrumento(saveStrumento);
            assortimentoRepository.save(assortimento);
-
-
             return "redirect:/admin" ;
         }
     }

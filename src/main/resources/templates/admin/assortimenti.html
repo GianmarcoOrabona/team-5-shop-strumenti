@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/resource :: head('Lista Assortimenti')"></head>
+<body>
+<header>
+    <nav th:replace="fragments/navbar :: topNavbar('area admin')"></nav>
+</header>
+
+<main>
+    <div class="container">
+        <div class="mt-100">
+            <a th:href="@{/admin/create}" class="btn btn-primary">Aggiungi</a>
+        </div>
+        <table class="table mt-100 table-image">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Qauntita</th>
+                <th scope="col">Data</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="assortimento : ${assortimenti}">
+                <th scope="row" th:text="${assortimento.id}"></th>
+                <td th:text="${assortimento.quantita}"></td>
+                <td th:text="|${assortimento.data} &euro;|"></td>
+                <td>
+                    <form
+                            th:action="@{/admin/Assortiemnto/delete/{id}(id=${assortimento.id})}"
+                            method="post"
+                            onsubmit="return confirm('Sei sicuro di voler eliminare questo Assortimento?')">
+                        <button type="submit" class="btn btn-danger" title="Elimina"><i class="fa-solid fa-trash-can"></i></button>
+                    </form>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+<footer th:replace="fragments/footer :: footer()"></footer>
+<th:block th:replace="fragments/resource :: script"></th:block>
+</body>
+</html>

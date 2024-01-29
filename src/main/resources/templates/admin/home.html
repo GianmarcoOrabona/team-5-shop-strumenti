@@ -32,6 +32,7 @@
                     <td><span th:text="${strumento.quantitaMagazzino()}" class="badge text-bg-success" th:classappend="${strumento.quantitaMagazzino() < 20 ? 'text-bg-danger' : ''}"></span></td>
                     <td>
                         <a class="btn btn-primary" th:href="@{/admin/edit/{id}(id=${strumento.id})}" title="Modifica"><i class="fa-solid fa-pencil"></i></a>
+                        <a class="btn btn-primary" th:href="@{/admin/assortimento/{id}(id=${strumento.id})}" title="Aggiungi assortimento">+</a>
                     </td>
                     <td>
                         <form
