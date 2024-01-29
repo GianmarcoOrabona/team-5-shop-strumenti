@@ -1,6 +1,8 @@
 package com.learning.team5shopstrumenti.controller;
 
+import com.learning.team5shopstrumenti.Dto.StrumentoDto;
 import com.learning.team5shopstrumenti.interfaccie.AssortimentoRepository;
+import com.learning.team5shopstrumenti.interfaccie.CategoriaRepository;
 import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
 import com.learning.team5shopstrumenti.model.Assortimento;
 import com.learning.team5shopstrumenti.model.Strumento;
@@ -27,6 +29,8 @@ public class AdminController {
     private StrumentoRepository strumentoRepository;
     @Autowired
     private AssortimentoRepository assortimentoRepository;
+
+    private CategoriaRepository categoriaRepository;
 
     @GetMapping
     public String index(Model model) {
@@ -65,20 +69,28 @@ public class AdminController {
 
     @GetMapping("/create")
     public String create(Model model) {
-        Strumento strumento = new Strumento();
-        Assortimento assortimento=new Assortimento();
-        assortimento.setData(LocalDate.now());
-        model.addAttribute("strumento", strumento);
-        model.addAttribute("assortimento",assortimento);
+        StrumentoDto strumentoDto  = new StrumentoDto();
+        model.addAttribute("strumento", strumentoDto);
         return "admin/create";
     }
 
     @PostMapping("/create")
-    public String store(@Valid @ModelAttribute("strumento") Strumento formStrumento, BindingResult bindingResult, Model model) {
+    public String store(@Valid  @ModelAttribute("strumento") StrumentoDto formStrumento,BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "admin/create";
         } else {
-            Strumento strumentoSalvato = strumentoRepository.save(formStrumento);
+           Strumento strumento = new Strumento();
+           strumento.setFoto(formStrumento.getFoto());
+           strumento.setDescrizione(formStrumento.getDescrizione());
+           strumento.setPrezzo(formStrumento.getPrezzo());
+           strumento.setMarca(formStrumento.getMarca());
+           strumento.setModello(formStrumento.getModello());
+           Strumento saveStrumento = strumentoRepository.save(strumento);
+           Assortimento assortimento = new Assortimento();
+           assortimento.setQuantita(formStrumento.getQuantita());
+           assortimento.setData(LocalDate.now());
+           assortimento.setStrumento(saveStrumento);
+           assortimentoRepository.save(assortimento);
             return "redirect:/admin" ;
         }
     }
