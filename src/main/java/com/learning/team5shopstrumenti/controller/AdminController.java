@@ -80,23 +80,24 @@ public class AdminController {
     }
 
     @PostMapping("/create")
-    public String store(@Valid  @ModelAttribute("strumento") StrumentoDto formStrumento,BindingResult bindingResult, Model model) {
+    public String store(@Valid  @ModelAttribute("strumento") StrumentoDto formStrumento, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "admin/create";
         } else {
-           Strumento strumento = new Strumento();
-           strumento.setFoto(formStrumento.getFoto());
-           strumento.setDescrizione(formStrumento.getDescrizione());
-           strumento.setPrezzo(formStrumento.getPrezzo());
-           strumento.setMarca(formStrumento.getMarca());
-           strumento.setModello(formStrumento.getModello());
-           Strumento saveStrumento = strumentoRepository.save(strumento);
-           Assortimento assortimento = new Assortimento();
-           assortimento.setQuantita(formStrumento.getQuantita());
-           assortimento.setData(LocalDate.now());
-           assortimento.setStrumento(saveStrumento);
-           assortimentoRepository.save(assortimento);
-           model.addAttribute("categoriaList", categoriaRepository.findAll());
+            model.addAttribute("categoriaList", categoriaRepository.findAll());
+            Strumento strumento = new Strumento();
+            strumento.setFoto(formStrumento.getFoto());
+            strumento.setDescrizione(formStrumento.getDescrizione());
+            strumento.setPrezzo(formStrumento.getPrezzo());
+            strumento.setMarca(formStrumento.getMarca());
+            strumento.setModello(formStrumento.getModello());
+            strumento.setCategorie(formStrumento.getCategorie());
+            Strumento saveStrumento = strumentoRepository.save(strumento);
+            Assortimento assortimento = new Assortimento();
+            assortimento.setQuantita(formStrumento.getQuantita());
+            assortimento.setData(LocalDate.now());
+            assortimento.setStrumento(saveStrumento);
+            assortimentoRepository.save(assortimento);
             return "redirect:/admin" ;
         }
     }

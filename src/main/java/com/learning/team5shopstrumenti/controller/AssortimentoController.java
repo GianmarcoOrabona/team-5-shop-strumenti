@@ -45,6 +45,7 @@ class AssortimentoController {
         assortimento.setStrumento(result.get());
         List<Strumento> list=strumentoRepository.findAll();
         return "admin/home";
+
     }
 
 

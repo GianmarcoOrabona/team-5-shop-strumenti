@@ -2,13 +2,597 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resource :: head('Home')"></head>
 <body>
+<style>
+    #carousel-example{
+    margin-top:50px;
+}
+
+#tabs li a {
+    color: #ff9058;
+    font-size: 15px;
+    background: none;
+    border: none;
+}
+
+.carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+}
+
+.products #tabs {
+    margin-top: 60px;
+}
+
+.products .nav.nav-pills {
+    display: table;
+    margin: 0px auto;
+}
+
+.products .btn.btn-default {
+    color: rgb(255, 255, 255);
+    font-size: 9px;
+    background: rgb(255, 144, 88);
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    padding: 12px;
+}
+
+.products .col-item {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(235, 235, 235);
+    border-image: initial;
+    background: rgb(255, 255, 255);
+}
+
+.products .price span {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.products .price p {
+    font-weight: 600;
+    color: rgb(159, 157, 157);
+    margin: 10px 0px;
+}
+
+.products .al-btn {
+    margin: 20px 0px;
+}
+
+.products .al-btn a {
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    background: rgb(83, 83, 83);
+    padding: 10px 30px;
+    text-decoration:none;
+}
+</style>
 <header>
     <nav th:replace="fragments/navbar :: topNavbar('home')"></nav>
 </header>
 <main>
+    <div class="products">
+        <div class="container">
 
+            <ul class="nav nav-pills" id="tabs">
+                <li class="active"><a data-toggle="pill" href="#menu">Yeni Gelenler</a></li>
+                <li><a data-toggle="pill" href="#menu1">İndirimdekiler</a></li>
+                <li><a data-toggle="pill" href="#menu2">Sizin İçin Seçtiklerimiz</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="menu" class="tab-pane fade active in">
+                    <div class="col-lg-11" style="background:#e7e7e7;position: relative; top: 30px;">
+                    </div>
+                    <div class="col-lg-1" style="padding: 0px;">
+                        <div class="controls pull-right hidden-xs">
+                            <a class="left fa fa-chevron-left btn btn-default" href="#carousel-example" data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-default" href="#carousel-example" data-slide="next"></a>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="detay.html">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="detay.html">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="detay.html">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="detay.html">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="detay.html">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="detay.html">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="detay.html">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="detay.html">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>  <!-- tab1 -->
+
+                <div id="menu1" class="tab-pane fade">
+                    <div class="col-lg-11" style="background:#e7e7e7;position: relative; top: 30px;">
+                    </div>
+                    <div class="col-lg-1" style="padding: 0px;">
+                        <div class="controls pull-right hidden-xs">
+                            <a class="left fa fa-chevron-left btn btn-default" href="#carousel-example2" data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-default" href="#carousel-example2" data-slide="next"></a>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  <!-- tab2 -->
+
+                <div id="menu2" class="tab-pane fade">
+                    <div class="col-md-11" style="background:#e7e7e7;position: relative; top: 30px;">
+                    </div>
+                    <div class="col-md-1" style="padding: 0px;">
+                        <div class="controls pull-right hidden-xs">
+                            <a class="left fa fa-chevron-left btn btn-default" href="#carousel-example2" data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-default" href="#carousel-example2" data-slide="next"></a>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="https://images.pexels.com/photos/35191/shoes-leather-single-fashion.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price text-center">
+                                                        <span>ÜRÜN ADI</span>
+                                                        <p class="price-text-color">60 TL</p>
+                                                    </div>
+                                                </div>
+                                                <div class="al-btn text-center">
+                                                    <a href="#">SATIN AL</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  <!-- tab3 -->
+            </div>   <!-- tab-content -->
+
+        </div>
+    </div>
 </main>
-</main>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <th:block th:replace="fragments/resource :: script"></th:block>
 </body>
 </html>

@@ -77,3 +77,29 @@ width:100px;
 border:1px solid rgb(222, 226, 230);
 border-radius:8px;
 }
+
+
+.addstrumento {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.bodyCreate {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, rgba(121,75,9,1) 35%, rgba(255,172,0,1));
+    background: rgb(7,114,157);
+    background: radial-gradient(circle, rgba(7,114,157,1) 0%, rgba(155,84,0,1) 100%);
+}
+
+
+.containerproperty {
+    width: 900px;
+    height: 500px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #3e3c3c;
+    border-radius: 50px;
+}
+
+
