@@ -68,6 +68,14 @@
                 <a class="btn btn-danger" th:href="@{/admin}">Cancel</a>
             </div>
 
+            <div class="col-4">
+                <label class="form-label" for="type">Categoria</label>
+                <select id="type" class="form-select" th:field="*{categorie}">
+                    <option value="" selected>Choose a type</option>
+                    <option th:each="cl : ${categoriaList}" th:value="${cl.id}"
+                            th:text="${cl.name}"></option>
+                </select>
+            </div>
 
 
         </form>

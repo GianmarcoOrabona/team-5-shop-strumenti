@@ -152,8 +152,8 @@ INSERT INTO assortimenti (`data`, quantita, strumento_id) VALUES('2023-10-29', 6
 
 -- Categoria
 
-INSERT INTO ricetta_type (name) VALUES('Chitarre');
-INSERT INTO ricetta_type (name) VALUES('Bassi');
-INSERT INTO ricetta_type (name) VALUES('Batterie');
-INSERT INTO ricetta_type (name) VALUES('Pianoforti');
+INSERT INTO categorie (name) VALUES('Chitarre');
+INSERT INTO categorie (name) VALUES('Bassi');
+INSERT INTO categorie (name) VALUES('Batterie');
+INSERT INTO categorie (name) VALUES('Pianoforti');
 

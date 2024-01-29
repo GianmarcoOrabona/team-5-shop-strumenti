@@ -16,12 +16,22 @@ private Integer quantita;
 
 private String descrizione;
 
+private String categorie;
+
     public String getMarca() {
         return marca;
     }
 
     public void setMarca(String marca) {
         this.marca = marca;
+    }
+
+    public String getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
     }
 
     public BigDecimal getPrezzo() {

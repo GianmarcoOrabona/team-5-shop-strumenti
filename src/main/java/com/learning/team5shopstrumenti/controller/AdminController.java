@@ -5,6 +5,7 @@ import com.learning.team5shopstrumenti.interfaccie.AssortimentoRepository;
 import com.learning.team5shopstrumenti.interfaccie.CategoriaRepository;
 import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
 import com.learning.team5shopstrumenti.model.Assortimento;
+import com.learning.team5shopstrumenti.model.Categoria;
 import com.learning.team5shopstrumenti.model.Strumento;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,6 +80,7 @@ public class AdminController {
         if (bindingResult.hasErrors()) {
             return "admin/create";
         } else {
+            model.addAttribute("categoriaList", categoriaRepository.findAll());
            Strumento strumento = new Strumento();
            strumento.setFoto(formStrumento.getFoto());
            strumento.setDescrizione(formStrumento.getDescrizione());
@@ -91,6 +93,8 @@ public class AdminController {
            assortimento.setData(LocalDate.now());
            assortimento.setStrumento(saveStrumento);
            assortimentoRepository.save(assortimento);
+
+
             return "redirect:/admin" ;
         }
     }
