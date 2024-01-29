@@ -3,27 +3,20 @@
 <div th:fragment="navbar2(area)">
 
     <div class="bg-gray">
-        <div class="container">
+        <div class="container p-3">
 
             <div class="row text-center">
 
                 <div class=" col-4 mt-2">
                     <li class=" list-inline-item">
-                        <a class="text-p fst-italic" href="#">Servizi</a>
+                        <a class="nav-link" th:classappend="${area == 'home' ? 'active' : ''}" th:href="@{/}"><i class="fa-solid fa-house"></i></a>
                     </li>
                     <li class=" list-inline-item">
                         <a class="text-p p-4 fst-italic" href="#">Contattaci</a>
                     </li>
                     <li class="nav-item list-inline-item">
-                        <a class="text-p fst-italic" href="#">Su di noi</a>
+                        <a class="nav-link text-p" th:classappend="${area == 'area admin' ? 'active' : ''}" th:href="@{/admin}">Area admin</a>
                     </li>
-                    <li class="nav-item">
-                        <a  th:classappend="${area == 'area admin' ? 'active' : ''}" th:href="@{/admin}">Area admin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a th:classappend="${area == 'area assortimenti' ? 'active' : ''}" th:href="@{/admin/assortimento}">Assortimenti</a>
-                    </li>
-
                 </div>
 
                 <div class="col-4 ra">
@@ -42,7 +35,7 @@
                 </div>
                 <div class="col-4 mt-2">
                     <li class="nav-item list-inline-item">
-                        <a class="text-p p-4 fst-italic" href="#">Spedizioni</a>
+                        <a class="text-p p-4 fst-italic" th:href="@{/spedizioni}">Spedizioni</a>
                     </li>
                     <li class="nav-item list-inline-item">
                         <a class="text-p fst-italic" href="#">Pagamenti sicuri</a>
