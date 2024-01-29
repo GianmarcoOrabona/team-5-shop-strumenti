@@ -75,6 +75,7 @@ public class AdminController {
         model.addAttribute("strumento", strumentoDto);
         model.addAttribute("categoriaList", categoriaRepository.findAll());
         return "admin/create";
+
     }
 
     @PostMapping("/create")
