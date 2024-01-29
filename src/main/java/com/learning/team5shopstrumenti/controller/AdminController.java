@@ -73,6 +73,7 @@ public class AdminController {
         StrumentoDto strumentoDto  = new StrumentoDto();
         model.addAttribute("strumento", strumentoDto);
         return "admin/create";
+
     }
 
     @PostMapping("/create")
