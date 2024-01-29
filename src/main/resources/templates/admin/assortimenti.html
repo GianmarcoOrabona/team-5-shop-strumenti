@@ -24,7 +24,7 @@
             <tbody>
             <tr th:each="assortimento : ${assortimenti}">
                 <th scope="row" th:text="${assortimento.id}"></th>
-                <th scope="row" >Nome dello Strumento</th>
+                <td scope="row" th:text="${assortimento.strumento.modello}"></td>
                 <td th:text="${assortimento.quantita}"></td>
                 <td th:text="|${assortimento.data}"></td>
                 <td>
