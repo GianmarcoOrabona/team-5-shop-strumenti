@@ -64,6 +64,7 @@ public class AdminController {
             formStrumento.setFoto(strumentoEdit.getFoto());
             Strumento savedStrumento = strumentoRepository.save(formStrumento);
             return "redirect:/admin";
+
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
         }
