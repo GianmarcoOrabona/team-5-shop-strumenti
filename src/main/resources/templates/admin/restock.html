@@ -1,23 +1,25 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resource :: head('Restock')"></head>
-<body>
+<body class="restock-body">
 <h1 class="text-center fs-1">Rifornimento</h1>
+
 <form
         method="post"
         th:action="@{/admin/assortimento/create/{id}(id=${strumento.id})}"
         id="edit-strumento"
         th:object="${assortimento}"
+        class="stock shadow-lg"
 >
-    <div class="mb-3" style="position:relative;left:42%;">
+    <div class="mb-3 text-center">
         <label for="exampleInputEmail1" class="form-label">Data</label>
         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width:200px;" th:field="*{data}">
     </div>
-    <div class="mb-3" style="position:relative;left:45%;">
+    <div class="mb-3 text-center">
         <label for="exampleInputPassword1" class="form-label">Quantità</label>
-        <input type="number" class="form-control" id="exampleInputPassword1" style="width:100px" th:field="*{quantita}">
+        <input type="number" class="form-control" id="exampleInputPassword1" style="width:100px;position:relative;left:50px;" th:field="*{quantita}">
     </div>
-    <button type="submit" class="btn btn-primary" style="position:relative;left:45%;">Rifornisci</button>
+    <button type="submit" class="btn btn-primary" style="position:relative;left:55px;">Rifornisci</button>
 </form>
 
 

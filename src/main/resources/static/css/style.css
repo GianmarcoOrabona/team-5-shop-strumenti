@@ -132,4 +132,19 @@ a {
     border-radius: 50px;
 }
 
+.restock-body {
+background-color:rgb(209, 200, 192);
+}
+
+
+.stock{
+position:relative;
+left:42%;
+border:1px solid red;
+display:inline-block;
+padding:10px;
+background-color:red;
+border-radius:30px;
+}
+
 
