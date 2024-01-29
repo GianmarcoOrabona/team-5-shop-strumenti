@@ -17,6 +17,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Foto</th>
                     <th scope="col">Nome</th>
+                    <th scope="col">Categoria</th>
                     <th scope="col">Prezzo &euro;</th>
                     <th scope="col">Quantità</th>
                     <th scope="col" class="text-center">Azioni</th>
@@ -28,6 +29,7 @@
                     <th scope="row" th:text="${strumento.id}"></th>
                     <td class="w-25"><img th:src="${strumento.foto}" class="img-fluid img-thumbnail" alt="Strumento"></td>
                     <td th:text="${strumento.marca}"></td>
+                    <td th:text="${strumento.categorie}"></td>
                     <td th:text="|${strumento.prezzo} &euro;|"></td>
                     <td><span th:text="${strumento.quantitaMagazzino()}" class="badge text-bg-success" th:classappend="${strumento.quantitaMagazzino() < 20 ? 'text-bg-danger' : ''}"></span></td>
                     <td>

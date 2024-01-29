@@ -31,6 +31,7 @@ public class AdminController {
     @Autowired
     private AssortimentoRepository assortimentoRepository;
 
+    @Autowired
     private CategoriaRepository categoriaRepository;
 
     @GetMapping
@@ -72,6 +73,7 @@ public class AdminController {
     public String create(Model model) {
         StrumentoDto strumentoDto  = new StrumentoDto();
         model.addAttribute("strumento", strumentoDto);
+        model.addAttribute("categoriaList", categoriaRepository.findAll());
         return "admin/create";
 
     }
@@ -93,6 +95,7 @@ public class AdminController {
            assortimento.setData(LocalDate.now());
            assortimento.setStrumento(saveStrumento);
            assortimentoRepository.save(assortimento);
+           model.addAttribute("categoriaList", categoriaRepository.findAll());
             return "redirect:/admin" ;
         }
     }

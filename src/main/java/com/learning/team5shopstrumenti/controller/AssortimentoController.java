@@ -36,7 +36,7 @@ class AssortimentoController {
         Optional<Assortimento> result=assortimentoRepository.findById(id);
         if(result.isPresent()) {
             assortimentoRepository.deleteById(id);
-            return "redirect:/admin";
+            return "redirect:/admin/assortimento";
 
         }
         else {

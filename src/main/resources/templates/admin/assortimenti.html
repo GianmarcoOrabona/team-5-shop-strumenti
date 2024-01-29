@@ -3,7 +3,7 @@
 <head th:replace="fragments/resource :: head('Lista Assortimenti')"></head>
 <body>
 <header>
-    <nav th:replace="fragments/navbar :: topNavbar('area assortimenti')"></nav>
+    <nav th:replace="fragments/navbar :: topNavbar('area admin')"></nav>
 </header>
 
 <main>
@@ -16,6 +16,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Quantità</th>
+                <th scope="col">Strumento</th>
                 <th scope="col">Data</th>
                 <th></th>
             </tr>
@@ -23,11 +24,12 @@
             <tbody>
             <tr th:each="assortimento : ${assortimenti}">
                 <th scope="row" th:text="${assortimento.id}"></th>
+                <th scope="row" >Nome dello Strumento</th>
                 <td th:text="${assortimento.quantita}"></td>
-                <td th:text="|${assortimento.data} &euro;|"></td>
+                <td th:text="|${assortimento.data}"></td>
                 <td>
                     <form
-                            th:action="@{/admin/Assortiemnto/delete/{id}(id=${assortimento.id})}"
+                            th:action="@{/admin/assortimento/delete/{id}(id=${assortimento.id})}"
                             method="post"
                             onsubmit="return confirm('Sei sicuro di voler eliminare questo Assortimento?')">
                         <button type="submit" class="btn btn-danger" title="Elimina"><i class="fa-solid fa-trash-can"></i></button>
