@@ -1,5 +1,6 @@
 package com.learning.team5shopstrumenti.Dto;
 
+import com.learning.team5shopstrumenti.model.Categoria;
 import jakarta.persistence.ManyToOne;
 
 import java.math.BigDecimal;
@@ -19,7 +20,7 @@ private Integer quantita;
 private String descrizione;
 
 @ManyToOne
-private String categorie;
+private Categoria categorie;
 
     public String getMarca() {
         return marca;
@@ -29,11 +30,11 @@ private String categorie;
         this.marca = marca;
     }
 
-    public String getCategorie() {
+    public Categoria getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(String categorie) {
+    public void setCategorie(Categoria categorie) {
         this.categorie = categorie;
     }
 
