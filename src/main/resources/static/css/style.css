@@ -231,3 +231,14 @@ h2 {
 
 
 
+.gallery-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  counter-increment: gallery-cell;
+}
+
+.carousel-img {
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}

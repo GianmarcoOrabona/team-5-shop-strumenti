@@ -6,7 +6,19 @@
     <nav th:replace="fragments/navbar :: topNavbar('home')"></nav>
 </header>
 
+<h1>Flickity - autoPlay</h1>
 
+<div class="gallery js-flickity"
+     data-flickity-options='{ "wrapAround": true }'>
+
+        <img class="gallery-cell carousel-img" src="/negozio_1.jpg" alt="">
+        <img class="gallery-cell carousel-img" src="/negozio_2.jpg" alt="">
+        <img class="gallery-cell carousel-img" src="/negozio_3.jpg" alt="">
+
+</div>
+
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <th:block th:replace="fragments/resource :: script"></th:block>
 </body>
 </html>
