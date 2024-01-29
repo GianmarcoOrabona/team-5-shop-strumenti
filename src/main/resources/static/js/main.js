@@ -39,3 +39,8 @@ const addButton = document.getElementById('addButton');
                 buttonId.style.display = 'none';
             }
     }
+
+let form = document.getElementById("plusStrument");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+});
