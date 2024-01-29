@@ -32,18 +32,29 @@ class AssortimentoController {
         return "admin/assortimenti";
     }
 
-    @GetMapping("/create")
-    public String form() {
+    @GetMapping("/create/{id}")
+    public String form(@PathVariable Integer id,Model model) {
+        Optional<Strumento> result=strumentoRepository.findById(id);
+        Strumento strumento= result.get();
+        Assortimento assortimento=new Assortimento();
+        assortimento.setData(LocalDate.now());
+        assortimento.setStrumento(strumento);
+        model.addAttribute("assortimento",assortimento);
+        model.addAttribute("strumento",strumento);
         return "admin/restock";
 
     }
 
     @PostMapping("/create/{id}")
-    public String create(@PathVariable Integer id,@ModelAttribute Assortimento formAssortimento) {
+    public String create(@PathVariable Integer id,@ModelAttribute Assortimento formAssortimento,Model model) {
         Optional<Strumento> result= strumentoRepository.findById(id);
         Assortimento assortimento= new Assortimento();
         assortimento.setStrumento(result.get());
+        assortimento.setQuantita(formAssortimento.getQuantita());
+        assortimento.setData(LocalDate.now());
+        assortimentoRepository.save(assortimento);
         List<Strumento> list=strumentoRepository.findAll();
+        model.addAttribute("strumenti",list);
         return "admin/home";
 
     }
