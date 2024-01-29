@@ -46,6 +46,7 @@ public class AdminController {
         Optional<Strumento> result=strumentoRepository.findById(id);
         if(result.isPresent()) {
             model.addAttribute("strumento",result.get());
+            model.addAttribute("categoriaList", categoriaRepository.findAll());
             return "admin/edit";
         }
         else {

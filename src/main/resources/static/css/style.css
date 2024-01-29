@@ -78,6 +78,39 @@ border:1px solid rgb(222, 226, 230);
 border-radius:8px;
 }
 
+.a-purple:hover {
+  background-color: purple;
+  border-radius: 10px;
+}
+
+.bg-nero{
+	background-color: black;
+}
+
+.text-p:hover {
+  color: purple;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.search-container button {
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 
 .addstrumento {
     color: white;
@@ -86,20 +119,85 @@ border-radius:8px;
 
 .bodyCreate {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(180deg, rgba(121,75,9,1) 35%, rgba(255,172,0,1));
-    background: rgb(7,114,157);
-    background: radial-gradient(circle, rgba(7,114,157,1) 0%, rgba(155,84,0,1) 100%);
+    background: radial-gradient(circle, rgba(54,78,0,1) 0%, rgba(0,85,0,1) 100%);
+}
+
+.bodyEdit {
+ font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle, rgba(0,14,78,1) 0%, rgba(0,17,85,1) 100%);
 }
 
 
 .containerproperty {
-    width: 900px;
-    height: 500px;
+     max-width:1200px;
+     max-height: 1200px;
     padding: 10px 10px 20px 10px;
     border: 1px solid #BFBFBF;
-    background-color: white;
     box-shadow: 10px 10px 5px #3e3c3c;
     border-radius: 50px;
+}
+
+.bg-gray {
+  background-color: rgb(247, 243, 247);
+}
+
+
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+
+.category i {
+    font-size: 48px;
+    color: #f0ad4e;
+    margin-bottom: 10px;
+}
+
+
+.category p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+
+.category:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.restock-body {
+background-color:rgb(209, 200, 192);
+}
+
+
+.stock{
+position:relative;
+left:42%;
+border:1px solid red;
+display:inline-block;
+padding:10px;
+background-color:red;
+border-radius:30px;
 }
 
 

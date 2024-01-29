@@ -3,11 +3,12 @@
 <head th:replace="fragments/resource :: head('Lista strumenti')"></head>
 <body>
 <header>
-    <nav th:replace="fragments/navbar :: topNavbar('strumenti')"></nav>
+
+    <div th:replace="fragments/navbar2 :: navbar2('strumenti')"> </div>
 </header>
 <div class="container mt-100">
     <div class="mt-5 row pb-5 " style="min-height:900px">
-        <h1 th:text="|Dettagli ${strumento.marca} ${strumento.modello}|"></h1>
+        <h1 th:text="|Dettagli ${strumento.marca} ${strumento.modello}|" ></h1>
         <div class="col-4">
             <div class="img-container img-fluid d-flex justify-content-center">
                 <img th:src="${strumento.foto}" alt="">
