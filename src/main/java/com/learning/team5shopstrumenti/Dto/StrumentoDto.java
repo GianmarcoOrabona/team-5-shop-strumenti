@@ -1,5 +1,7 @@
 package com.learning.team5shopstrumenti.Dto;
 
+import jakarta.persistence.ManyToOne;
+
 import java.math.BigDecimal;
 
 public class StrumentoDto {
@@ -16,6 +18,7 @@ private Integer quantita;
 
 private String descrizione;
 
+@ManyToOne
 private String categorie;
 
     public String getMarca() {
