@@ -2,36 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resource :: head('Aggiungi Strumento')"></head>
 <body>
-
-<header>
-    <div class="row bg-dark p-3">
-        <h3 class="text-center text-light"> AGGIUNGI UNO STRUMENTO </h3>
-    </div>
-</header>
 <main>
-    <div class="container mt-5">
-
-        <p class="text-secondary text-start">* Campi obbligatori</p>
+    <h2 class="text-white text-center mt-4 addstrumento">Aggiungi Strumento</h2>
+    <div class="container bg-dark containerproperty text-center mt-3">
+        <p class="text-secondary text-start ms-3">* Campi obbligatori</p>
 
         <form
                 method="post"
                 th:action="@{/admin/create}"
                 id="create-strumento"
-                class="row g-3"
                 th:object="${strumento}"
         >
-            <div class="col-6">
-                <div class="col-md-6 mb-3">
-                    <label for="marca" class="form-label">Marca*</label>
-                    <input type="text" class="form-control" id="marca" placeholder="Es: Fender" th:field="*{marca}" th:errorClass="is-invalid">
-                    <div class="invalid-feedback" th:if="${#fields.hasErrors('marca')}">
+            <div class="row">
+                <div class="col-6">
+                    <label for="modello" class="form-label text-white">Modello*</label>
+                    <input type="text" class="form-control" id="modello" placeholder="Esempio: Stratocaster" th:field="*{modello}" th:errorClass="is-invalid">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('modello')}">
                         <ul>
-                            <li th:each="err : ${#fields.errors('marca')}" th:text="${err}"></li>
+                            <li th:each="err : ${#fields.errors('modello')}" th:text="${err}"></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label for="prezzo" class="form-label">Prezzo*</label>
+                <div class="col-6">
+                    <label for="prezzo" class="form-label text-white">Prezzo*</label>
                     <input type="number" min="0" value="0" step=".01" class="form-control" id="prezzo" th:field="*{prezzo}" th:errorClass="is-invalid">
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('prezzo')}">
                         <ul>
@@ -39,52 +32,49 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <div class="col-md-6 mb-3">
-                    <label for="foto" class="form-label">Foto</label>
-                    <input type="text" class="form-control" id="foto" th:field="*{foto}">
+                <div class="col-6 mt-1">
+                    <label for="foto" class="form-label text-white">Foto</label>
+                    <input type="text" class="form-control" placeholder="Inserisci un URL"  id="foto" th:field="*{foto}">
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label for="modello" class="form-label">Modello*</label>
-                    <input type="text" class="form-control" id="modello" placeholder="Es: Stratocaster" th:field="*{modello}" th:errorClass="is-invalid">
-                    <div class="invalid-feedback" th:if="${#fields.hasErrors('modello')}">
+                <div class="col-6 mt-1">
+                    <label for="marca" class="form-label text-white">Marca*</label>
+                    <input type="text" class="form-control" id="marca" placeholder="Esempio: Fender" th:field="*{marca}" th:errorClass="is-invalid">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('marca')}">
                         <ul>
-                            <li th:each="err : ${#fields.errors('modello')}" th:text="${err}"></li>
+                            <li th:each="err : ${#fields.errors('marca')}" th:text="${err}"></li>
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="col-12" style="position:relative;left:35%;top:10px">
-                <label for="quantita" class="form-label">Quantità</label>
-                <input type="number" id="quantita" class="form-control inputNumber" aria-describedby="passwordHelpBlock" th:field="*{quantita}"  th:errorClass="is-invalid">
-                <div class="invalid-feedback" th:if="${#fields.hasErrors('quantita')}">
-                    <ul>
-                        <li th:each="err : ${#fields.errors('modello')}" th:text="${err}"></li>
-                    </ul>
+                <div class="col-6 mt-2">
+                    <label for="inputQuantita" class="form-label text-white">Quantità</label>
+                    <input type="number" id="inputQuantita" class="form-control inputNumber"  th:field="*{quantita}">
+                </div>
+                <div class="col-6 mt-2">
+                    <label class="form-label text-white" for="type">Categoria</label>
+                    <select id="type" class="form-select" th:field="*{categorie}">
+                        <option value="" selected>Seleziona categoria</option>
+                        <option th:each="cl : ${categoriaList}" th:value="${cl.id}"
+                                th:text="${cl.name}"></option>
+                    </select>
+                </div>
+                <div class="col-12 mt-2">
+                    <label for="descrizione" class="form-label text-white">Descrizione</label>
+                    <textarea class="form-control" rows="5" id="descrizione" th:field="*{descrizione}"></textarea>
+                </div>
+                <div class="col-12 d-flex justify-content-around mt-2">
+                    <button type="submit" class="btn btn-primary">Aggiungi</button>
+                    <a class="btn btn-danger" th:href="@{/admin}">Annulla</a>
                 </div>
             </div>
-            <div class="col-md-12">
-                <label for="descrizione" class="form-label">Scrivi una descrizione</label>
-                <textarea class="form-control" rows="10" id="descrizione" th:field="*{descrizione}"></textarea>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Aggiungi</button>
-                <a class="btn btn-danger" th:href="@{/admin}">Cancel</a>
-            </div>
-
-            <div class="col-4">
-                <label class="form-label" for="type">Categoria</label>
-                <select id="type" class="form-select" th:field="*{categorie}">
-                    <option value="" selected disabled>Choose a type</option>
-                    <option th:each="cl : ${categoriaList}" th:value="${cl.id}"
-                            th:text="${cl.name}"></option>
-                </select>
-            </div>
-
-
-        </form>
+    </div>
+    </form>
     </div>
 </main>
+</body>
+</html>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>
