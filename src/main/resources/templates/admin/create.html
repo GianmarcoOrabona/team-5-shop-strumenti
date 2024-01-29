@@ -54,7 +54,7 @@
                 <div class="col-6 mt-2">
                     <label class="form-label text-white" for="type">Categoria</label>
                     <select id="type" class="form-select" th:field="*{categorie}">
-                        <option value="" selected>Seleziona categoria</option>
+                        <option value="">Seleziona categoria</option>
                         <option th:each="cl : ${categoriaList}" th:value="${cl.id}"
                                 th:text="${cl.name}"></option>
                     </select>
