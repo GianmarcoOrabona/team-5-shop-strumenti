@@ -112,3 +112,24 @@ a {
 }
 
 
+.addstrumento {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.bodyCreate {
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle, rgba(54,78,0,1) 0%, rgba(0,85,0,1) 100%);
+}
+
+
+.containerproperty {
+    width: 900px;
+    height: 500px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #BFBFBF;
+    box-shadow: 10px 10px 5px #3e3c3c;
+    border-radius: 50px;
+}
+
+

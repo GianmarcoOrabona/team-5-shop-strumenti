@@ -56,8 +56,13 @@
                 </div>
             </div>
             <div class="col-12" style="position:relative;left:35%;top:10px">
-                <label for="inputPassword5" class="form-label">Quantità</label>
-                <input type="number" id="inputPassword5" class="form-control inputNumber" aria-describedby="passwordHelpBlock"  th:field="*{quantita}">
+                <label for="quantita" class="form-label">Quantità</label>
+                <input type="number" id="quantita" class="form-control inputNumber" aria-describedby="passwordHelpBlock" th:field="*{quantita}"  th:errorClass="is-invalid">
+                <div class="invalid-feedback" th:if="${#fields.hasErrors('quantita')}">
+                    <ul>
+                        <li th:each="err : ${#fields.errors('modello')}" th:text="${err}"></li>
+                    </ul>
+                </div>
             </div>
             <div class="col-md-12">
                 <label for="descrizione" class="form-label">Scrivi una descrizione</label>
