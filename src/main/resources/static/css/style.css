@@ -259,3 +259,24 @@ h2 {
     font-size: 14px;
     color: #808080;
 }
+.disponibile{
+    color: lime;
+    font-size: 20px;
+}
+
+
+.button-acquista {
+   background-color: black;
+   color: white;
+   border: none;
+   padding: 15px;
+   font-size: 20px;
+   cursor: pointer;
+   width: 250px;
+}
+    .button-acquista:hover {
+      background-color: purple;
+    }
+
+
+
