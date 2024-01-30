@@ -25,7 +25,7 @@
             <p class="p-show mb-1">Tasse e spedizione incluse</p>
             <!--Testo che varia in base al numero di strumenti disponibili-->
             <p th:if="${strumento.assortimenti.size() == 0}" style="background-color:red">Non disponibile</p>
-            <p th:unless="${strumento.assortimenti.size() == 0}" class="disponibile m-0">Disponibile</p>
+            <p th:unless="${strumento.assortimenti.size() == 0}" class="disponibile m-0" > Disponibile</p>
             <p th:text="|Paga fino a 12 rate da: ${strumento.pagaARate()} &euro;|"></p>
             <form
                     method="post"
