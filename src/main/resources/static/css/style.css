@@ -300,5 +300,28 @@ body { font-family: sans-serif; }
     background-color: purple;
 }
 
+/* Error page */
 
+.error-body h1,
+ h2 {
+    display: block;
+    border-bottom: 0;
+}
 
+.error-body hr {
+  border: none;
+  height: 3px;
+  background-color: #333;
+}
+
+.hero {
+    height: 25vw;
+    background-size: cover;
+    background-position: 50%;
+    position: relative;
+}
+
+.error-hero {
+    background-image: url("/error-hero.jpg");
+    margin-bottom: 0.625em;
+}
