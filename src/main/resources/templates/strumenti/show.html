@@ -22,12 +22,11 @@
                 <span class="price-symbol"> &euro; </span>
                 <span class="fw-bold" th:text="${strumento.prezzo} "></span>
             </div>
-            <p class="p-show">Tasse e spedizione incluse</p>
+            <p class="p-show mb-1">Tasse e spedizione incluse</p>
             <!--Testo che varia in base al numero di strumenti disponibili-->
             <p th:if="${strumento.assortimenti.size() == 0}" style="background-color:red">Non disponibile</p>
-            <p th:unless="${strumento.assortimenti.size() == 0}" style="color:green; font-weight:bold">Disponibile</p>
+            <p th:unless="${strumento.assortimenti.size() == 0}" class="disponibile m-0">Disponibile</p>
             <p th:text="|Paga fino a 12 rate da: ${strumento.pagaARate()} &euro;|"></p>
-            <p class="text-danger">Spedizione <i class="fa-solid fa-truck"></i></p>
             <form
                     method="post"
                     th:action="@{/vendite}"
@@ -37,15 +36,17 @@
             >
                 <input type="hidden" th:field="*{strumento}">
                 <input type="hidden" th:field="*{data}">
-                <select class="form-select" aria-label="Default select example" style="width:100px;position:relative;left:8px" name="quantita">
-                    <option th:each="qt : ${array}" th:text="${qt}" th:value="${qt}"></option>
-                </select>
-                <div class="input-group mb-3">
-                    <button type="submit" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#addToCartModal">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        Acquista
-                    </button>
+                <div class="d-flex ">
+                    <select class="form-select rounded-pill" aria-label="Default select example" style="width:100px;position:relative;left:8px" name="quantita">
+                        <option th:each="qt : ${array}" th:text="${qt}" th:value="${qt}"></option>
+                    </select>
+                    <div class="input-group d-flex justify-content-end">
+                        <button type="submit" class="btn button-acquista rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#addToCartModal">
+                            Acquista
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </button>
+                </div>
                 </div>
             </form>
         </div>

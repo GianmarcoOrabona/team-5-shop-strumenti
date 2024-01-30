@@ -234,16 +234,37 @@ h2 {
 
 
 
-.gallery-cell {
-  width: 66%;
-  height: 200px;
+html, body {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body { font-family: sans-serif; }
+
+.carousel {
+  height: 50%;
+}
+
+.carousel-cell {
+  width: 45%;
+  height: 100%;
   margin-right: 10px;
-  counter-increment: gallery-cell;
+  counter-increment: carousel-cell;
+}
+
+.flickity-page-dots {
+  bottom: 10px;
 }
 
 .carousel-img {
     object-fit: cover;
     aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 90%;
 }
 
 .price{
@@ -264,3 +285,25 @@ h2 {
     font-size: 14px;
     color: #808080;
 }
+.disponibile{
+    color: lime;
+    font-size: 20px;
+}
+
+
+.button-acquista {
+   background-color: black;
+   color: white;
+   border: none;
+   padding: 15px;
+   font-size: 20px;
+   cursor: pointer;
+   width: 250px;
+}
+
+.button-acquista:hover {
+    background-color: purple;
+}
+
+
+

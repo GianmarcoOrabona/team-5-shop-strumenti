@@ -1,8 +1,10 @@
 package com.learning.team5shopstrumenti.controller;
 
 import com.learning.team5shopstrumenti.interfaccie.AssortimentoRepository;
+import com.learning.team5shopstrumenti.interfaccie.CategoriaRepository;
 import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
 import com.learning.team5shopstrumenti.interfaccie.VenditaRepository;
+import com.learning.team5shopstrumenti.model.Categoria;
 import com.learning.team5shopstrumenti.model.Strumento;
 import com.learning.team5shopstrumenti.model.Vendita;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,17 +32,22 @@ public class StrumentoController {
     @Autowired
     private VenditaRepository venditaRepository;
 
+    @Autowired
+    private CategoriaRepository categoriaRepository;
+
 
     @GetMapping
-    public String index(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
-
+    public String index(@RequestParam(name = "keyword", required = false) String searchKeyword,@RequestParam(name = "searchCategoria", required = false) String searchCategoria, Model model) {
         List<Strumento> strumenti;
+        List<Categoria> categoria;
         if (searchKeyword != null) {
             strumenti = strumentoRepository.findByMarcaContainingOrModelloContaining(searchKeyword, searchKeyword);
+        } else if (searchCategoria != null) {
+            categoria = categoriaRepository.findByName(searchCategoria);
+            strumenti = strumentoRepository.findByCategoria(categoria);
         } else {
             strumenti = strumentoRepository.findAll();
         }
-        model.addAttribute("area", "public");
         model.addAttribute("strumenti", strumenti);
         model.addAttribute("preloadSearch", searchKeyword);
         return "strumenti/list";
