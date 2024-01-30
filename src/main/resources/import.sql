@@ -11,23 +11,23 @@ INSERT INTO categorie (name) VALUES('Pianoforti');
 
 -- Chitarre
 
-INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 123.45, 'Eko', 'Chitarra classica', 'Chitarra classica', 'https://www.crucianimusica.it/media/06217039_m.jpg');
+INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 123.45, 'Gibson', 'Gibson Les Paul', 'Chitarra classica', 'https://www.crucianimusica.it/media/06217039_m.jpg');
 
-INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 156.78, 'Eko', 'Chitarra acustica', 'Chitarra acustica', 'https://m.media-amazon.com/images/I/41g7wUFj0UL.jpg');
+INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 156.78, 'Eko', 'Rickenbacker 330', 'Chitarra acustica', 'https://m.media-amazon.com/images/I/41g7wUFj0UL.jpg');
 
-INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 189.01, 'YAMAHA', 'Chitarra elettrica', 'Chitarra elettrica', 'https://www.musicbros.net/media/catalog/product/cache/1/image/900x/040ec09b1e35df139433887a97daa66f/b/r/bryce-bes002-chitarra-elettrica-nera-fretless.jpg');
+INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 189.01, 'Gibson', 'Gibson Melody Maker', 'Chitarra elettrica', 'https://www.musicbros.net/media/catalog/product/cache/1/image/900x/040ec09b1e35df139433887a97daa66f/b/r/bryce-bes002-chitarra-elettrica-nera-fretless.jpg');
 
-INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 221.23, 'YAMAHA', 'Chitarra classica', 'Chitarra classica', 'https://ae01.alicdn.com/kf/H2bd5106a984043d8a0a5bb94287780ffr.jpg_640x640q90.jpg');
+INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 221.23, 'YAMAHA', 'Washburn Paul Stanley PSV2000', 'Chitarra classica', 'https://ae01.alicdn.com/kf/H2bd5106a984043d8a0a5bb94287780ffr.jpg_640x640q90.jpg');
 
-INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 253.45, 'Eko', 'Chitarra classica', 'Chitarra classica', 'https://www.bananamusic.it/c/1177-category_default/chitarre-flamenco.jpg');
+INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 253.45, 'Gibson', 'Gibson Thunderbird', 'Chitarra classica', 'https://www.bananamusic.it/c/1177-category_default/chitarre-flamenco.jpg');
 
-INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 285.67, 'YAMAHA', 'Chitarra elettrica', 'Chitarra elettrica', 'https://www.guitarsland.it/pub/media/catalog/product/cache/cf3f2243ef4940fd5c66f2ff035145ac/m/j/mjdm30bk.png');
+INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 285.67, 'Fender', 'Fender Mustang', 'La chitarra Fender Mustang è un classico della musica rock. Questa chitarra elettrica è stata introdotta nel 1964 e ha rivoluzionato il panorama musicale con il suo design offset a scala ridotta', 'https://www.guitarsland.it/pub/media/catalog/product/cache/cf3f2243ef4940fd5c66f2ff035145ac/m/j/mjdm30bk.png');
 
 INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 317.89, 'Eko', 'Chitarra elettrica', 'Chitarra elettrica', 'https://www.cittadelsole.it/files/content/93/78/48/20220704100750_WI42296_A1_STRUMENTI_MUSICALI_chitarra_piccola_elettrica_OK.jpg');
 
-INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 350.12, 'YAMAHA', 'Chitarra elettrica', 'Chitarra elettrica', 'https://www.fireflyaudio.it/wp-content/uploads/2016/08/EKO-3_4-S100-CHROME-RED.jpg');
+INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 350.12, 'YAMAHA', 'YAMAHA C40', 'Chitarra elettrica', 'https://www.fireflyaudio.it/wp-content/uploads/2016/08/EKO-3_4-S100-CHROME-RED.jpg');
 
-INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 382.34, 'YAMAHA', 'Chitarra acustica', 'Chitarra acustica', 'https://www.sanniomusicstore.com/3955-large_default/EKO-RANGER-6-EQ-Chitarra.jpg');
+INSERT INTO strumenti (categorie_id, prezzo, marca, modello, descrizione, foto) VALUES (1, 382.34, 'YAMAHA', 'YAMAHA FG800 Natural', 'Chitarra acustica', 'https://www.sanniomusicstore.com/3955-large_default/EKO-RANGER-6-EQ-Chitarra.jpg');
 
 
 -- Tastiere

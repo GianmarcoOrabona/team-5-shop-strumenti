@@ -39,12 +39,16 @@ public class StrumentoController {
     @GetMapping
     public String index(@RequestParam(name = "keyword", required = false) String searchKeyword,@RequestParam(name = "searchCategoria", required = false) String searchCategoria, Model model) {
         List<Strumento> strumenti;
-        List<Categoria> categoria;
         if (searchKeyword != null) {
             strumenti = strumentoRepository.findByMarcaContainingOrModelloContaining(searchKeyword, searchKeyword);
         } else if (searchCategoria != null) {
-            categoria = categoriaRepository.findByName(searchCategoria);
-            strumenti = strumentoRepository.findByCategorie(categoria);
+            Optional<Categoria> categoria = categoriaRepository.findByName(searchCategoria);
+             if (categoria.isPresent()) {
+                 strumenti = strumentoRepository.findByCategorie(categoria.get());
+             } else {
+                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Categoria not found");
+             }
+
         } else {
             strumenti = strumentoRepository.findAll();
         }
