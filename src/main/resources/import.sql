@@ -166,3 +166,9 @@ INSERT INTO assortimenti (`data`, quantita, strumento_id) VALUES('2023-11-11', 9
 INSERT INTO assortimenti (`data`, quantita, strumento_id) VALUES('2023-12-21', 63, 35);
 
 INSERT INTO assortimenti (`data`, quantita, strumento_id) VALUES('2023-10-29', 62, 36);
+
+INSERT INTO role (name) VALUES("admin");
+INSERT INTO role (name) VALUES("user");
+INSERT INTO utenti (first_name,last_name,email,password) VALUES("luigi","iaco","prova@gmail.com","{noop}chitarra");
+INSERT INTO utenti_role_set(user_id,role_set_name) VALUES (1,"admin");
+
