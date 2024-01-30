@@ -3,7 +3,7 @@ body {
 }
 
 .img-container img {
-    width: 300px;
+    width: 700px;
 }
 
 footer {
@@ -146,8 +146,6 @@ h1 {
     font-family: Arial, sans-serif;
     font-size: 36px;
     color: #333;
-    margin-top: 20px;
-    margin-bottom: 40px;
 }
 
 
@@ -229,11 +227,7 @@ h2 {
   background-color: #ff5252 !important;
 }
 
-/* Carosello */
 
-/* external css: flickity.css */
-
-* { box-sizing: border-box; }
 
 html, body {
   height: 100%;
@@ -262,7 +256,48 @@ body { font-family: sans-serif; }
 }
 
 .carousel-img {
+    object-fit: cover;
     aspect-ratio: 1/1;
     object-fit: cover;
     width: 90%;
 }
+
+.price{
+    line-height: 60px;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.price-symbol{
+    font-size: 40px;
+    line-height: 40px;
+    vertical-align: top;
+    position: relative;
+    top: 5px;
+}
+
+.p-show{
+    font-size: 14px;
+    color: #808080;
+}
+.disponibile{
+    color: lime;
+    font-size: 20px;
+}
+
+
+.button-acquista {
+   background-color: black;
+   color: white;
+   border: none;
+   padding: 15px;
+   font-size: 20px;
+   cursor: pointer;
+   width: 250px;
+}
+    .button-acquista:hover {
+      background-color: purple;
+    }
+
+
+
