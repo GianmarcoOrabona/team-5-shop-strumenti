@@ -6,15 +6,17 @@
     <nav th:replace="fragments/navbar :: topNavbar('home')"></nav>
 </header>
 
-<h1>Flickity - autoPlay</h1>
-
-<div class="gallery js-flickity"
-     data-flickity-options='{ "wrapAround": true }'>
-
-        <img class="gallery-cell carousel-img" src="/negozio_1.jpg" alt="">
-        <img class="gallery-cell carousel-img" src="/negozio_2.jpg" alt="">
-        <img class="gallery-cell carousel-img" src="/negozio_3.jpg" alt="">
-
+<!-- Flickity HTML init -->
+<div class="carousel" data-flickity='{ "setGallerySize": false, "wrapAround": true, "autoPlay": true }'>
+    <div class="carousel-cell rounded">
+        <img class="carousel-img rounded" src="/negozio_1.jpg" alt="">
+    </div>
+    <div class="carousel-cell rounded">
+        <img class="carousel-img rounded" src="/negozio_2.jpg" alt="">
+    </div>
+    <div class="carousel-cell rounded">
+        <img class="carousel-img rounded" src="/negozio_3.jpg" alt="">
+    </div>
 </div>
 
 
