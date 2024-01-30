@@ -1,26 +1,32 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resource :: head('Restock')"></head>
-<body class="restock-body">
-<h1 class="text-center fs-1">Rifornimento</h1>
-
-<form
-        method="post"
-        th:action="@{/admin/assortimento/create/{id}(id=${strumento.id})}"
-        id="edit-strumento"
-        th:object="${assortimento}"
-        class="stock shadow-lg"
->
-    <div class="mb-3 text-center">
-        <label for="exampleInputEmail1" class="form-label">Data</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width:200px;" th:field="*{data}">
-    </div>
-    <div class="mb-3 text-center">
-        <label for="exampleInputPassword1" class="form-label">Quantità</label>
-        <input type="number" class="form-control" id="exampleInputPassword1" style="width:100px;position:relative;left:50px;" th:field="*{quantita}">
-    </div>
-    <button type="submit" class="btn btn-primary" style="position:relative;left:55px;">Rifornisci</button>
-</form>
+<body class="body">
+<div class="container text-center mt-4">
+    <h1 class="shadow p-3 mb-5 bg-white rounded">Rifornimenti</h1>
+</div>
+<div class="container text-center mt-4 shadow p-3 mb-5 bg-white rounded">
+<div class="container p-4">
+    <form
+            method="post"
+            th:action="@{/admin/assortimento/create/{id}(id=${strumento.id})}"
+            id="edit-strumento"
+            th:object="${assortimento}"
+    >
+        <div class="row p-4">
+            <div class=" col-6 mb-3">
+                <label for="inputData" class="form-label">Data odierna</label>
+                <input type="text" class="form-control" id="inputData" th:field="*{data}">
+            </div>
+            <div class="col-6 mb-3">
+                <label for="inputQuantita" class="form-label">Quantità</label>
+                <input type="number" class="form-control" id="inputQuantita" th:field="*{quantita}">
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-dark">Rifornisci</button>
+            </div>
+    </form>
+</div>
 
 
 </body>
