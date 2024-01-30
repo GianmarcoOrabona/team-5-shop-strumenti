@@ -36,7 +36,7 @@ public class StrumentoController {
 
         List<Strumento> strumenti;
         if (searchKeyword != null) {
-            strumenti = strumentoRepository.findByMarcaContaining(searchKeyword);
+            strumenti = strumentoRepository.findByMarcaContainingOrModelloContaining(searchKeyword, searchKeyword);
         } else {
             strumenti = strumentoRepository.findAll();
         }

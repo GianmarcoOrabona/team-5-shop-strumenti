@@ -3,7 +3,7 @@ body {
 }
 
 .img-container img {
-    width: 300px;
+    width: 700px;
 }
 
 footer {
@@ -146,8 +146,6 @@ h1 {
     font-family: Arial, sans-serif;
     font-size: 36px;
     color: #333;
-    margin-top: 20px;
-    margin-bottom: 40px;
 }
 
 
@@ -241,4 +239,23 @@ h2 {
 .carousel-img {
     object-fit: cover;
     aspect-ratio: 1/1;
+}
+
+.price{
+    line-height: 60px;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.price-symbol{
+    font-size: 40px;
+    line-height: 40px;
+    vertical-align: top;
+    position: relative;
+    top: 5px;
+}
+
+.p-show{
+    font-size: 14px;
+    color: #808080;
 }
