@@ -1,10 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/resource :: head('Contattaci')"></head>
 </head>
 <body>
+<header>
+    <div th:replace="fragments/navbar2 :: navbar2('strumenti')"> </div>
+</header>
+<main>
+    <!--Section: Contact v.2-->
+    <section class="mb-4">
 
+        < <!--Section heading-->
+        <div class="container text-center">
+            <h2 class="font-weight-bold mb-4 mt-3">Contattaci</h2>
+        </div>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-5">Hai domande o particolari richieste? Non esitare a contattarci, la nostra assistenza clienti risponderà entro 24/48 ore.</p>
+        <div class="container">
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-9 mb-md-0 mb-5">
+
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="name" name="name" class="form-control">
+                                    <label for="name" class="">Il tuo nome</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="email" name="email" class="form-control">
+                                    <label for="email" class="">La tua e-mail</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+
+
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-12 mt-5">
+
+                                <div class="md-form">
+                                    <textarea type="text" id="message" name="message" rows="5" class="form-control md-textarea"></textarea>
+                                    <label for="message">Il tuo messaggio</label>
+                                </div>
+
+                            </div>
+
+                    <div class="row mt-4">
+                        <div class="col-1">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault"></label>
+                        </div>
+                        <div class="col-11">
+                            <p> Ho letto l'<a href="https://www.esempio.com/privacy-e-cookie-policy/" target="_blank" rel="nofollow noopener">informativa privacy</a> e acconsento alla memorizzazione dei miei dati nel vostro archivio secondo quanto stabilito dal regolamento europeo per la protezione dei dati personali n. 679/2016, GDPR.<span style="font-size: 13px;"></span> <span style="font-size: 13px; color: #ff0000;"></span> </p>
+                        </div>
+                        <div class="col-12 text-center mt-3">
+                            <a class="btn btn-dark" href="#" role="button">Invia</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-3 text-center bg-secondary p-4 shadow p-3 mb-5 bg-white rounded">
+                <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                        <p>Via D'Azeglio 94, 40124, (BO)</p>
+                    </li>
+
+                    <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                        <p> +39 344 125 9981</p>
+                    </li>
+
+                    <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                        <p>musicinstri@shop.it</p>
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+
+        </div>
+        </div>
+
+    </section>
+    <!--Section: Contact v.2-->
+</main>
+</body>
+</html>
 </body>
 </html>

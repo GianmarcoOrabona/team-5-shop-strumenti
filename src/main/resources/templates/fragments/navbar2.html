@@ -12,7 +12,7 @@
                         <a class="nav-link" th:classappend="${area == 'home' ? 'active' : ''}" th:href="@{/strumenti}"><i class="fa-solid fa-house"></i></a>
                     </li>
                     <li class=" list-inline-item">
-                        <a class="text-p p-4 fst-italic" href="#">Contattaci</a>
+                        <a class="text-p p-4 fst-italic" th:href="@{/contattaci}">Contattaci</a>
                     </li>
                     <li class="nav-item list-inline-item">
                         <a class="nav-link text-p" th:classappend="${area == 'area admin' ? 'active' : ''}" th:href="@{/admin}">Area admin</a>
