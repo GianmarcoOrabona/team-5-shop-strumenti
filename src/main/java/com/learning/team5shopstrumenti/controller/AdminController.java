@@ -4,9 +4,11 @@ import com.learning.team5shopstrumenti.Dto.StrumentoDto;
 import com.learning.team5shopstrumenti.interfaccie.AssortimentoRepository;
 import com.learning.team5shopstrumenti.interfaccie.CategoriaRepository;
 import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
+import com.learning.team5shopstrumenti.interfaccie.VenditaRepository;
 import com.learning.team5shopstrumenti.model.Assortimento;
 import com.learning.team5shopstrumenti.model.Categoria;
 import com.learning.team5shopstrumenti.model.Strumento;
+import com.learning.team5shopstrumenti.model.Vendita;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -32,11 +35,15 @@ public class AdminController {
     private AssortimentoRepository assortimentoRepository;
 
     @Autowired
+    private VenditaRepository venditaRepository;
+
+    @Autowired
     private CategoriaRepository categoriaRepository;
 
     @GetMapping
     public String index(Model model) {
         List<Strumento> strumenti = strumentoRepository.findAll();
+        List<Assortimento> assortimenti=assortimentoRepository.findAll();
         model.addAttribute("strumenti", strumenti);
         return "admin/home";
         }
