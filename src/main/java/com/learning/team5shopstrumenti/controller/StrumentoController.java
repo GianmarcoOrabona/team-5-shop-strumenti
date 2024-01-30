@@ -44,7 +44,7 @@ public class StrumentoController {
             strumenti = strumentoRepository.findByMarcaContainingOrModelloContaining(searchKeyword, searchKeyword);
         } else if (searchCategoria != null) {
             categoria = categoriaRepository.findByName(searchCategoria);
-            strumenti = strumentoRepository.findByCategoria(categoria);
+            strumenti = strumentoRepository.findByCategorie(categoria);
         } else {
             strumenti = strumentoRepository.findAll();
         }

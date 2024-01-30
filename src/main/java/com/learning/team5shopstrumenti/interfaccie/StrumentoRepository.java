@@ -10,6 +10,6 @@ import java.util.List;
 public interface StrumentoRepository extends JpaRepository<Strumento, Integer> {
     List<Strumento> findByMarcaContainingOrModelloContaining (String searchMarca, String searchModello);
 
-    List<Strumento> findByCategoria(Categoria categoria);
+    List<Strumento> findByCategorie(Categoria categoria);
 
 }
