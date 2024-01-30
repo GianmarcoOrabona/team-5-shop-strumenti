@@ -2,8 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resource :: head('Restock')"></head>
 <body class="restock-body">
-<h1 class="text-center fs-1">Rifornimento</h1>
-
+<h1 class="text-center title_restock fs-1">Rifornimento</h1>
 <form
         method="post"
         th:action="@{/admin/assortimento/create/{id}(id=${strumento.id})}"
