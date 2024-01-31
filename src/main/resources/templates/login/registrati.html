@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/resource :: head('Lista strumenti')"></head>
+
+<header>
+    <div th:replace="fragments/navbar2 :: navbar2('strumenti')"> </div>
+</header>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Registrazione</h1>
+        <div class="d-flex justify-content-center">
+            <form action="/registrazione" method="post">
+
+                <div class="col-12 mb-3 ">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input placeholder="Inserisci il tuo Nome" type="text" class="form-control" id="nome" name="nome" style="width: 600px; ">
+                </div>
+
+                <div class="mb-3">
+                    <label for="cognome" class="form-label">Cognome</label>
+                    <input placeholder="Inserisci il tuo Cognome" type="text" class="form-control" id="cognome" name="cognome">
+                </div>
+
+                <div class="mb-3">
+                    <label for="citta" class="form-label">Città</label>
+                    <input placeholder="Inserisci la tua Città" type="text" class="form-control" id="citta" name="citta">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="indirizzo" class="form-label">Indirizzo</label>
+                    <input placeholder="Via Roma 1" type="text" class="form-control" id="indirizzo" name="indirizzo">
+                </div>
+
+                <div class="mb-3">
+                    <label for="cap" class="form-label">CAP</label>
+                    <input placeholder="C.A.P" type="text" class="form-control" id="cap" name="cap">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Indirizzo email</label>
+                    <input  placeholder="Inserisci il campo 1"type="email" class="form-control" id="email" name="email">
+                    <small class="form-text text-muted">Riceverai una mail con un link per impostare la password.</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cap" class="form-label">Password</label>
+                    <input placeholder="PSW" type="password" class="form-control" id="psw" name="cap">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Registrazione</button>
+
+            </form>
+        </div>
+
+
+        <p class="text-center mt-4">Hai già fatto acquisti da noi prima d'ora? <a href="/login">Accedi</a></p>
+
+</div>
+
+</body>
+</html>

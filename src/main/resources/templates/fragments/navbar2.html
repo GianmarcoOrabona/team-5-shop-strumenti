@@ -45,21 +45,17 @@
             </div>
         </div>
 
-
-
-
-        <div id="mySidebar">
+        <div>
+            <a th:href="@{/registrazione}">Registrati</a>
             <a class="mt-4 login-link" th:href="@{/custom-login}">
                 <span sec:authorize="!isAuthenticated()">Login</span>
             </a>
-            <sec:authorize access="isAuthenticated()">
+            <th:block sec:authorize="isAuthenticated()">
                     <span class="gold-text ps-4 fs-4" sec:authorize="hasAnyAuthority('admin','user')"></span>
                 <a class="mt-4" href="/logout" sec:authorize="hasAnyAuthority('admin','user')">Logout</a>
-            </sec:authorize>
+            </th:block>
+
         </div>
-
-
-
 
     </div>
 
