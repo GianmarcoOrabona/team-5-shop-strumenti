@@ -6,8 +6,33 @@
     <div th:replace="fragments/navbar2 :: navbar2('strumenti')"> </div>
 </header>
 
+<main>
+    <div class="container mt-100">
+        <h1 class="text-center ">Strumenti</h1>
+        <div class="row g-5">
+            <div class="col-3" th:each="strumenti : ${strumenti}">
+                <a th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="text-decoration-none text-dark">
+                    <div class="card h-100 crad-strumento">
+                        <img th:src="${strumenti.foto}" class="card-img-top img-fluid object-fit-contain"
+                             alt="strumento" style="height: 200px;">
+                        <hr>
+                        <div class="card-body d-flex flex-column">
+                            <h5 th:text="${strumenti.marca}"></h5>
+                            <p class="card-text mb-4" th:text="${strumenti.modello}"></p>
+                            <p class="card-text mb-4" th:text="${strumenti.prezzo}"></p>
+                            <div class="mt-auto d-flex justify-content-around">
+                                <a th:if="${area == 'public'}" th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="btn btn-primary">Acquista</a>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
 <div class="container">
-    <h1 class="text-center">Marche più popolari</h1>
+    <h1 class="mt-3">Marche più popolari</h1>
     <div class="row">
         <div class="col-md-4">
             <div class="category">
@@ -94,34 +119,7 @@
             </div>
         </div>
     </div>
-
 </div>
-
-<main>
-    <div class="container mt-100">
-        <h1 class="text-center ">Strumenti</h1>
-        <!-- Card strumenti -->
-        <div class="row g-5">
-            <div class="col-3" th:each="strumenti : ${strumenti}">
-                <a th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="text-decoration-none text-dark">
-                    <div class="card h-100 crad-strumento">
-                        <img th:src="${strumenti.foto}" class="card-img-top img-fluid object-fit-contain"
-                             alt="strumento" style="height: 200px;">
-                        <hr>
-                        <div class="card-body d-flex flex-column">
-                            <h5 th:text="${strumenti.marca}"></h5>
-                            <p class="card-text mb-4" th:text="${strumenti.modello}"></p>
-                            <p class="card-text mb-4" th:text="${strumenti.prezzo}"></p>
-                            <div class="mt-auto d-flex justify-content-around">
-                                <a th:if="${area == 'public'}" th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="btn btn-primary">Acquista</a>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</main>
 
 
 

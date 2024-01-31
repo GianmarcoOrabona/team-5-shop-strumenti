@@ -32,9 +32,6 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                //.requestMatchers("/admin","/admin/edit/**","/admin/create","/admin/home","/admin/restock","/admin")
-                //.hasAuthority("admin")
-                //.requestMatchers("/strumenti","/strumenti/show/**").hasAnyAuthority("admin","user")
                 .requestMatchers("/admin/**").hasAuthority("admin")
                 .requestMatchers("/vendite").hasAuthority("user")
                 .requestMatchers("/**").permitAll()
@@ -42,7 +39,10 @@ public class SecurityConfiguration {
                 .and().logout()
                 .and().exceptionHandling()
                 .and().csrf().disable();
+        http.formLogin().loginPage("/custom-login");
+
                 return http.build();
+
 
 
 

@@ -142,12 +142,6 @@ a {
 }
 
 
-h1 {
-    font-family: Arial, sans-serif;
-    font-size: 36px;
-    color: #333;
-}
-
 
 .category {
     display: flex;
@@ -223,7 +217,7 @@ header {
 h1,
 h2 {
   font-weight: normal;
-  border-bottom: 1px dotted #bdbdbd;
+  border-bottom: 5px solid purple;
   padding-bottom: 2px;
   display: inline-block;
 }
