@@ -13,7 +13,7 @@
                     action="/registrazione"
                     method="post"
             >
-
+                <input type = "hidden" name="role" th:value="user"></input>
                 <div class="col-12 mb-3 ">
                     <label for="nome" class="form-label">Nome</label>
                     <input placeholder="Inserisci il tuo Nome" type="text" class="form-control" id="nome" name="firstName" style="width: 600px; ">
