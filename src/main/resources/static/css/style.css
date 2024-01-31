@@ -67,10 +67,6 @@ width: 300px;
     margin-bottom: 30px;
 }
 
-.carousel {
-    margin-top: 10%;
-}
-
 
 .inputNumber{
 width:100px;
@@ -239,27 +235,30 @@ body {
 
 body { font-family: sans-serif; }
 
-.carousel {
-  height: 50%;
-}
+/* Carousel */
 
-.carousel-cell {
-  width: 45%;
-  height: 100%;
-  margin-right: 10px;
-  counter-increment: carousel-cell;
+.carousel {
+    height: 50%;
+    margin-top: 3%;
 }
 
 .flickity-page-dots {
-  bottom: 10px;
+    bottom: 10px;
+}
+
+.carousel-cell {
+  width: 53%;
+  height: 100%;
+  margin-right: 10px;
+  border-radius: 5px;
+  counter-increment: gallery-cell;
 }
 
 .carousel-img {
-    object-fit: cover;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    width: 90%;
+    border-radius: 8px;
 }
+
+/* /Carousel */
 
 .price{
     line-height: 60px;
