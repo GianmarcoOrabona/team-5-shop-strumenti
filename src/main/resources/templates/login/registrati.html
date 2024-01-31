@@ -9,16 +9,19 @@
 <div class="container mt-5">
     <h1 class="text-center mb-5">Registrazione</h1>
         <div class="d-flex justify-content-center">
-            <form action="/registrazione" method="post">
+            <form
+                    action="/registrazione"
+                    method="post"
+            >
 
                 <div class="col-12 mb-3 ">
                     <label for="nome" class="form-label">Nome</label>
-                    <input placeholder="Inserisci il tuo Nome" type="text" class="form-control" id="nome" name="nome" style="width: 600px; ">
+                    <input placeholder="Inserisci il tuo Nome" type="text" class="form-control" id="nome" name="firstName" style="width: 600px; ">
                 </div>
 
                 <div class="mb-3">
                     <label for="cognome" class="form-label">Cognome</label>
-                    <input placeholder="Inserisci il tuo Cognome" type="text" class="form-control" id="cognome" name="cognome">
+                    <input placeholder="Inserisci il tuo Cognome" type="text" class="form-control" id="cognome" name="lastName">
                 </div>
 
                 <div class="mb-3">
@@ -45,13 +48,12 @@
 
                 <div class="mb-3">
                     <label for="cap" class="form-label">Password</label>
-                    <input placeholder="PSW" type="password" class="form-control" id="psw" name="cap">
+                    <input placeholder="PSW" type="password" class="form-control" id="psw" name="password">
                 </div>
 
                 <button type="submit" class="btn button-acquista rounded-pill" data-bs-toggle="modal"
                         data-bs-target="#addToCartModal">
-                    Acquista
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    Registrati
                 </button>
 
             </form>
