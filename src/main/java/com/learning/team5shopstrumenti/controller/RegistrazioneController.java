@@ -29,9 +29,9 @@ public class RegistrazioneController {
         user.setFirstName(formUser.getFirstName());
         user.setLastName(formUser.getLastName());
         user.setEmail(formUser.getEmail());
-        //BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        //String pswencode = encoder.encode(formUser.getPassword());
-        user.setPassword(formUser.getPassword());
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String pswencode = encoder.encode(formUser.getPassword());
+        user.setPassword("{bcrypt}" + pswencode);
         userRepository.save(user);
         return "redirect:/strumenti";
 
