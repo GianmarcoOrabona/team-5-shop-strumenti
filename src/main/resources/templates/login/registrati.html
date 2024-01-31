@@ -48,13 +48,17 @@
                     <input placeholder="PSW" type="password" class="form-control" id="psw" name="cap">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Registrazione</button>
+                <button type="submit" class="btn button-acquista rounded-pill" data-bs-toggle="modal"
+                        data-bs-target="#addToCartModal">
+                    Acquista
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </button>
 
             </form>
         </div>
 
 
-        <p class="text-center mt-4">Hai già fatto acquisti da noi prima d'ora? <a href="/login">Accedi</a></p>
+        <p class="text-center mt-4">Hai già fatto acquisti da noi prima d'ora? <a th:href="|@{/custom-login} Accedi|"></a></p>
 
 </div>
 
