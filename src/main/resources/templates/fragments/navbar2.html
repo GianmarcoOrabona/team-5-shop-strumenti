@@ -15,7 +15,7 @@
                         <a class="text-p p-4 fst-italic" th:href="@{/contattaci}">Contattaci</a>
                     </li>
                     <li class="nav-item list-inline-item">
-                        <a class="nav-link text-p" th:classappend="${area == 'area admin' ? 'active' : ''}" th:href="@{/admin}">area admin
+                        <a class="nav-link text-p" th:classappend="${area == 'area admin' ? 'active' : ''}" th:href="@{/admin}">Area admin
                         </a>
                     </li>
                 </div>
@@ -45,17 +45,25 @@
             </div>
         </div>
 
-        <div>
-            <a th:href="@{/registrazione}">Registrati</a>
-            <a class="mt-4 login-link" th:href="@{/custom-login}">
+        <div class="p-2">
+            <a class="text-p" th:href="@{/registrazione}">Registrati</a>
+            <a class="mt-4 login-link text-p p-3" th:href="@{/custom-login}">
                 <span sec:authorize="!isAuthenticated()">Login</span>
             </a>
-            <th:block sec:authorize="isAuthenticated()">
+            <!-- <th:block sec:authorize="isAuthenticated()"> -->
                     <span class="gold-text ps-4 fs-4" sec:authorize="hasAnyAuthority('admin','user')"></span>
                 <a class="mt-4" href="/logout" sec:authorize="hasAnyAuthority('admin','user')">Logout</a>
-            </th:block>
-
+            <!--</th:block> -->
         </div>
+
+        <th:block sec:authorize="isAuthenticated()">
+            <div class="">
+                Logged user: <span sec:authentication="name"></span>
+                Roles: <span sec:authentication="principal.authorities"></span>
+            </div>
+
+        </th:block>
+
 
     </div>
 

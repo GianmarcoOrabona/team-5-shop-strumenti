@@ -323,3 +323,11 @@ body { font-family: sans-serif; }
     background-image: url("/error-hero.jpg");
     margin-bottom: 0.625em;
 }
+
+.b-purple{
+ border-bottom: 1px solid purple;
+ }
+
+ .hover:hover {
+    cursor: pointer;
+ }

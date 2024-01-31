@@ -171,4 +171,6 @@ INSERT INTO role (name) VALUES("admin");
 INSERT INTO role (name) VALUES("user");
 INSERT INTO utenti (first_name,last_name,email,password) VALUES("luigi","iaco","prova@gmail.com","{noop}chitarra");
 INSERT INTO utenti_role_set(user_id,role_set_name) VALUES (1,"admin");
+INSERT INTO utenti (first_name,last_name,email,password) VALUES("luigi","laloe","prova1@gmail.com","{noop}violino");
+INSERT INTO utenti_role_set(user_id,role_set_name) VALUES (2,"user");
 

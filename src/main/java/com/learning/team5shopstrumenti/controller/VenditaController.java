@@ -26,6 +26,7 @@ public class VenditaController {
     @PostMapping
     public String store(@ModelAttribute("vendita") Vendita vendita, Model model) {
         Vendita savedVendita = venditaRepository.save(vendita);
+        model.addAttribute("foto", vendita.getStrumento().getFoto());
         return "vendite/show";
     }
 }
