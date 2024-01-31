@@ -45,14 +45,20 @@
 
                 <div class="mb-3">
                     <label for="cap" class="form-label">Password</label>
-                    <input placeholder="PSW" type="password" class="form-control" id="psw" name="cap">
+                    <input placeholder="PSW" type="password" class="form-control" id="password" name="cap">
                 </div>
 
-                <button type="submit" class="btn button-acquista rounded-pill" data-bs-toggle="modal"
-                        data-bs-target="#addToCartModal">
-                    Acquista
-                    <i class="fa-solid fa-bag-shopping"></i>
-                </button>
+                <div class="mb-3">
+                    <label for="cap" class="form-label">Conferma password </label>
+                    <input placeholder="PSW" type="password" class="form-control" id="confirm-password" name="cap">
+                </div>
+                <div class="text-center">
+                    <button id="btn" type="submit" class="btn button-acquista rounded-pill " data-bs-toggle="modal"
+                            data-bs-target="#addToCartModal">
+                        Registrati
+                    </button>
+
+                </div>
 
             </form>
         </div>
@@ -60,6 +66,8 @@
 
         <p class="text-center mt-4">Hai già fatto acquisti da noi prima d'ora? <a th:href="|@{/custom-login} Accedi|"></a></p>
 
+
+    <script src="/js/main.js"></script>
 </div>
 
 </body>
