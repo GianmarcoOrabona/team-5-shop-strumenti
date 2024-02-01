@@ -123,4 +123,13 @@ public class AdminController {
         }
 
     }
+
+
+
+    @GetMapping("/vendite")
+    public String vendite(Model model) {
+        List<Vendita> vendite = venditaRepository.findAll();
+        model.addAttribute("vendite", vendite);
+        return "admin/vendite";
+    }
 }

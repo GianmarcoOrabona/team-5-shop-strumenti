@@ -12,13 +12,13 @@
                     <a class="nav-link" th:classappend="${area == 'home' ? 'active' : ''}" th:href="@{/}"><i class="fa-solid fa-house"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:classappend="${area == 'strumenti' ? 'active' : ''}" th:href="@{/strumenti}">Strumenti</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:classappend="${area == 'area admin' ? 'active' : ''}" th:href="@{/admin}">Area admin</a>
+                    <a class="nav-link" th:classappend="${area == 'area admin' ? 'active' : ''}" th:href="@{/admin}">Catalogo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:classappend="${area == 'area assortimenti' ? 'active' : ''}" th:href="@{/admin/assortimento}">Assortimenti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${area == 'area vendite' ? 'active' : ''}" th:href="@{/admin/vendite}">Vendite</a>
                 </li>
             </ul>
         </div>

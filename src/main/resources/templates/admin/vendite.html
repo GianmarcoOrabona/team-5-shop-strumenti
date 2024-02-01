@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/resource :: head('Lista Assortimenti')"></head>
+<body>
+<header>
+    <nav th:replace="fragments/navbar :: topNavbar('area vendite')"></nav>
+</header>
+
+<main>
+    <div class="container mb-900">
+        <table class="table mt-100 table-image">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Strumento venduto</th>
+                <th scope="col">Quantità vendute</th>
+                <th scope="col">Data di vendita</th>
+                <th scope="col">User</th>
+                <th scope="col">Tot vendita</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="vendita : ${vendite}">
+                <th scope="row" th:text="${vendita.id}"></th>
+                <td scope="row" th:text="${vendita.strumento.modello}"></td>
+                <td th:text="${vendita.quantita}"></td>
+                <td th:text="|${vendita.data}"></td>
+                <td th:text="|Id:${vendita.utenti.id}) ${vendita.utenti.firstName}  |"></td>
+                <td th:text="|${vendita.prezzoTotale()} &euro;|"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+<footer th:replace="fragments/footer :: footer()"></footer>
+<th:block th:replace="fragments/resource :: script"></th:block>
+</body>
+</html>

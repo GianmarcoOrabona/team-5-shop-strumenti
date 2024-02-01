@@ -52,7 +52,7 @@
             </a>
              <th:block sec:authorize="isAuthenticated()">
                     <span class="gold-text ps-4 fs-4" sec:authorize="hasAnyAuthority('admin','user')"></span>
-                <a class="mt-4" href="/logout" sec:authorize="hasAnyAuthority('admin','user')">Logout</a>
+                <a class="mt-4" th:href="@{/logout}" sec:authorize="hasAnyAuthority('admin','user')">Logout</a>
             </th:block>
         </div>
 

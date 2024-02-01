@@ -24,8 +24,8 @@
             </div>
             <p class="p-show mb-1">Tasse e spedizione incluse</p>
             <!--Testo che varia in base al numero di strumenti disponibili-->
-            <p th:if="${strumento.assortimenti.size() == 0}" style="background-color:red">Non disponibile</p>
-            <p th:unless="${strumento.assortimenti.size() == 0}" class="disponibile m-0" > Disponibile</p>
+            <p th:if="${strumento.quantitaMagazzino() == 0}" class="nondisponibile m-0">Non disponibile</p>
+            <p th:unless="${strumento.quantitaMagazzino() == 0}" class="disponibile m-0" > Disponibile</p>
             <p th:text="|Paga fino a 12 rate da: ${strumento.pagaARate()} &euro;|"></p>
             <form
                     method="post"
@@ -37,12 +37,12 @@
                 <input type="hidden" th:field="*{strumento}">
                 <input type="hidden" th:field="*{data}">
                 <div class="d-flex ">
-                    <select class="form-select rounded-pill" aria-label="Default select example" style="width:100px;position:relative;left:8px" name="quantita">
+                    <select th:classappend="${strumento.quantitaMagazzino() == 0} ? 'd-none' : ''" class="form-select rounded-pill" aria-label="Default select example" style="width:100px;position:relative;left:8px" name="quantita">
                         <option th:each="qt : ${array}" th:text="${qt}" th:value="${qt}"></option>
                     </select>
                     <div class="input-group d-flex justify-content-end">
 
-                        <button type="submit" class="btn button-acquista rounded-pill" data-bs-toggle="modal"
+                        <button th:classappend="${strumento.quantitaMagazzino() == 0} ? 'd-none' : ''" type="submit" class="btn button-acquista rounded-pill" data-bs-toggle="modal"
                                 data-bs-target="#addToCartModal" sec:authorize="isAuthenticated()">
                             Acquista
                             <i class="fa-solid fa-bag-shopping"></i>

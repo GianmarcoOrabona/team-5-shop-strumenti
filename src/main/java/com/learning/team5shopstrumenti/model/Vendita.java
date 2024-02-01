@@ -17,13 +17,23 @@ public class Vendita {
     private LocalDate data;
 
     private Integer quantita;
-
-
     // RELAZIONI
     @ManyToOne
     private Strumento strumento;
 
-    // GETTER E SETTER
+    @ManyToOne
+    private User utenti;
+
+
+// GETTER E SETTER
+
+    public User getUtenti() {
+        return utenti;
+    }
+
+    public void setUtenti(User utenti) {
+        this.utenti = utenti;
+    }
 
     public Integer getId() {
         return id;

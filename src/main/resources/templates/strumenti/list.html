@@ -109,7 +109,7 @@
     <div class="container mt-100">
         <h1 class="text-center ">Strumenti</h1>
         <div class="row g-5">
-            <div class="col-3" th:each="strumenti : ${strumenti}" th:if="${strumenti.quantitaMagazzino() != 0}">
+            <div class="col-3" th:each="strumenti : ${strumenti}">
                 <a th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="text-decoration-none text-dark ">
                     <div class="card h-100 crad-strumento">
                         <img th:src="${strumenti.foto}" class="card-img-top img-fluid object-fit-contain b-purple"

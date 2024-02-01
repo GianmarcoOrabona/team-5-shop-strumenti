@@ -1,7 +1,9 @@
 package com.learning.team5shopstrumenti.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Set;
 
 
@@ -19,6 +21,18 @@ public class User {
 
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roleSet;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "utenti", orphanRemoval = true)
+    private List<Vendita> vendite;
+
+    public List<Vendita> getVendite() {
+        return vendite;
+    }
+
+    public void setVendite(List<Vendita> vendite) {
+        this.vendite = vendite;
+    }
 
     public Integer getId() {
         return id;
