@@ -50,10 +50,10 @@
             <a class="mt-4 login-link text-p p-3" th:href="@{/custom-login}">
                 <span sec:authorize="!isAuthenticated()">Login</span>
             </a>
-            <!-- <th:block sec:authorize="isAuthenticated()"> -->
+             <th:block sec:authorize="isAuthenticated()">
                     <span class="gold-text ps-4 fs-4" sec:authorize="hasAnyAuthority('admin','user')"></span>
                 <a class="mt-4" href="/logout" sec:authorize="hasAnyAuthority('admin','user')">Logout</a>
-            <!--</th:block> -->
+            </th:block>
         </div>
 
         <th:block sec:authorize="isAuthenticated()">

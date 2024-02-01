@@ -331,3 +331,9 @@ body { font-family: sans-serif; }
  .hover:hover {
     cursor: pointer;
  }
+
+.price-card__price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}

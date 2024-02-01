@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/registrazione")
@@ -30,29 +32,26 @@ public class RegistrazioneController {
     private RoleRepository roleRepository;
 
     @GetMapping
-    public String index() {
+    public String index(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
         return "login/registrati";
     }
 
     @PostMapping
-    public String signUp(@ModelAttribute UtenteDto formUser, BindingResult bindingResult, Model model) {
+    public String signUp(@ModelAttribute User formUser, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()){
             return "/strumenti";
         } else {
-            model.addAttribute("role", roleRepository.findAll());
-            User user = new User();
-            user.setEmail(formUser.getEmail());
-            user.setFirstName(formUser.getFirstName());
-            user.setPassword(formUser.getPassword());
-            user.setLastName(formUser.getLastName());
-            userRepository.save(user);
-            Role role = new Role();
-            role.setName(formUser.getRole());
-            roleRepository.save(role);
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
             String pswencode = encoder.encode(formUser.getPassword());
-            user.setPassword("{bcrypt}" + pswencode);
-            userRepository.save(user);
+            formUser.setPassword("{bcrypt}" + pswencode);
+            Role roleUser = new Role();
+            roleUser.setName("user");
+            Set<Role> roleUserSet = new HashSet<>();
+            roleUserSet.add(roleUser);
+            formUser.setRoleSet(roleUserSet);
+            userRepository.save(formUser);
             return "redirect:/strumenti";
         }
 

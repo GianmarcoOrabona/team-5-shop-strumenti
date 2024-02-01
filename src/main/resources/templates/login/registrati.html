@@ -10,18 +10,19 @@
     <h1 class="text-center mb-5">Registrazione</h1>
         <div class="d-flex justify-content-center">
             <form
-                    action="/registrazione"
+                    th:object="${user}"
+                    th:action="@{/registrazione}"
                     method="post"
             >
                 <input type = "hidden" name="role" th:value="user"></input>
                 <div class="col-12 mb-3 ">
                     <label for="nome" class="form-label">Nome</label>
-                    <input placeholder="Inserisci il tuo Nome" type="text" class="form-control" id="nome" name="firstName" style="width: 600px; ">
+                    <input placeholder="Inserisci il tuo Nome" type="text" class="form-control" id="nome" th:field="*{firstName}" style="width: 600px; ">
                 </div>
 
                 <div class="mb-3">
                     <label for="cognome" class="form-label">Cognome</label>
-                    <input placeholder="Inserisci il tuo Cognome" type="text" class="form-control" id="cognome" name="lastName">
+                    <input placeholder="Inserisci il tuo Cognome" type="text" class="form-control" id="cognome" th:field="*{lastName}">
                 </div>
 
                 <div class="mb-3">
@@ -42,13 +43,13 @@
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Indirizzo email</label>
-                    <input  placeholder="Inserisci il campo 1"type="email" class="form-control" id="email" name="email">
+                    <input  placeholder="Inserisci il campo 1"type="email" class="form-control" id="email" th:field="*{email}">
                     <small class="form-text text-muted">Riceverai una mail con un link per impostare la password.</small>
                 </div>
 
                 <div class="mb-3">
                     <label for="cap" class="form-label">Password</label>
-                    <input placeholder="PSW" type="password" class="form-control" id="password" name="password">
+                    <input placeholder="PSW" type="password" class="form-control" id="password" th:field="*{password}">
                 </div>
 
                 <div class="mb-3">

@@ -118,7 +118,7 @@
                         <div class="card-body d-flex flex-column">
                             <h5 th:text="${strumenti.marca}"></h5>
                             <p class="card-text mb-4" th:text="${strumenti.modello}"></p>
-                            <p class="card-text mb-4" th:text="${strumenti.prezzo}"></p>
+                            <p class="card-text mb-4 price-card__price" th:text="${strumenti.prezzo}"></p>
                             <div class="mt-auto d-flex justify-content-around">
                                 <a th:if="${area == 'public'}" th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="btn btn-primary">Acquista</a>
                             </div>
