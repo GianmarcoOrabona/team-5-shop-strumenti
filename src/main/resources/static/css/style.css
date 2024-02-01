@@ -63,6 +63,7 @@ width: 300px;
    margin: 80px;
 }
 
+
 .card-column {
     margin-bottom: 30px;
 }
@@ -85,6 +86,10 @@ border-radius:8px;
 
 .text-p:hover {
   color: purple;
+}
+
+.text-pb:hover {
+ color: #8A2BE2;
 }
 
 a {
