@@ -14,47 +14,46 @@
                     th:action="@{/registrazione}"
                     method="post"
             >
-                <input type = "hidden" name="role" th:value="user"></input>
                 <div class="col-12 mb-3 ">
                     <label for="nome" class="form-label">Nome</label>
-                    <input placeholder="Inserisci il tuo Nome" type="text" class="form-control" id="nome" th:field="*{firstName}" style="width: 600px; ">
+                    <input placeholder="Inserisci il tuo Nome" type="text" class="form-control" id="nome" th:field="*{firstName}" required style="width: 600px; ">
                 </div>
 
                 <div class="mb-3">
                     <label for="cognome" class="form-label">Cognome</label>
-                    <input placeholder="Inserisci il tuo Cognome" type="text" class="form-control" id="cognome" th:field="*{lastName}">
+                    <input placeholder="Inserisci il tuo Cognome" type="text" class="form-control" id="cognome" th:field="*{lastName}" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="citta" class="form-label">Città</label>
-                    <input placeholder="Inserisci la tua Città" type="text" class="form-control" id="citta" name="citta">
+                    <input placeholder="Inserisci la tua Città" type="text" class="form-control" id="citta" name="citta" required>
                 </div>
 
 
                 <div class="mb-3">
                     <label for="indirizzo" class="form-label">Indirizzo</label>
-                    <input placeholder="Via Roma 1" type="text" class="form-control" id="indirizzo" name="indirizzo">
+                    <input placeholder="Via Roma 1" type="text" class="form-control" id="indirizzo" name="indirizzo" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="cap" class="form-label">CAP</label>
-                    <input placeholder="C.A.P" type="text" class="form-control" id="cap" name="cap">
+                    <input placeholder="C.A.P" type="text" class="form-control" id="cap" name="cap" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Indirizzo email</label>
-                    <input  placeholder="Inserisci il campo 1"type="email" class="form-control" id="email" th:field="*{email}">
+                    <input  placeholder="Inserisci il campo 1"type="email" class="form-control" id="email" th:field="*{email}" required>
                     <small class="form-text text-muted">Riceverai una mail con un link per impostare la password.</small>
                 </div>
 
                 <div class="mb-3">
                     <label for="cap" class="form-label">Password</label>
-                    <input placeholder="PSW" type="password" class="form-control" id="password" th:field="*{password}">
+                    <input placeholder="PSW" type="password" class="form-control" id="password" th:field="*{password}" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="cap" class="form-label">Conferma password </label>
-                    <input placeholder="Conferma psw" type="password" class="form-control" id="confirm-password" name="cap">
+                    <input placeholder="Conferma psw" type="password" class="form-control" id="confirm-password" name="cap" required>
                 </div>
                 <div class="text-center">
                     <button id="btn" type="submit" class="btn button-acquista rounded-pill " data-bs-toggle="modal"
@@ -66,7 +65,6 @@
 
             </form>
         </div>
-
 
         <p class="text-center mt-4">Hai già fatto acquisti da noi prima d'ora? <a th:href="|@{/custom-login} Accedi|"></a></p>
 
