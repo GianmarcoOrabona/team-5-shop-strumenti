@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/resource :: head('Ordine')"></head>
+<body>
+
+<header>
+    <div th:replace="fragments/navbar2 :: navbar2('strumenti')"> </div>
+</header>
+
+<main>
+    <div class="container mt-100">
+        <h1>Riepilogo dei tui ordini</h1>
+        <table class="table table-image mb-900">
+            <thead>
+            <tr class="text-center">
+                <th scope="col">Numero ordine</th>
+                <th scope="col">Immagine</th>
+                <th scope="col">Quantità acquistata</th>
+                <th scope="col">prezzo totale</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center" th:each="ordine : ${userLoggato.getVendite()}">
+                <th scope="row" th:text="${ordine.id}"></th>
+                <td class="w-25"><img th:src="${ordine.getStrumento().getFoto()}" class="img-fluid img-thumbnail" alt="Strumento"></td>
+                <td th:text="${ordine.quantita}"></td>
+                <td th:text="|${ordine.prezzoTotale()} &euro;|"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+
+<footer th:replace="fragments/footer :: footer()"></footer>
+<th:block th:replace="fragments/resource :: script"></th:block>
+</body>
+</html>

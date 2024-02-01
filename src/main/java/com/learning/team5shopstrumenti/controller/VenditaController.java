@@ -7,6 +7,7 @@ import com.learning.team5shopstrumenti.model.Assortimento;
 import com.learning.team5shopstrumenti.model.Strumento;
 import com.learning.team5shopstrumenti.model.Vendita;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +30,7 @@ public class VenditaController {
 
 
     @PostMapping
-    public String store(@ModelAttribute("vendita") Vendita vendita, Model model) {
+    public String store(@ModelAttribute("vendita") Vendita vendita, Model model, Authentication authentication) {
         Vendita savedVendita = venditaRepository.save(vendita);
         model.addAttribute("foto", vendita.getStrumento().getFoto());
         return "vendite/show";
