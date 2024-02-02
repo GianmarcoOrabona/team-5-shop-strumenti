@@ -49,7 +49,7 @@
             <span th:if="${#authorization.expression('isAuthenticated()')}" class="text-p " th:href="@{/profilo}">
                 <i class="fa-regular fa-user"></i>
             </span>
-            <a th:unless="${#authorization.expression('isAuthenticated()')}" class="mt-4 login-link text-p p-3" th:href="@{/custom-login}">
+            <a th:unless="${#authorization.expression('isAuthenticated()')}" class="mt-4 login-link text-p p-3" th:href="@{/registrazione}">
                 Registrati
             </a>
             <a class="mt-4 login-link text-p p-3" th:href="@{/custom-login}">
