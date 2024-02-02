@@ -15,7 +15,7 @@
                         <a class="text-p p-4 fst-italic" th:href="@{/contattaci}">Contattaci</a>
                     </li>
                     <li class="nav-item list-inline-item">
-                        <a class="nav-link text-p" th:classappend="${area == 'area admin' ? 'active' : ''}" th:href="@{/admin}">Area admin
+                        <a class="nav-link text-p" sec:authorize="hasAnyAuthority('admin')" th:classappend="${area == 'area admin' ? 'active' : ''}" th:href="@{/admin}">Area admin
                         </a>
                     </li>
                 </div>
@@ -61,8 +61,6 @@
                 Ciao: <span sec:authentication="name"></span>
             </div>
         </th:block>
-
-
     </div>
 
 
