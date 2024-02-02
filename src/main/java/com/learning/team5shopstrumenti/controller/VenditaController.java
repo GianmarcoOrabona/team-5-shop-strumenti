@@ -42,8 +42,9 @@ public class VenditaController {
 
         Optional<User> user = userRepository.findByEmail(userEmail);
         if (user.isPresent()) {
+            vendita.setUtenti(user.get());
             Vendita savedVendita = venditaRepository.save(vendita);
-            savedVendita.setUtenti(user.get());
+            model.addAttribute("vendita", savedVendita);
             model.addAttribute("foto", vendita.getStrumento().getFoto());
             return "vendite/show";
         } else {
