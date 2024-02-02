@@ -187,4 +187,5 @@ INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-1
 INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-19', 20, 17,3);
 INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-29', 30, 15,4);
 INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-29', 89, 2,4);
+INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-29', 80, 7,4);
 
