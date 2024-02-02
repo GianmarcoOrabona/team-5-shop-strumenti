@@ -171,13 +171,13 @@ INSERT INTO assortimenti (`data`, quantita, strumento_id) VALUES('2023-10-29', 6
 INSERT INTO role (name) VALUES("admin");
 INSERT INTO role (name) VALUES("user");
 -- User insert
-INSERT INTO utenti (first_name,last_name,email,password) VALUES("luigi","iaco","admin@gmail.com","{noop}chitarra");
+INSERT INTO utenti (first_name,last_name,email,password) VALUES("luigi","iaco","admin@gmail.com","{noop}admin");
 INSERT INTO utenti_role_set(user_id,role_set_name) VALUES (1,"admin");
-INSERT INTO utenti (first_name,last_name,email,password) VALUES("Luigi","laloe","user@gmail.com","{noop}violino");
+INSERT INTO utenti (first_name,last_name,email,password) VALUES("Luigi","laloe","user@gmail.com","{noop}user");
 INSERT INTO utenti_role_set(user_id,role_set_name) VALUES (2,"user");
-INSERT INTO utenti (first_name,last_name,email,password) VALUES("Gianmarco","Orabona","user1@gmail.com","{noop}basso");
+INSERT INTO utenti (first_name,last_name,email,password) VALUES("Gianmarco","Orabona","user1@gmail.com","{noop}user");
 INSERT INTO utenti_role_set(user_id,role_set_name) VALUES (3,"user");
-INSERT INTO utenti (first_name,last_name,email,password) VALUES("Gabriele","Ciarl","user2@gmail.com","{noop}batteria");
+INSERT INTO utenti (first_name,last_name,email,password) VALUES("Gabriele","Ciarl","user2@gmail.com","{noop}user");
 INSERT INTO utenti_role_set(user_id,role_set_name) VALUES (4,"user");
 -- Vendite insert
 INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-04', 22, 36,2);
