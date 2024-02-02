@@ -46,7 +46,7 @@ public class StrumentoController {
              if (categoria.isPresent()) {
                  strumenti = strumentoRepository.findByCategorie(categoria.get());
              } else {
-                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Categoria not found");
+                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Categoria non trovata");
              }
 
         } else {
@@ -79,7 +79,7 @@ public class StrumentoController {
         }
 
         else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Lo strumento con id " + id + " non è stato trovato");
         }
     }
 

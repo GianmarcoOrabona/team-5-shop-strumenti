@@ -57,7 +57,7 @@ public class AdminController {
             return "admin/edit";
         }
         else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "strumento with id " + id + " not found");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Lo strumento con id " + id + " non è stato trovato");
         }
     }
 
@@ -74,7 +74,7 @@ public class AdminController {
             return "redirect:/admin";
 
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Lo strumento con id " + id + " non è stato trovato");
         }
     }
 
@@ -119,7 +119,7 @@ public class AdminController {
 
         }
         else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Lo strumento con questo id: " + id + " non e' stato trovato");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Lo strumento con id: " + id + " non è stato trovato");
         }
 
     }
