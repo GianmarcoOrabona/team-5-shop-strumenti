@@ -65,7 +65,7 @@ public class StrumentoController {
     private List<Strumento> getTopStrumenti() {
         List<Strumento> strumentoVenduto = strumentoRepository.findAll();
         Collections.sort(strumentoVenduto, Collections.reverseOrder(new StrumentoDataVenditaComparator()));
-        return strumentoVenduto.subList(0, Math.min(5, strumentoVenduto.size()));
+        return strumentoVenduto.subList(0, 5);
     }
 
     @GetMapping("/show/{id}")
