@@ -371,9 +371,13 @@ background-color:rgb(8, 102, 255);
 
 /* Carosello prodotti */
 
+.carousel-2 {
+    height: 35%;
+}
+
 .carousel-cell-2 {
   width: 28%;
-  height: 200px;
+  height: 500px;
   margin-right: 10px;
   border-radius: 5px;
   counter-increment: carousel-cell;

@@ -180,12 +180,12 @@ INSERT INTO utenti_role_set(user_id,role_set_name) VALUES (3,"user");
 INSERT INTO utenti (first_name,last_name,email,password) VALUES("Gabriele","Ciarl","user2@gmail.com","{noop}user");
 INSERT INTO utenti_role_set(user_id,role_set_name) VALUES (4,"user");
 -- Vendite insert
-INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-04', 22, 36,2);
+INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-04', 22, 36, 2);
 INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-13', 20, 1, 3);
-INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-22', 30, 10,4);
-INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-14', 22, 21,2);
+INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-22', 30, 8, 4);
+INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-14', 22, 23,2);
 INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-19', 20, 17,3);
 INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-29', 30, 15,4);
-INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-29', 89, 2,4);
-INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-29', 80, 7,4);
+INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-29', 89, 2, 4);
+INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-29', 80, 7, 4);
 

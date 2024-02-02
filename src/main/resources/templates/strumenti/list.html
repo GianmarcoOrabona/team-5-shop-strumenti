@@ -3,25 +3,35 @@
 <head th:replace="fragments/resource :: head('Lista strumenti')"></head>
 <body>
 <header>
-    <div th:replace="fragments/navbar2 :: navbar2('strumenti')"> </div>
+    <div th:replace="fragments/navbar2 :: navbar2('strumenti')"></div>
 </header>
 
 <!-- Flickity HTML init -->
-<div class="carousel" data-flickity='{ "autoPlay": true, "wrapAround": true, "imagesLoaded": true }'>
+<div class="carousel" data-flickity='{ "autoPlay": true, "wrapAround": true, "imagesLoaded": true, "pageDots": false }'>
     <div class="carousel-cell">
-        <img class="carousel-img img-fluid" src="https://thumbs.static-thomann.de/thumb//txteaser1000--da872201cee6e52632dfebee332ea835/pics/cms/image/teasertool/fr/10069/studio_furniture_topseller.webp?d=ZW1uZzUybENVcVBnSUFVeUtVQmZhZWpsRFhJSjNOQ2pHSSs5eUlEdzVUYWpIOWMrMWkxckVPZ1c2d0NXckxaZTdyVGlISkZ0bWwvcmdON3RGV2o0QWRVZnhHZlRpSVp1cDVtb1crNTlOL016MGZtWCsvSTI5YUludlJ6U1JrbGl0VXkrV0FaWkxzcXMyVUFzZDg3aGpucWVxSWtRN1l6Q3lMWE1RelpaVEF0Z1ZSdytFSmU3dXRyWE5MRjNVaFVXWmltTVdPZ3FSZnhkNWV1U2lWU3pxK2t3L2l2OUM0bFVHaEQxTHowbUluRXJYSDJnemowQW5oQzZyM250azZpOGNtR0IrN2IzZFRyb0Z1c0FscXkyWG9ZYXg4WEJKSUs1WEVNT05VejlLbjlER1pwWGhPWXVkWS9zcmdjWFhaZ3o%3D" alt="">
+        <img class="carousel-img img-fluid"
+             src="https://thumbs.static-thomann.de/thumb//txteaser1000--da872201cee6e52632dfebee332ea835/pics/cms/image/teasertool/fr/10069/studio_furniture_topseller.webp?d=ZW1uZzUybENVcVBnSUFVeUtVQmZhZWpsRFhJSjNOQ2pHSSs5eUlEdzVUYWpIOWMrMWkxckVPZ1c2d0NXckxaZTdyVGlISkZ0bWwvcmdON3RGV2o0QWRVZnhHZlRpSVp1cDVtb1crNTlOL016MGZtWCsvSTI5YUludlJ6U1JrbGl0VXkrV0FaWkxzcXMyVUFzZDg3aGpucWVxSWtRN1l6Q3lMWE1RelpaVEF0Z1ZSdytFSmU3dXRyWE5MRjNVaFVXWmltTVdPZ3FSZnhkNWV1U2lWU3pxK2t3L2l2OUM0bFVHaEQxTHowbUluRXJYSDJnemowQW5oQzZyM250azZpOGNtR0IrN2IzZFRyb0Z1c0FscXkyWG9ZYXg4WEJKSUs1WEVNT05VejlLbjlER1pwWGhPWXVkWS9zcmdjWFhaZ3o%3D"
+             alt="">
     </div>
     <div class="carousel-cell">
-        <img class="carousel-img img-fluid" src="https://thumbs.static-thomann.de/thumb//txteaser1000--26097bc3f8cc3d5dfe5e0065703f3ca3/pics/cms/image/teasertool/fr/10069/boutique_special_effects.webp?d=ZW1uZzUybENVcU4rUkdBRjdEa2pHUEtKTUdibmt6bk02QmJyQUphc3RsNDBUWXNzazhtczM2aUJpdHVqMGYvMXBqZnBFem9ncGVNNUovcjJVeDYwcCs1Z1h4a2hZOGdtQURhZnEyQ3Fsajg0TmhtdXRTb1YzYkZlWUdGQ1JzSmY5OG9nWlhZM2xJczBYWjlDVVh6RlhvZHJZUE9JSjlCczMzQUIzREYxWW9ZY3J5ZVMyLzdleW5iMWV4QkdlNmtUYUlaY2tseThVOTIvR1I0bUw0RXhpMjhoTTNrcjViS213TDdRNDZuTldDL1pDdDN5aEtydFAxRlY4L3VsV25ET2N5Zk5lL1pXUlpSNWs0VXVzNGZVZUpTVnQvRjUrK3diZjdUS0lkWlR0cWFqVHl1ZFRTOFhrLy9zYzlUeVVydmo%3D" alt="">
+        <img class="carousel-img img-fluid"
+             src="https://thumbs.static-thomann.de/thumb//txteaser1000--26097bc3f8cc3d5dfe5e0065703f3ca3/pics/cms/image/teasertool/fr/10069/boutique_special_effects.webp?d=ZW1uZzUybENVcU4rUkdBRjdEa2pHUEtKTUdibmt6bk02QmJyQUphc3RsNDBUWXNzazhtczM2aUJpdHVqMGYvMXBqZnBFem9ncGVNNUovcjJVeDYwcCs1Z1h4a2hZOGdtQURhZnEyQ3Fsajg0TmhtdXRTb1YzYkZlWUdGQ1JzSmY5OG9nWlhZM2xJczBYWjlDVVh6RlhvZHJZUE9JSjlCczMzQUIzREYxWW9ZY3J5ZVMyLzdleW5iMWV4QkdlNmtUYUlaY2tseThVOTIvR1I0bUw0RXhpMjhoTTNrcjViS213TDdRNDZuTldDL1pDdDN5aEtydFAxRlY4L3VsV25ET2N5Zk5lL1pXUlpSNWs0VXVzNGZVZUpTVnQvRjUrK3diZjdUS0lkWlR0cWFqVHl1ZFRTOFhrLy9zYzlUeVVydmo%3D"
+             alt="">
     </div>
     <div class="carousel-cell">
-        <img class="carousel-img img-fluid" src="https://thumbs.static-thomann.de/thumb//txteaser1000--4b222da964e4edf668f2e7e34ec6e65c/pics/cms/image/teasertool/fr/10069/custom_shop_saxophones_neu.webp?d=ZW1uZzUybENVcVBjcWxKTURpMDhJQUt1WG9XbnIvNEplWk9GTHJPSDFIalFId3JwajBxNGh1bmxNSFUzcktBUklsRWpuVjNLUFVwbDVVRzlzZXJvbzBOdzFQTktKWTFIOWRzMm5leUtXZTFBM0FwYTFteEpjM0hZcWlvODhhcWVqMnE3TzIvTkNvRGFIeUFSd3VMSXFQdXozM3IvL1hKZDFNT3R5M081NVRHWWUraW40eENPNjQyQ2NEV0JxbGtVK0hoZ2YyN1RsYWVOZjhpR1N1SnRHY1owOWRwSTdBNXJDejhHT2pnb3pqRzRxQXhER09pZmo0TUpHUmZIR09RUUJKTHVNTmwvZnhDVEFpZWJCQU55WnJBemJvZWdDdkR0UVZOZjVrd0E4R2pLTWhxZVo0VFpTRjFGOFljMnlKeStBR2pPZ0JoY0VrZz0%3D" alt="">
+        <img class="carousel-img img-fluid"
+             src="https://thumbs.static-thomann.de/thumb//txteaser1000--4b222da964e4edf668f2e7e34ec6e65c/pics/cms/image/teasertool/fr/10069/custom_shop_saxophones_neu.webp?d=ZW1uZzUybENVcVBjcWxKTURpMDhJQUt1WG9XbnIvNEplWk9GTHJPSDFIalFId3JwajBxNGh1bmxNSFUzcktBUklsRWpuVjNLUFVwbDVVRzlzZXJvbzBOdzFQTktKWTFIOWRzMm5leUtXZTFBM0FwYTFteEpjM0hZcWlvODhhcWVqMnE3TzIvTkNvRGFIeUFSd3VMSXFQdXozM3IvL1hKZDFNT3R5M081NVRHWWUraW40eENPNjQyQ2NEV0JxbGtVK0hoZ2YyN1RsYWVOZjhpR1N1SnRHY1owOWRwSTdBNXJDejhHT2pnb3pqRzRxQXhER09pZmo0TUpHUmZIR09RUUJKTHVNTmwvZnhDVEFpZWJCQU55WnJBemJvZWdDdkR0UVZOZjVrd0E4R2pLTWhxZVo0VFpTRjFGOFljMnlKeStBR2pPZ0JoY0VrZz0%3D"
+             alt="">
     </div>
     <div class="carousel-cell">
-        <img class="carousel-img img-fluid" src="https://thumbs.static-thomann.de/thumb//txteaser1000--c89c478f20ab6fd0caf4a8f35fab84c3/pics/cms/image/teasertool/fr/10069/157819_harley_benton_acoustic_guitars.webp?d=ZW1uZzUybENVcVBnSUFVeUtVQmZhZWpsRFhJSjNOQ2pHSSs5eUlEdzVUYWpIOWMrMWkxckVPZ1c2d0NXckxaZTdyVGlISkZ0bWwvcmdON3RGV2o0QVNZcVdiL2Q4ZWpGMENXS2lxWXpCb2d4VUFLdk12emhFQVBya3ZJV3c1dlRVQkVmd3dnV25tR0tlSFBoTHNRSWJML09ZdjBhZmphdktNaktTSU5KTHIxZ1ZSdytFSmU3dXRyWE5MRjNVaFVXWmltTVdPZ3FSZnhkNWV1U2lWU3pxK2t3L2l2OUM0bFVHaEQxTHowbUluRXJYSDJnemowQW5oQzZyM250azZpOGNtR0IrN2IzZFRyb0Z1c0FscXkyWG9ZYXg4WEJKSUs1WEVNT05VejlLbi9NY2hWY0xaeElaSUNFWnhBZXVrd3o%3D" alt="">
+        <img class="carousel-img img-fluid"
+             src="https://thumbs.static-thomann.de/thumb//txteaser1000--c89c478f20ab6fd0caf4a8f35fab84c3/pics/cms/image/teasertool/fr/10069/157819_harley_benton_acoustic_guitars.webp?d=ZW1uZzUybENVcVBnSUFVeUtVQmZhZWpsRFhJSjNOQ2pHSSs5eUlEdzVUYWpIOWMrMWkxckVPZ1c2d0NXckxaZTdyVGlISkZ0bWwvcmdON3RGV2o0QVNZcVdiL2Q4ZWpGMENXS2lxWXpCb2d4VUFLdk12emhFQVBya3ZJV3c1dlRVQkVmd3dnV25tR0tlSFBoTHNRSWJML09ZdjBhZmphdktNaktTSU5KTHIxZ1ZSdytFSmU3dXRyWE5MRjNVaFVXWmltTVdPZ3FSZnhkNWV1U2lWU3pxK2t3L2l2OUM0bFVHaEQxTHowbUluRXJYSDJnemowQW5oQzZyM250azZpOGNtR0IrN2IzZFRyb0Z1c0FscXkyWG9ZYXg4WEJKSUs1WEVNT05VejlLbi9NY2hWY0xaeElaSUNFWnhBZXVrd3o%3D"
+             alt="">
     </div>
     <div class="carousel-cell">
-        <img class="carousel-img img-fluid" src="https://thumbs.static-thomann.de/thumb//txteaser1000--a6adcb43ff12ab597c84ad6919232aeb/pics/cms/image/teasertool/fr/10069/led_bar_topseller.webp?d=ZW1uZzUybENVcU1xQW1sZUdONjhaK2psRFhJSjNOQ2pDeGJkUktiWVVOV2pIOWMrMWkxckVJMUJES0w3bjd5eURHd1kyWXVyNG9QcmdON3RGV2o0QVdGbi9SbGovNThad0ZVcW53K0FIcUJCMHNhM3F1dHlNekNPWFN0SlRaeExFTmVBNGFmZHhCMGFRUXBObzZSZmp5VWRyUEdwdHNIUU4rV2VzbTJMQk5HM3ZFc05WM0xlQjdyRURkTGxWUXAvRmp4SjJtQ0EyV1hQNmxpd0dndXJBUjlyaWN3a3lYNThHVmJseUlQaGhKU0xFbjRtVWM2dmJ4R0tjeVJXZ2Z5YTNkeTVSTS9GbmoxYjlDd3dvM3R6c2tnTUowMWRlWVpLRkRKcjJMcldzUHRNT1NjdFliNGxtQT09" alt="">
+        <img class="carousel-img img-fluid"
+             src="https://thumbs.static-thomann.de/thumb//txteaser1000--a6adcb43ff12ab597c84ad6919232aeb/pics/cms/image/teasertool/fr/10069/led_bar_topseller.webp?d=ZW1uZzUybENVcU1xQW1sZUdONjhaK2psRFhJSjNOQ2pDeGJkUktiWVVOV2pIOWMrMWkxckVJMUJES0w3bjd5eURHd1kyWXVyNG9QcmdON3RGV2o0QVdGbi9SbGovNThad0ZVcW53K0FIcUJCMHNhM3F1dHlNekNPWFN0SlRaeExFTmVBNGFmZHhCMGFRUXBObzZSZmp5VWRyUEdwdHNIUU4rV2VzbTJMQk5HM3ZFc05WM0xlQjdyRURkTGxWUXAvRmp4SjJtQ0EyV1hQNmxpd0dndXJBUjlyaWN3a3lYNThHVmJseUlQaGhKU0xFbjRtVWM2dmJ4R0tjeVJXZ2Z5YTNkeTVSTS9GbmoxYjlDd3dvM3R6c2tnTUowMWRlWVpLRkRKcjJMcldzUHRNT1NjdFliNGxtQT09"
+             alt="">
     </div>
 </div>
 
@@ -29,22 +39,26 @@
 <div class="container">
     <div class="row">
         <div class="d-flex justify-content-center p-5">
-            <h1 >Categorie</h1>
+            <h1>Categorie</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-4">
             <div class="d-flex align-items-center b-purple">
                 <a class="nav-link text-p fs-4" th:href="@{/strumenti(searchCategoria = 'Chitarre')}">
-                <img class="me-5" src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/gi.webp" alt="">
-                Chitarre</a>
+                    <img class="me-5"
+                         src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/gi.webp"
+                         alt="">
+                    Chitarre</a>
 
             </div>
         </div>
         <div class="col-4">
             <div class="d-flex align-items-center b-purple">
                 <a class="nav-link text-p fs-4" th:href="@{/strumenti(searchCategoria = 'Batterie')}">
-                <img class="me-5" src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/dr.webp" alt="">
+                    <img class="me-5"
+                         src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/dr.webp"
+                         alt="">
                     Batterie</a>
 
             </div>
@@ -52,7 +66,9 @@
         <div class="col-4">
             <div class="d-flex align-items-center b-purple">
                 <a class="nav-link text-p fs-4" th:href="@{/strumenti(searchCategoria = 'Pianoforti')}">
-                <img class="me-5" src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/ta.webp" alt="">
+                    <img class="me-5"
+                         src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/ta.webp"
+                         alt="">
                     Pianoforti</a>
 
             </div>
@@ -62,21 +78,27 @@
         <div class="col-4">
             <div class="d-flex align-items-center b-purple">
                 <a class="nav-link text-p fs-4" th:href="@{/strumenti(searchCategoria = 'Bassi')}">
-                <img class="p-3 me-5" src="https://thumbs.static-thomann.de/thumb//thumb250x250/pics/prod/264956.webp" alt="" style="width: 150px;">
+                    <img class="p-3 me-5"
+                         src="https://thumbs.static-thomann.de/thumb//thumb250x250/pics/prod/264956.webp" alt=""
+                         style="width: 150px;">
                     Bassi</a>
 
             </div>
         </div>
         <div class="col-4">
             <div class="d-flex align-items-center b-purple hover text-p">
-                <img class="me-5" src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/st.webp" alt="">
+                <img class="me-5"
+                     src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/st.webp"
+                     alt="">
                 <h4 class="text-center">Studio e registrazione</h4>
 
             </div>
         </div>
         <div class="col-4">
             <div class="d-flex align-items-center b-purple hover text-p">
-                <img class="me-5" src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/sw.webp" alt="">
+                <img class="me-5"
+                     src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/sw.webp"
+                     alt="">
                 <h4 class="text-center">Software</h4>
 
             </div>
@@ -85,21 +107,27 @@
     <div class="row">
         <div class="col-4">
             <div class="d-flex align-items-center b-purple hover text-p">
-                <img class="me-5" src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/dj.webp" alt="">
+                <img class="me-5"
+                     src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/dj.webp"
+                     alt="">
                 <h4 class="text-center">DJ</h4>
 
             </div>
         </div>
         <div class="col-4">
             <div class="d-flex align-items-center b-purple hover text-p">
-                <img class="me-5" src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/zu.webp" alt="">
+                <img class="me-5"
+                     src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/zu.webp"
+                     alt="">
                 <h4 class="text-center">Accessori</h4>
 
             </div>
         </div>
         <div class="col-4">
             <div class="d-flex align-items-center b-purple hover text-p">
-                <img class="me-5" src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/bl.webp" alt="">
+                <img class="me-5"
+                     src="https://thumbs.static-thomann.de/thumb//thumb150x150/pics/images/category/icons/main/bl.webp"
+                     alt="">
                 <h4 class="text-center">Strumenti a fiato</h4>
 
             </div>
@@ -111,162 +139,177 @@
 <div class="container mt-100">
     <div class="row">
         <div class="d-flex justify-content-center p-5">
-            <h1 >Top Seller</h1>
+            <h1>Top Seller</h1>
         </div>
     </div>
 
-<div class="container mt-100" th:if="${topStrumenti}">
-    <h1>Flickity - groupCells</h1>
+    <div class="container mt-100" th:if="${topStrumenti}">
 
-    <!-- Flickity HTML init -->
-    <div class="carousel-2" data-flickity='{ "groupCells": true }'>
-        <div class="carousel-cell-2" th:each="strumento : ${topStrumenti}">
-            <div class="card crad-top-ptodotti">
-                <img th:src="${strumento.foto}" class="card-img-top img-fluid object-fit-contain b-purple"
-                     alt="strumento" style="height: 200px;">
-                <div class="card-body d-flex flex-column text-center hover text-pb">
-                    <h5 th:text="${strumento.marca}"></h5>
-                    <p class="card-text mb-4" th:text="${strumento.modello}"></p>
-                    <p class="card-text mb-4 price-card__price hover text-pb" th:text="|${strumento.prezzo} &euro;|"></p>
-                    <div class="mt-auto d-flex justify-content-around">
-                        <a th:if="${area == 'public'}" th:href="@{/strumenti/show/{id}(id=${strumento.id})}" class="btn btn-primary">Acquista</a>
+        <!-- Carosello 2 -->
+        <div class="carousel-2" data-flickity='{ "autoPlay": true, "wrapAround": true, "pageDots": false, "imagesLoaded": true }'>
+            <div class="carousel-cell-2" th:each="strumento : ${topStrumenti}">
+                <div class="card mt-1">
+                    <div class="text-center">
+                        <img th:src="${strumento.foto}" class="b-purple"
+                             alt="strumento" width="200px">
+                    </div>
+                    <div class="card-body d-flex flex-column text-center hover text-pb">
+                        <h5 th:text="${strumento.marca}"></h5>
+                        <p class="card-text mb-4" th:text="${strumento.modello}"></p>
+                        <p class="card-text mb-4 price-card__price hover text-pb"
+                           th:text="|${strumento.prezzo} &euro;|"></p>
+                        <div class="mt-auto d-flex justify-content-around">
+                            <a th:if="${area == 'public'}" th:href="@{/strumenti/show/{id}(id=${strumento.id})}"
+                               class="btn btn-primary">Acquista</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<main>
-    <div class="container mt-100">
-        <div class="row">
-            <div class="d-flex justify-content-center p-5">
-                <h1 >Strumenti</h1>
+    <main>
+        <div class="container mt-100">
+            <div class="row">
+                <div class="d-flex justify-content-center p-5">
+                    <h1>Strumenti</h1>
+                </div>
             </div>
-        </div>
-        <div class="row g-5">
-            <div class="col-3" th:each="strumenti : ${strumenti}">
-                <a th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="text-decoration-none text-dark ">
-                    <div class="card h-100 crad-strumento">
-                        <img th:src="${strumenti.foto}" class="card-img-top img-fluid object-fit-contain b-purple"
-                             alt="strumento" style="height: 200px;">
-                        <div class="card-body d-flex flex-column text-center hover text-pb">
-                            <h5 th:text="${strumenti.marca}"></h5>
-                            <p class="card-text mb-4" th:text="${strumenti.modello}"></p>
-                            <p class="card-text mb-4 price-card__price hover text-pb" th:text="|${strumenti.prezzo} &euro;|"></p>
-                            <div class="mt-auto d-flex justify-content-around">
-                                <a th:if="${area == 'public'}" th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="btn btn-primary">Acquista</a>
+            <div class="row g-5">
+                <div class="col-3" th:each="strumenti : ${strumenti}">
+                    <a th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="text-decoration-none text-dark ">
+                        <div class="card h-100 crad-strumento">
+                            <img th:src="${strumenti.foto}" class="card-img-top img-fluid object-fit-contain b-purple"
+                                 alt="strumento" style="height: 200px;">
+                            <div class="card-body d-flex flex-column text-center hover text-pb">
+                                <h5 th:text="${strumenti.marca}"></h5>
+                                <p class="card-text mb-4" th:text="${strumenti.modello}"></p>
+                                <p class="card-text mb-4 price-card__price hover text-pb"
+                                   th:text="|${strumenti.prezzo} &euro;|"></p>
+                                <div class="mt-auto d-flex justify-content-around">
+                                    <a th:if="${area == 'public'}" th:href="@{/strumenti/show/{id}(id=${strumenti.id})}"
+                                       class="btn btn-primary">Acquista</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="d-flex justify-content-center p-5">
+                <h1>Marche piu popolari</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/fender.webp"
+                             alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://www.shure.com/it-IT}" class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/shure.webp"
+                             alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://it.yamaha.com/it/products/musical_instruments/index.html}"
+                       class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/yamaha.webp"
+                             alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://www.uaudio.com/}" class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/universal_audio.webp"
+                             alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://harleybenton.com/}" class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/harley_benton.webp"
+                             alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://www.bose.it/it_it/index.html}" class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/bose_logo.webp"
+                             alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/sennheiser.webp"
+                             alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/rode.webp"
+                             alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/stairville.webp"
+                             alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/taylor.webp"
+                             alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/boss.webp"
+                             alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category">
+                    <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
+                        <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/thon.webp"
+                             alt="">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</main>
 
 
-
-
-<div class="container">
-    <div class="row">
-        <div class="d-flex justify-content-center p-5">
-            <h1 >Marche piu popolari</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/fender.webp" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://www.shure.com/it-IT}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/shure.webp" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://it.yamaha.com/it/products/musical_instruments/index.html}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/yamaha.webp" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://www.uaudio.com/}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/universal_audio.webp" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://harleybenton.com/}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/harley_benton.webp" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://www.bose.it/it_it/index.html}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/bose_logo.webp" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/sennheiser.webp" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/rode.webp" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/stairville.webp" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/taylor.webp" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/boss.webp" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="category">
-                <a th:href="@{https://www.fender.com/it-IT/start}" class="text-decoration-none text-dark">
-                    <img src="https://thumbs.static-thomann.de/thumb//thumb270x160/pics/herstlogos/thon.webp" alt="">
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<footer th:replace="fragments/footer :: footer()"></footer>
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<th:block th:replace="fragments/resource :: script"></th:block>
+    <footer th:replace="fragments/footer :: footer()"></footer>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <th:block th:replace="fragments/resource :: script"></th:block>
 </body>
 </html>
