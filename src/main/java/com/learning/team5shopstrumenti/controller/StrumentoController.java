@@ -16,6 +16,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -82,6 +83,20 @@ public class StrumentoController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Strumento with id " + id + " not found");
         }
     }
+
+
+    @GetMapping("/strumenti")
+    public String listaOggetti(Model model, @RequestParam(defaultValue = "asc") String ordine) {
+        List<Strumento> strumento = strumentoRepository.findAll();
+        if (ordine.equals("asc")) {
+            strumento.sort(Comparator.comparing(Strumento::getPrezzo));
+        } else if (ordine.equals("desc")) {
+            strumento.sort(Comparator.comparing(Strumento::getPrezzo).reversed());
+        }
+        model.addAttribute("strumenti1", strumento);
+        return "strumenti/list";
+    }
+
 
 
 

@@ -9,7 +9,7 @@
 
                 <div class=" col-4 mt-2">
                     <li class=" list-inline-item">
-                        <a class="nav-link" th:classappend="${area == 'home' ? 'active' : ''}" th:href="@{/strumenti}"><i class="fa-solid fa-house"></i></a>
+                        <a class="nav-link text-p" th:classappend="${area == 'home' ? 'active' : ''}" th:href="@{/strumenti}"><i class="fa-solid fa-house"></i></a>
                     </li>
                     <li class=" list-inline-item">
                         <a class="text-p p-4 fst-italic" th:href="@{/contattaci}">Contattaci</a>
@@ -30,7 +30,7 @@
                         <div class="input-group search-container rounded-pill">
                             <input class="form-control me-2" type="text" name="keyword" id="keyword"
                                    placeholder="Cerca lo strumento" th:value="${preloadSearch}">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
                 </div>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="p-2">
-            <a class="text-p" th:href="@{/registrazione}">Registrati</a>
+            <a class="text-p" sec:authorize="!isAuthenticated()"  th:href="@{/registrazione}"><i class="fa-regular fa-user"></i></a>
             <a class="mt-4 login-link text-p p-3" th:href="@{/custom-login}">
                 <span sec:authorize="!isAuthenticated()">Login</span>
             </a>

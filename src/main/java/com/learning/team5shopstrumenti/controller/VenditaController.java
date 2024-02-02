@@ -37,9 +37,6 @@ public class VenditaController {
     @PostMapping
     public String store(@ModelAttribute("vendita") Vendita vendita, Model model, Authentication authentication) {
         String userEmail = authentication.getName();
-
-        // TODO: AGGIUNGERE ID UTENTE PER ASSOCIARE LA VENDITA
-
         Optional<User> user = userRepository.findByEmail(userEmail);
         if (user.isPresent()) {
             vendita.setUtenti(user.get());
