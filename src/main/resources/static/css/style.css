@@ -351,3 +351,11 @@ body { font-family: sans-serif; }
 .mb-900{
 margin-bottom: 900px;
 }
+
+#icon-ig:hover {
+background-color:rgb(254, 2, 149);
+}
+
+#icon-fb:hover{
+background-color:rgb(8, 102, 255);
+}
