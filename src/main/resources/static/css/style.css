@@ -304,6 +304,15 @@ body { font-family: sans-serif; }
    width: 250px;
 }
 
+.btn-search{
+background-color: black;
+   color: white;
+   border: none;
+}
+
+.btn-search:hover {
+    background-color: purple;
+}
 .button-acquista:hover {
     background-color: purple;
 }
