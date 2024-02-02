@@ -48,7 +48,7 @@
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
 
-                        <a class="btn button-acquista rounded-pill" th:href="@{/custom-login}" sec:authorize="!isAuthenticated()"><i class="fa-solid fa-bag-shopping"></i>Fai il login per acquistare</a>
+                        <a class="btn button-acquista rounded-pill" th:classappend="${strumento.quantitaMagazzino() == 0} ? 'd-none' : ''" th:href="@{/custom-login}" sec:authorize="!isAuthenticated()"><i class="fa-solid fa-bag-shopping"></i>Fai il login per acquistare</a>
 
 
 
