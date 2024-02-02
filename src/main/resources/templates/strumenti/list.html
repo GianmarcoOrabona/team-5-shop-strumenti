@@ -27,7 +27,11 @@
 
 
 <div class="container">
-    <h1>Categorie</h1>
+    <div class="row">
+        <div class="d-flex justify-content-center p-5">
+            <h1 >Categorie</h1>
+        </div>
+    </div>
     <div class="row">
         <div class="col-4">
             <div class="d-flex align-items-center b-purple">
@@ -104,6 +108,13 @@
 </div>
 
 <!-- Carosello con prodotti più venduti -->
+<div class="container mt-100">
+    <div class="row">
+        <div class="d-flex justify-content-center p-5">
+            <h1 >Top Seller</h1>
+        </div>
+    </div>
+
 <div class="container mt-100" th:if="${topStrumenti}">
     <h1>Flickity - groupCells</h1>
 
@@ -129,7 +140,11 @@
 
 <main>
     <div class="container mt-100">
-        <h1 class="text-center ">Strumenti</h1>
+        <div class="row">
+            <div class="d-flex justify-content-center p-5">
+                <h1 >Strumenti</h1>
+            </div>
+        </div>
         <div class="row g-5">
             <div class="col-3" th:each="strumenti : ${strumenti}">
                 <a th:href="@{/strumenti/show/{id}(id=${strumenti.id})}" class="text-decoration-none text-dark ">
@@ -155,7 +170,11 @@
 
 
 <div class="container">
-    <h1 class="mt-3">Marche più popolari</h1>
+    <div class="row">
+        <div class="d-flex justify-content-center p-5">
+            <h1 >Marche piu popolari</h1>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-4">
             <div class="category">
