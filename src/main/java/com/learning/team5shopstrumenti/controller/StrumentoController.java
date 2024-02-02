@@ -1,5 +1,6 @@
 package com.learning.team5shopstrumenti.controller;
 
+import com.learning.team5shopstrumenti.comparator.StrumentoDataVenditaComparator;
 import com.learning.team5shopstrumenti.interfaccie.AssortimentoRepository;
 import com.learning.team5shopstrumenti.interfaccie.CategoriaRepository;
 import com.learning.team5shopstrumenti.interfaccie.StrumentoRepository;
@@ -16,6 +17,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,7 +56,15 @@ public class StrumentoController {
         }
         model.addAttribute("strumenti", strumenti);
         model.addAttribute("preloadSearch", searchKeyword);
+        List<Strumento> topStrumenti = getTopStrumenti();
+        model.addAttribute("topStrumenti", topStrumenti);
         return "strumenti/list";
+    }
+
+    private List<Strumento> getTopStrumenti() {
+        List<Strumento> strumentoVenduto = strumentoRepository.findAll();
+        Collections.sort(strumentoVenduto, Collections.reverseOrder(new StrumentoDataVenditaComparator()));
+        return strumentoVenduto.subList(0, Math.min(5, strumentoVenduto.size()));
     }
 
     @GetMapping("/show/{id}")

@@ -9,6 +9,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -143,5 +144,17 @@ public class Strumento {
         BigDecimal rate = new BigDecimal(12);
         BigDecimal prezzoRata = prezzo.divide(rate, RoundingMode.HALF_EVEN);
         return prezzoRata;
+    }
+
+    public Integer topVenditeMese() {
+        LocalDate now = LocalDate.now();
+        LocalDate ultimoMese = now.minusMonths(1);
+        Integer totaleVendite = 0;
+        for (Vendita vendita : vendite) {
+            if (vendita.getData().isAfter(ultimoMese)) {
+                totaleVendite += vendita.getQuantita();
+            }
+        }
+        return totaleVendite;
     }
 }
