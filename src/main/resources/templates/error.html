@@ -8,8 +8,8 @@
 
 <!-- Contenuto dell'errore -->
 <div class="container error-body text-center">
-    <h3 class="fw-bold fs-2">Qualcosa è andato storto...</h3>
-    <p class="text-center fs-4">Siamo spacenti, quel link potrebbe non essere valido. Per favore controlla l'URL o torna alla nostra hompage.</p>
+    <h3 class="fw-bold fs-2">Qualcosa è andato storto...errore <span class="text-danger" th:text="${status}"></span></h3>
+    <p class="text-center fs-4" th:text="${message}"></p>
     <a class="btn btn-dark" th:href="@{/strumenti}">Continua lo shopping</a>
     <hr class="w-25 mx-auto">
     <h5 class="text-uppercase">Hai bisogno di aiuto? Parla con noi:</h5>

@@ -69,7 +69,7 @@ class AssortimentoController {
 
         }
         else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "L Assortimento con questo id: " + id + " non e' stato trovato");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "L' Assortimento con questo id: " + id + " non e' stato trovato");
         }
 
     }
