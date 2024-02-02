@@ -46,13 +46,18 @@
         </div>
 
         <div class="p-2">
-            <a class="text-p" sec:authorize="!isAuthenticated()"  th:href="@{/registrazione}"><i class="fa-regular fa-user"></i></a>
+            <span th:if="${#authorization.expression('isAuthenticated()')}" class="text-p " th:href="@{/profilo}">
+                <i class="fa-regular fa-user"></i>
+            </span>
+            <a th:unless="${#authorization.expression('isAuthenticated()')}" class="mt-4 login-link text-p p-3" th:href="@{/custom-login}">
+                Registrati
+            </a>
             <a class="mt-4 login-link text-p p-3" th:href="@{/custom-login}">
                 <span sec:authorize="!isAuthenticated()">Login</span>
             </a>
              <th:block sec:authorize="isAuthenticated()">
                     <span class="gold-text ps-4 fs-4" sec:authorize="hasAnyAuthority('admin','user')"></span>
-                <a class="mt-4" th:href="@{/logout}" sec:authorize="hasAnyAuthority('admin','user')">Logout</a>
+                <a class="mt-4 text-p" th:href="@{/logout}" sec:authorize="hasAnyAuthority('admin','user')">Logout</a>
             </th:block>
         </div>
 
