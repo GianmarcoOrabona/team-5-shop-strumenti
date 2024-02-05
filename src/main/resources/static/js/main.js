@@ -76,3 +76,13 @@ if(validateFormVendita() ){
    alert("Non tutti i campi sono stati compilati")
 }
 })
+
+const passwordField = document.getElementById('password');
+const showPasswordCheckbox = document.getElementById('showPassword');
+  showPasswordCheckbox.addEventListener('change', function () {
+            if (showPasswordCheckbox.checked) {
+                passwordField.setAttribute('type', 'text');
+            } else {
+                passwordField.setAttribute('type', 'password');
+            }
+        });
