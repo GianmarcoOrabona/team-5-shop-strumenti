@@ -181,7 +181,7 @@ INSERT INTO utenti (first_name,last_name,email,password) VALUES("Gabriele","Ciar
 INSERT INTO utenti_role_set(user_id,role_set_name) VALUES (4,"user");
 -- Vendite insert
 INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-04', 22, 36, 2);
-INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-13', 20, 1, 3);
+INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-13', 20, 3, 3);
 INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-22', 30, 8, 4);
 INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-14', 22, 23,2);
 INSERT INTO vendite (`data`, quantita, strumento_id,utenti_id) VALUES('2024-01-19', 20, 17,3);
